@@ -12,6 +12,8 @@
 
 - Keep 我吗 (OhMee) and Why Bother as the two primary projects unless the owner changes that direction.
 - Treat shelter as an early exploration focused on hand-drawn visuals.
+- Use the owner's chosen theme blue, `#2548F5`, with light supporting surfaces unless the owner requests another palette.
+- Make project types prominent. Keep homepage project descriptions, evidence labels, responsibilities and links at least 14px across responsive breakpoints; do not shrink these to fit a narrow card.
 - Preserve the homepage → project detail → return to projects flow, image previews, keyboard access, and responsive layout.
 - Use the supplied project evidence. Do not invent metrics, testimonials, contact details, or resume links.
 
