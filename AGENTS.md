@@ -10,14 +10,13 @@
 
 ## Portfolio context
 
-- Keep 我吗 (OhMee) and Why Bother as the two primary projects unless the owner changes that direction.
+- Keep 我吗 (OhMee) and Why Bother as the two primary project images and case studies unless the owner changes that direction.
 - Treat shelter as an early exploration focused on hand-drawn visuals.
-- The supplied `figma-website-main.zip` is the visual authority for the homepage. Preserve its layout, typography and blue `#1616C5` / orange `#F05A24` palette; integrate the existing project cards and details into it. Keep shelter's card dark.
-- Make project types prominent. Keep homepage project descriptions, evidence labels, responsibilities and links at least 14px across responsive breakpoints; do not shrink these to fit a narrow card.
+- The supplied `figma-website-main.zip` is the authority for the homepage's layout AND copy. The owner clarified: replace only the four project preview images, keep the source card structure, title/description/tag text, hero introduction, capabilities and about sections unchanged. Use its exact typography and blue `#1616C5` / orange `#F05A24` palette. Connect the existing case studies through the cards. Keep shelter's preview dark.
 - Preserve the homepage → project detail → return to projects flow, image previews, keyboard access, and responsive layout.
 - Use the supplied project evidence. Do not invent metrics, testimonials, contact details, or resume links.
-- Keep the personal interest statement in the hero and the resume preview/download area at the end. The owner approved a labelled resume placeholder until the real PDF is supplied; never enable a broken download.
-- Preserve the supplied homepage's long-page section flow; it supersedes the earlier full-screen snapping design. Keep content readable on mobile and respect reduced-motion preferences. Treat template identity, experience and contact text as placeholders, not facts about the owner.
+- Keep the provided resume section and its placeholder preview; the real PDF remains unavailable, so keep its download disabled.
+- Preserve the supplied homepage's long-page section flow; it supersedes the earlier full-screen snapping design. Respect reduced-motion preferences. The owner explicitly requested retaining source text for UI review: do not treat its sample identity, project names, experience or contact text as verified facts about the owner or independently rewrite it.
 
 ## Verification
 

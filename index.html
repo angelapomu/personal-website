@@ -53,27 +53,6 @@ h1, h2, h3, h4 { font-weight: 500; }
 .studio-header nav a.on, .studio-header nav a:hover { color: var(--chrome-ink); }
 .studio-header nav a.on::after { content: ''; position: absolute; bottom: 3px; left: 0; right: 0; height: 1px; background: currentColor; }
 .nav-contact span { margin-left: 9px; }
-.feature-card { display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px; min-width: 0; }
-.featured-copy { align-self: center; padding: 30px 40px; background: var(--white); border-radius: 14px; }
-.project-context { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; }
-.project-type { font-size: 15px; color: var(--accent); font-weight: 600; }
-.project-context > span { font-size: 13px; color: var(--muted); }
-.project-brand { display: flex; align-items: center; gap: 10px; margin-top: 22px; }
-.project-brand img { width: 38px; height: 38px; object-fit: contain; border-radius: 9px; mix-blend-mode: multiply; }
-.project-brand h2 { font: 500 28px/1.4 var(--display); letter-spacing: -.03em; }
-.project-brand h2 small { font: 400 15px/1.5 var(--font); color: var(--muted); margin-left: 8px; }
-.project-statement { font-size: clamp(27px, 2.4vw, 32px); line-height: 1.5; letter-spacing: -.04em; margin-top: 17px; }
-.project-description { font-size: 16px; color: var(--muted); line-height: 1.9; margin-top: 17px; }
-.project-evidence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; max-width: 340px; margin-top: 19px; }
-.project-evidence > div { display: flex; flex-direction: column; }
-.project-evidence b { font: 500 34px/1.2 var(--display); color: var(--accent); letter-spacing: -.04em; }
-.project-evidence b > span { font-size: 23px; }
-.project-evidence > div > span { font-size: 14px; color: var(--muted); margin-top: 5px; }
-.project-link { display: inline-flex; align-items: center; gap: 29px; min-height: 44px; margin-top: 17px; border-bottom: 1px solid #c9d0fd; color: var(--accent); font-size: 15px; font-weight: 500; }
-.project-link > span { font-size: 20px; transition: transform .2s; }
-.project-link:hover > span { transform: translate(3px,-3px); }
-.project-role { font-size: 14px; line-height: 1.8; margin-top: 15px; color: var(--ink); }
-.role-label { font-size: 14px; color: var(--muted); margin-right: 10px; }
 .featured-stage { position: relative; min-height: 590px; align-self: stretch; overflow: hidden; border-radius: 16px; }
 .stage-label { position: absolute; top: 17px; left: 40px; font-size: 14px; }
 .stage-label > span { display: block; font: 12px/1.8 var(--display); margin-top: 3px; color: var(--muted); }
@@ -116,11 +95,7 @@ body[data-view="home"] > .studio-footer { display: none; }
 
 @media (max-width: 1100px) {
   :root { --gutter: 42px; }
-  .featured-copy { padding: 28px; }
   .featured-stage, .companion-stage { min-height: 550px; }
-  .project-statement { font-size: 29px; }
-  .project-brand h2 small { display: block; margin: 0; }
-  .project-description br { display: none; }
   .companion-type { font-size: 94px; }
   .companion-stage img { right: 0; width: 56%; bottom: 55px; }
   .dictionary-project, .shelter-project { padding: 26px; gap: 19px; }
@@ -128,9 +103,6 @@ body[data-view="home"] > .studio-footer { display: none; }
 }
 @media (max-width: 900px) {
   :root { --gutter: 28px; }
-  .featured-copy { padding: 25px; }
-  .project-brand h2 { font-size: 25px; }
-  .project-statement { font-size: 27px; }
   .featured-stage, .companion-stage { min-height: 540px; }
   .product-phone { width: 43%; border-width: 4px; }
   .identity-phone { left: 5%; top: 29%; }
@@ -150,12 +122,6 @@ body[data-view="home"] > .studio-footer { display: none; }
   .studio-brand b { font-size: 25px; }
   .studio-header nav { font-size: 13px; gap: 19px; }
   .nav-contact span { margin-left: 5px; }
-  .feature-card { display: flex; flex-direction: column; gap: 20px; }
-  .featured-copy { padding: 27px; align-self: stretch; }
-  .project-brand h2 small { display: inline; margin-left: 8px; }
-  .project-statement { font-size: 29px; }
-  .project-description { font-size: 16px; }
-  .project-role { font-size: 14px; }
   .featured-stage { min-height: 320px; height: 320px; }
   .stage-label { left: 23px; top: 0; }
   .product-phone { width: 31%; max-width: 136px; }
@@ -177,23 +143,11 @@ body[data-view="home"] > .studio-footer { display: none; }
 @media (max-width: 370px) {
   :root { --gutter: 20px; }
   .studio-header nav { gap: 13px; font-size: 12px; }
-  .featured-copy { padding: 23px; }
-  .project-statement { font-size: 26px; }
-  .project-brand h2 small { display: block; margin: 0; }
   .companion-type { font-size: 72px; }
   .dictionary-project, .shelter-project { padding: 22px; gap: 17px; }
   .dictionary-visual { margin-bottom: -22px; }
 }
 @media (min-width: 901px) and (max-height: 760px) {
-  .featured-copy { padding: 24px 33px; }
-  .project-brand { margin-top: 12px; }
-  .project-brand h2 small { display: inline; margin-left: 8px; }
-  .project-statement { font-size: 28px; margin-top: 12px; }
-  .project-description { margin-top: 12px; line-height: 1.8; }
-  .project-evidence { margin-top: 14px; }
-  .project-evidence b { font-size: 30px; }
-  .project-link { margin-top: 12px; }
-  .project-role { margin-top: 11px; line-height: 1.7; }
   .featured-stage, .companion-stage { min-height: 500px; }
   .product-phone { width: 30%; max-width: 172px; }
   .identity-phone { left: 18%; top: 25%; }
@@ -750,68 +704,42 @@ html { scroll-behavior: smooth; }
   @keyframes pulse { 50% { transform: scale(.72) rotate(15deg); } }
 }
 
-/* Integration: original project cards inside the supplied Figma grid. */
+/* Integration: only the four project preview regions use existing media. */
 html { scroll-padding-top: 72px; }
 body[data-view="home"] > .studio-header,
 body[data-view="home"] > .studio-footer { display: none; }
-.figma-home [id] { scroll-margin-top: 0; }
-.figma-home .portfolio-projects {
-  --accent: var(--blue); --rust: var(--orange); --rust-ink: #ad3b17;
+.figma-home .imported-preview {
+  --accent: var(--blue); --rust: var(--orange); --muted: #676560;
   --display: 'Outfit', 'Noto Sans SC', sans-serif;
-  --font: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --muted: #676560; --white: #fff; --night: #171819;
-  font-family: var(--font);
-}
-.figma-home .featured-grid .feature-card {
-  display: flex; flex-direction: column; gap: 0; background: var(--white);
-  border-radius: 14px; overflow: hidden; min-width: 0;
-}
-.figma-home .featured-grid .featured-copy {
-  order: 1; padding: 32px; border-radius: 0; align-self: stretch; flex: 1;
-}
-.figma-home .featured-grid .featured-stage,
-.figma-home .featured-grid .companion-stage {
-  order: 0; width: 100%; min-height: 0; height: auto;
-  aspect-ratio: 1.16; border-radius: 0; align-self: stretch; overflow: hidden;
+  display: block; position: relative; height: 100%; width: 100%; min-height: 0;
+  border-radius: 0; overflow: hidden;
 }
 .figma-home .featured-stage { background: #eef0fe; }
 .figma-home .companion-stage { background: var(--orange); }
-.figma-home .project-context { font-size: 14px; }
-.figma-home .project-type { font-size: 15px; }
-.figma-home .project-brand { margin-top: 20px; }
-.figma-home .project-brand h2 { font: 500 28px/1.4 var(--display); }
-.figma-home .project-statement { margin-top: 17px; font-size: 30px; line-height: 1.5; }
-.figma-home .portfolio-projects .project-description {
-  margin: 17px 0 0; font-size: 16px; line-height: 1.9; max-width: none; opacity: 1; color: var(--muted);
-}
-.figma-home .project-evidence { margin-top: 19px; }
-.figma-home .project-role { margin-top: 15px; font-size: 14px; line-height: 1.8; }
-.figma-home .project-link { margin-top: 17px; font-size: 15px; }
-.figma-home .featured-stage .stage-label { top: 22px; left: 26px; }
-.figma-home .featured-stage .product-phone { width: 33%; max-width: none; border-width: 4px; }
-.figma-home .featured-stage .identity-phone { left: 13%; top: 23%; }
-.figma-home .featured-stage .chat-phone { left: 49%; top: 16%; }
-.figma-home .featured-stage .screen-switch { bottom: 15px; }
-.figma-home .featured-stage .screen-switch button { border-radius: 3px; font-size: 14px; }
-.figma-home .companion-stage .art-label { top: 24px; left: 27px; }
-.figma-home .companion-stage .companion-type { top: 76px; left: 24px; font-size: clamp(88px, 8vw, 125px); }
+.figma-home .imported-preview .stage-label { top: 24px; left: 26px; font-size: 14px; }
+.figma-home .imported-preview .product-phone { width: 33%; max-width: none; border: 4px solid #fff; border-radius: 20px; }
+.figma-home .imported-preview .identity-phone { left: 13%; top: 23%; }
+.figma-home .imported-preview .chat-phone { left: 49%; top: 16%; }
+.figma-home .imported-preview .screen-switch { bottom: 16px; }
+.figma-home .imported-preview .screen-switch button { border-radius: 3px; font-size: 14px; }
+.figma-home .imported-preview .art-label { top: 24px; left: 27px; }
+.figma-home .imported-preview .companion-type { top: 76px; left: 24px; font-size: clamp(88px, 8vw, 125px); }
 .figma-home .companion-stage > img { width: 42%; right: 24px; bottom: 25px; }
-.figma-home .companion-stage .companion-caption { left: 27px; bottom: 25px; font-size: 14px; }
-.figma-home .companion-stage .art-arrow { top: 20px; right: 27px; }
-.figma-home .small-grid .dictionary-project,
-.figma-home .small-grid .shelter-project { min-height: 320px; padding: 32px; gap: 24px; }
-.figma-home .small-grid .dictionary-project { background: #fff; }
-.figma-home .small-grid .dictionary-visual { height: 260px; margin-bottom: -32px; display: block; }
-.figma-home .small-grid .exploration-copy h3 { margin-top: 11px; font: 500 29px/1.4 var(--display); }
-.figma-home .small-grid .exploration-copy > p:not(.eyebrow) { margin-top: 16px; font-size: 15px; }
-.figma-home .small-grid .eyebrow { margin: 0; font: 500 14px/1.7 var(--font); letter-spacing: 0; }
-.figma-home .shelter-project .eyebrow { color: #d8a287; }
-.figma-home .shelter-thumbnail img { mix-blend-mode: screen; }
+.figma-home .imported-preview .companion-caption { left: 27px; bottom: 25px; font-size: 14px; }
+.figma-home .imported-preview .art-arrow { top: 20px; right: 27px; }
+.figma-home .dictionary-media { display: grid; place-items: center; background: #eef0fe; }
+.figma-home .dictionary-media .dictionary-visual {
+  display: block; position: absolute; width: 36%; height: auto; left: 32%; top: 12%;
+  margin: 0; border: 6px solid white; border-radius: 17px 17px 0 0; overflow: hidden;
+  transform: rotate(-4deg); background: white;
+}
+.figma-home .dictionary-visual img { width: 100%; }
+.figma-home .shelter-media { display: grid; place-items: center; background: #171819; }
+.figma-home .shelter-media img { width: 48%; max-height: 80%; object-fit: contain; mix-blend-mode: screen; }
 .figma-home :focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
 .figma-home :is(.topbar,.hero,.capabilities-section,footer) :focus-visible { outline-color: var(--paper); }
-.figma-home .primary-button:disabled { cursor: not-allowed; opacity: .65; }
+.figma-home .primary-button:disabled { cursor: not-allowed; }
 .figma-home .primary-button:disabled:hover { background: var(--paper); color: var(--ink); }
-.figma-home .resume-actions .text-link { background: transparent; border: 0; border-bottom: 1px solid currentColor; color: inherit; cursor: pointer; padding: 0 0 5px; }
 .figma-home .resume-modal {
   border: 0; padding: 0; margin: 0; width: 100vw; max-width: none; height: 100dvh;
   max-height: none; background: rgba(12,12,12,.96); color: var(--paper); overflow: hidden;
@@ -819,54 +747,30 @@ body[data-view="home"] > .studio-footer { display: none; }
 .figma-home .resume-modal::backdrop { background: rgba(12,12,12,.92); }
 .figma-home .resume-modal-toolbar { background: #171713; }
 .figma-home .resume-modal-toolbar button { min-height: 36px; }
+.figma-home .resume-modal-toolbar button:disabled { cursor: not-allowed; border-bottom: 1px solid var(--paper); }
 .figma-home .resume-modal-toolbar :focus-visible { outline-color: var(--paper); }
-.figma-home .resume-modal-toolbar button:disabled { opacity: .55; cursor: not-allowed; }
-.figma-home .resume-modal-paper section > p,
-.figma-home .resume-modal-paper section div > p { font-size: 14px; }
-.figma-home .resume-modal-paper h2 { font-size: clamp(38px, 7vw, 60px); }
 .figma-home .resume-paper { max-width: 96%; }
-@media (min-width: 901px) and (max-width: 1100px) {
-  .figma-home .featured-grid .featured-copy { padding: 26px; }
-  .figma-home .project-statement { font-size: 27px; }
-  .figma-home .small-grid .dictionary-project,
-  .figma-home .small-grid .shelter-project { padding: 24px; gap: 18px; }
-  .figma-home .small-grid .dictionary-visual { margin-bottom: -24px; flex-basis: 28%; }
-}
 @media (max-width: 900px) {
-  .figma-home .featured-grid .featured-stage,
-  .figma-home .featured-grid .companion-stage { aspect-ratio: 1.4; }
-  .figma-home .featured-stage .product-phone { width: 28%; }
-  .figma-home .featured-stage .identity-phone { left: 20%; }
-  .figma-home .featured-stage .chat-phone { left: 51%; }
-  .figma-home .companion-stage .companion-type { font-size: clamp(90px, 14vw, 130px); }
-  .figma-home .companion-stage > img { max-width: 260px; }
+  .figma-home .imported-preview .product-phone { width: 31%; }
+  .figma-home .imported-preview .identity-phone { left: 18%; }
+  .figma-home .imported-preview .chat-phone { left: 51%; }
+  .figma-home .imported-preview .companion-type { font-size: clamp(90px, 14vw, 130px); }
+  .figma-home .companion-stage > img { max-width: 280px; }
 }
 @media (max-width: 560px) {
-  .figma-home .featured-grid .featured-stage,
-  .figma-home .featured-grid .companion-stage { aspect-ratio: 1; }
-  .figma-home .featured-grid .featured-copy { padding: 27px 24px; }
-  .figma-home .project-statement { font-size: 27px; }
-  .figma-home .featured-stage .product-phone { width: 35%; }
-  .figma-home .featured-stage .identity-phone { left: 11%; }
-  .figma-home .featured-stage .chat-phone { left: 50%; }
-  .figma-home .featured-stage .stage-label { top: 16px; left: 21px; }
-  .figma-home .companion-stage .companion-type { top: 65px; left: 21px; font-size: 83px; }
-  .figma-home .companion-stage .art-label { left: 22px; top: 19px; font-size: 12px; }
-  .figma-home .companion-stage .companion-caption { left: 22px; bottom: 18px; }
-  .figma-home .companion-stage > img { right: 10px; bottom: 13px; width: 44%; }
-  .figma-home .small-grid .dictionary-project,
-  .figma-home .small-grid .shelter-project { padding: 24px; gap: 20px; min-height: 260px; }
-  .figma-home .small-grid .dictionary-visual { height: 230px; margin-bottom: -24px; }
-  .figma-home .resume-modal-paper { min-height: 1050px; }
+  .figma-home .imported-preview .product-phone { width: 36%; }
+  .figma-home .imported-preview .identity-phone { left: 10%; }
+  .figma-home .imported-preview .chat-phone { left: 51%; }
+  .figma-home .imported-preview .stage-label { top: 20px; left: 21px; }
+  .figma-home .imported-preview .companion-type { top: 73px; left: 21px; font-size: 91px; }
+  .figma-home .imported-preview .art-label { top: 20px; left: 22px; font-size: 12px; }
+  .figma-home .imported-preview .companion-caption { left: 22px; bottom: 20px; }
+  .figma-home .companion-stage > img { width: 47%; right: 14px; bottom: 32px; }
+  .figma-home .dictionary-media .dictionary-visual { width: 50%; left: 25%; }
 }
 @media (max-width: 370px) {
-  .figma-home .companion-stage .companion-type { font-size: 70px; }
-  .figma-home .companion-stage .companion-caption { font-size: 14px; max-width: 155px; }
-  .figma-home .featured-grid .featured-copy { padding: 24px 20px; }
-  .figma-home .project-statement { font-size: 25px; }
-  .figma-home .small-grid .dictionary-project,
-  .figma-home .small-grid .shelter-project { padding: 22px; gap: 14px; }
-  .figma-home .resume-modal-grid { grid-template-columns: 1fr; gap: 22px; }
+  .figma-home .imported-preview .companion-type { font-size: 78px; }
+  .figma-home .imported-preview .companion-caption { max-width: 155px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -883,42 +787,12 @@ body[data-view="home"] > .studio-footer { display: none; }
 </header>
 <main id="main-content" tabindex="-1">
 <section class="view on figma-home" id="home" aria-label="Angela 的作品集">
-<div class="site-shell"><header class="topbar"><a class="brand" href="#top" data-home-section="intro" aria-label="返回顶部"><span class="brand-dot"></span>ANGELA XU</a><nav aria-label="主导航"><a href="#work" data-home-section="projects">作品</a><a href="#capabilities" data-home-section="capabilities">能力</a><a href="#about" data-home-section="about">关于</a></nav><span class="availability"><i></i> OPEN TO WORK</span></header><div class="figma-main"><section class="hero" id="top"><div class="hero-noise"></div><div class="hero-copy"><p class="eyebrow">ANGELA XU · AI PRODUCT MANAGER</p><h1><span>让复杂的 AI</span><span class="hero-line-two">变得<span class="orange-word">自然</span><b>。</b></span></h1><p class="hero-intro">你好，我是 Angela。关注技术如何回应人的真实感受，<br/>从用户访谈、AI 产品设计，到实现与验证。</p></div><div class="hero-art" aria-label="个人照片占位与求职方向"><div class="portrait-frame"><div class="portrait-placeholder"><span>PORTRAIT</span><small>PHOTO PLACEHOLDER</small></div><p>ANGELA / AI PRODUCT MANAGER</p></div><div class="role-note"><span>SEEKING</span><strong>AI PRODUCT<br/>MANAGER</strong><i>OPEN TO WORK · 2026</i></div></div><a class="scroll-cue" href="#work" data-home-section="projects"><span>SCROLL TO EXPLORE</span><i><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></i></a></section><section class="work-section" id="work"><div class="section-heading"><p class="eyebrow">SELECTED WORK · 2025—2026</p><h2>最近在做的事</h2><p>两个认真长大的产品，<br/>和两个保持好奇的小实验。</p></div><div class="featured-grid portfolio-projects"><article class="feature-card woma-work" aria-labelledby="woma-card-title">
-        <div class="featured-copy">
-          <p class="project-context"><strong class="project-type">AI 自我认知产品</strong><span>MVP · 持续迭代</span></p>
-          <div class="project-brand"><img src="images/woma.png" alt=""><h2 id="woma-card-title">我吗 <small>OhMee</small></h2></div>
-          <p class="project-statement">换一种说法，<br>重新看见自己。</p>
-          <p class="project-description">通过 AI 重写与身份认领，<br>让用户看见日常经历里被忽略的能力。</p>
-          <div class="project-evidence"><div><b>50<span>+</span></b><span>MVP 测试用户</span></div><div><b>553</b><span>用户消息分析</span></div></div>
-          <a class="project-link" href="#project/woma">查看产品设计与验证 <span aria-hidden="true">↗</span></a>
-          <p class="project-role"><span class="role-label">我的工作</span><span>产品设计 / AI Workflow / 全栈开发 / 用户验证</span></p>
-        </div>
-        <div class="featured-stage" data-screen="chat">
+<div class="site-shell"><header class="topbar"><a class="brand" href="#top" data-home-section="intro" aria-label="返回顶部"><span class="brand-dot"></span>YUN STUDIO</a><nav aria-label="主导航"><a href="#work" data-home-section="projects">作品</a><a href="#capabilities" data-home-section="capabilities">能力</a><a href="#about" data-home-section="about">关于</a></nav><span class="availability"><i></i> OPEN TO WORK</span></header><div class="figma-main"><section class="hero" id="top"><div class="hero-noise"></div><div class="hero-copy"><p class="eyebrow">AI PRODUCT DESIGNER · SHANGHAI</p><h1><span>让复杂的 AI</span><span class="hero-line-two">变得<span class="orange-word">自然</span><b>。</b></span></h1><p class="hero-intro">你好，我是 Yun。专注于 AI 产品体验，<br/>在逻辑与直觉之间，建立清晰、有感知力的产品。</p></div><div class="hero-art" aria-hidden="true"><div class="portrait-frame"><div class="portrait-placeholder"><span>PORTRAIT</span><small>REPLACE WITH YOUR PHOTO</small></div><p>YUN / AI PRODUCT MANAGER</p></div><div class="role-note"><span>SEEKING</span><strong>AI PRODUCT<br/>MANAGER</strong><i>SHANGHAI · 2025</i></div></div><a class="scroll-cue" href="#work" data-home-section="projects"><span>SCROLL TO EXPLORE</span><i><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></i></a></section><section class="work-section" id="work"><div class="section-heading"><p class="eyebrow">SELECTED WORK · 2023—2025</p><h2>最近在做的事</h2><p>两个认真长大的产品，<br/>和两个保持好奇的小实验。</p></div><div class="featured-grid"><article class="project-card project-mori featured-project"><div class="project-preview"><div class="featured-stage imported-preview" data-screen="chat">
           <p class="stage-label">认识自己，从日常开始。<span>OHMEE / PRODUCT SCREENS</span></p>
           <button class="product-phone identity-phone" type="button" data-preview-src="images/woma-app-profile.png" data-preview-alt="我吗的身份首页" aria-label="放大我吗身份首页"><img src="images/woma-app-profile.png" alt="我吗身份首页，自学者身份卡" loading="lazy"></button>
           <button class="product-phone chat-phone" type="button" data-preview-src="images/woma-app-chat.png" data-preview-alt="我吗的聊天与 AI 重写界面" aria-label="放大我吗聊天界面"><img src="images/woma-app-chat.png" alt="我吗聊天与 AI 重写界面" loading="lazy"></button>
           <div class="screen-switch" role="group" aria-label="选择展示的我吗界面"><button type="button" data-screen-choice="chat" aria-pressed="true">重写对话</button><button type="button" data-screen-choice="identity" aria-pressed="false">身份卡片</button></div>
-        </div>
-      </article><article class="feature-card companion-work" aria-labelledby="whybother-card-title">
-        <a class="companion-stage" href="#project/whybother" aria-label="查看 Why Bother 项目案例"><span class="art-label">A LITTLE COMPANY, EVERY DAY.</span><span class="companion-type" aria-hidden="true">Why<br>Bother?</span><img src="images/whybother.png" alt="Why Bother 的饭碗与对话气泡插画" loading="lazy"><span class="companion-caption">好好吃饭。<br>有人陪，也有人说真话。</span><span class="art-arrow" aria-hidden="true">↗</span></a>
-        <div class="featured-copy">
-          <p class="project-context"><strong class="project-type">陪伴型 AI</strong><span>独立产品 · 开发中</span></p>
-          <div class="project-brand"><h2 id="whybother-card-title">Why Bother <small>减肥搭子</small></h2></div>
-          <p class="project-statement">一个会说真话，<br>也一直在的 AI 朋友。</p>
-          <p class="project-description">把人设、语气和长期记忆做进陪伴体验，<br>探索从陌生到熟悉的持续对话。</p>
-          <div class="project-evidence"><div><b>20<span>+</span></b><span>早期兴趣表达</span></div><div><b>9</b><span>加入早期社群</span></div></div>
-          <a class="project-link" href="#project/whybother">查看陪伴体验设计 <span aria-hidden="true">↗</span></a>
-          <p class="project-role"><span class="role-label">我的工作</span><span>陪伴体验 / Agent 设计 / 记忆机制 / 早期验证</span></p>
-        </div>
-      </article></div><div class="lab-heading"><span>PLAYGROUND</span><p>早期练习 / 快速实验</p></div><div class="small-grid portfolio-projects"><a class="dictionary-project" href="#project/contextual" aria-labelledby="dictionary-title"><div class="dictionary-visual"><img src="images/contextual-app-01.png" alt="截图词典的真实词卡，保留 proactive 与其所在的原句" loading="lazy"></div><div class="exploration-copy"><p class="eyebrow">个人学习工具 · 2026</p><h3 id="dictionary-title">截图词典</h3><p>记住一个词，<br>也记住遇见它的那句话。</p><span class="exploration-link">看看这个小工具 <span aria-hidden="true">↗</span></span></div></a><a class="shelter-project" href="#project/shelter" aria-labelledby="shelter-title"><div class="exploration-copy"><p class="eyebrow">早期手绘探索 · 2025</p><h3 id="shelter-title">shelter</h3><p>从一顶手绘帐篷开始，<br>探索专注空间的氛围与体验。</p><span class="exploration-link">看看早期探索 <span aria-hidden="true">↗</span></span></div><div class="shelter-thumbnail"><img src="images/shelter.png" alt="shelter 早期探索中的手绘帐篷与篝火" loading="lazy"></div></a></div></section><section class="capabilities-section" id="capabilities"><div class="capabilities-heading"><p class="eyebrow">AIPM CAPABILITIES</p><h2>从机会判断，<br/>到产品落地。</h2><p>不止于定义功能。我关注 AI 能力如何转化为真实用户价值，以及产品如何持续迭代。</p></div><div class="capability-list"><article><span class="capability-number">01</span><h3>产品策略</h3><p>用户访谈 · 需求洞察 · 产品定位<br/>MVP 范围 · 验证目标</p><b>DISCOVER / DEFINE</b></article><article><span class="capability-number">02</span><h3>AI 产品设计</h3><p>AI Workflow · Prompt / Context<br/>Agent 设计 · 记忆机制</p><b>DESIGN / EVALUATE</b></article><article><span class="capability-number">03</span><h3>验证与交付</h3><p>PRD · 快速原型 · 用户测试<br/>数据分析 · 迭代实验</p><b>BUILD / ITERATE</b></article><article><span class="capability-number">04</span><h3>实现与迭代</h3><p>Vibe Coding · 全栈开发<br/>用户消息分析 · 持续改进</p><b>LEARN / IMPROVE</b></article></div><div class="tool-line"><span>WORKING WITH</span><p>Figma</p><p>Codex</p><p>Claude Code</p><p>Dify</p><p>LLM APIs</p><p>Analytics</p></div></section><section class="about-section" id="about"><div class="about-title"><span class="about-kicker">ABOUT ME</span><h2>理解技术，<br/><em>也理解人。</em></h2><div class="about-scribble">PRODUCT / TECHNOLOGY / PEOPLE</div></div><div class="about-content"><p class="about-lead">我是一名正在寻找新机会的 AI 产品经理，擅长把技术能力转化成清晰、可验证的产品方案。</p><div class="about-columns"><p>从我吗的用户访谈、AI 重写和身份认领，到 Why Bother 的陪伴体验与长期记忆，我喜欢把想法推进到可以被真实用户体验的阶段。</p><p>谢菲尔德大学本科，2024 届。日常使用 Codex、Claude Code、Figma 和 Dify 做设计与开发，也通过用户消息分析和反馈继续迭代。</p></div></div></section><section class="resume-section" id="contact"><div class="resume-preview"><div class="resume-paper back-paper"></div><button type="button" class="resume-paper front-paper" data-resume-preview aria-label="全屏预览简历版式占位"><div class="resume-name"><b>Angela</b><span>AI Product Manager</span></div><div class="resume-rule"></div><div class="resume-layout"><div><b>EXPERIENCE</b><span></span><span></span><span class="short"></span></div><div><b>EDUCATION</b><span></span><span class="short"></span></div><div><b>SELECTED WORK</b><span></span><span></span><span></span></div><div><b>SKILLS</b><span></span><span class="short"></span></div></div><span class="resume-page">01 / 01</span><span class="resume-open-hint">版式占位 · 点击预览 ↗</span></button></div><div class="resume-copy"><p class="eyebrow">ONE MORE THING</p><h2>想了解<br/>更多细节？</h2><p>更完整地了解我的项目与经历。<br/><span id="resume-file-status">当前为简历版式占位，PDF 文件待补充。</span></p><div class="resume-actions"><button class="primary-button" type="button" disabled aria-describedby="resume-file-status">下载简历 <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></button><button class="text-link" type="button" data-resume-preview>预览简历 ↗</button></div></div></section></div><dialog id="resume-dialog" class="resume-modal" aria-labelledby="resume-preview-title">
-  <div class="resume-modal-toolbar"><span id="resume-preview-title">ANGELA XU — 简历版式占位</span><div><button type="button" disabled>PDF 待补充</button><button class="resume-close" type="button" autofocus>关闭 ×</button></div></div>
-  <div class="resume-modal-scroll"><article class="resume-modal-paper">
-    <header><div><h2>Angela Xu</h2><p>AI Product Manager</p></div><p>徐晓萌<br>简历版式预览</p></header>
-    <section><h3>PREVIEW / 版式占位</h3><p>这里展示简历的排版与预览交互。正式 PDF 尚未提供，以下是已知的项目与教育信息。</p></section>
-    <section class="resume-modal-grid"><div><h3>SELECTED WORK</h3><h4>我吗 / OhMee</h4><p>AI 自我认知产品 · 产品设计、AI Workflow、全栈开发与用户验证。</p><h4>Why Bother</h4><p>陪伴型 AI · 陪伴体验、Agent 设计、记忆机制与早期验证。</p><h4>探索与实验</h4><p>截图词典 / shelter 手绘探索</p></div><div><h3>EDUCATION</h3><h4>谢菲尔德大学</h4><p>本科 · 2024 届</p><h3>WORKING WITH</h3><p>Figma / Dify<br>Codex / Claude Code</p></div></section>
-    <footer><span>ANGELA / PLACEHOLDER</span><span>01 / 01</span></footer>
-  </article></div>
-</dialog><footer><div class="footer-main"><p>期待下一次<br/><span>产品挑战</span>。</p><a href="#contact" data-home-section="contact">VIEW RESUME <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="footer-meta"><span>© 2026 ANGELA XU</span><span>DESIGNED WITH CURIOSITY</span><span>AI PRODUCTS / SELECTED WORK</span></div></footer></div>
+        </div></div><div class="project-info"><div class="project-title-row"><span class="project-number">01</span><div><h3>MORI</h3><p class="project-subtitle">AI 灵感伙伴</p></div><a class="project-arrow" href="#project/woma" aria-label="查看 MORI 项目"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">把散落的灵感，养成一片会生长的森林。一个懂得追问、连接与留白的 AI 创作空间。</p><div class="tag-row"><span>0→1 PRODUCT</span><span>AI INTERACTION</span><span>2024</span></div></div></article><article class="project-card project-echo featured-project"><div class="project-preview"><a class="companion-stage imported-preview" href="#project/whybother" aria-label="查看 Why Bother 项目案例"><span class="art-label">A LITTLE COMPANY, EVERY DAY.</span><span class="companion-type" aria-hidden="true">Why<br>Bother?</span><img src="images/whybother.png" alt="Why Bother 的饭碗与对话气泡插画" loading="lazy"><span class="companion-caption">好好吃饭。<br>有人陪，也有人说真话。</span><span class="art-arrow" aria-hidden="true">↗</span></a></div><div class="project-info"><div class="project-title-row"><span class="project-number">02</span><div><h3>ECHO</h3><p class="project-subtitle">AI 声音日记</p></div><a class="project-arrow" href="#project/whybother" aria-label="查看 ECHO 项目"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">说出来，就有人替你轻轻收好。将碎片语音整理为情绪脉络与可回看的生活切片。</p><div class="tag-row"><span>MOBILE APP</span><span>UX STRATEGY</span><span>2024</span></div></div></article></div><div class="lab-heading"><span>PLAYGROUND</span><p>早期练习 / 快速实验</p></div><div class="small-grid"><article class="project-card project-sumi small-project"><div class="project-preview"><a class="imported-preview dictionary-media" href="#project/contextual" aria-label="查看截图词典详情"><div class="dictionary-visual"><img src="images/contextual-app-01.png" alt="截图词典的 proactive 词卡与原句" loading="lazy"></div></a></div><div class="project-info"><div class="project-title-row"><span class="project-number">03</span><div><h3>SUMI</h3><p class="project-subtitle">AI 阅读墨水</p></div><a class="project-arrow" href="#project/contextual" aria-label="查看 SUMI 项目"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">为长文章提取观点、分歧与意外连接的阅读实验。</p><div class="tag-row"><span>EARLY EXPLORATION</span><span>2023</span></div></div></article><article class="project-card project-patch small-project"><div class="project-preview"><a class="imported-preview shelter-media" href="#project/shelter" aria-label="查看 shelter 手绘探索详情"><img src="images/shelter.png" alt="shelter 的手绘帐篷与篝火" loading="lazy"></a></div><div class="project-info"><div class="project-title-row"><span class="project-number">04</span><div><h3>PATCH</h3><p class="project-subtitle">提示词拼贴板</p></div><a class="project-arrow" href="#project/shelter" aria-label="查看 PATCH 项目"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">像做拼贴一样组合提示词，让 AI 创作更直觉。</p><div class="tag-row"><span>WEEKEND BUILD</span><span>2023</span></div></div></article></div></section><section class="capabilities-section" id="capabilities"><div class="capabilities-heading"><p class="eyebrow">AIPM CAPABILITIES</p><h2>从机会判断，<br/>到产品落地。</h2><p>不止于定义功能。我关注 AI 能力如何转化为真实用户价值，以及产品如何持续迭代。</p></div><div class="capability-list"><article><span class="capability-number">01</span><h3>产品策略</h3><p>用户研究 · 机会识别 · 产品定位<br/>Roadmap · 指标体系</p><b>DISCOVER / DEFINE</b></article><article><span class="capability-number">02</span><h3>AI 产品设计</h3><p>LLM 工作流 · Prompt / Context<br/>评测体系 · Human-in-the-loop</p><b>DESIGN / EVALUATE</b></article><article><span class="capability-number">03</span><h3>验证与交付</h3><p>PRD · 快速原型 · 用户测试<br/>数据分析 · 迭代实验</p><b>BUILD / ITERATE</b></article><article><span class="capability-number">04</span><h3>跨团队协作</h3><p>设计 / 算法 / 工程协同<br/>目标对齐 · 项目推进</p><b>ALIGN / DELIVER</b></article></div><div class="tool-line"><span>WORKING WITH</span><p>Figma</p><p>Cursor</p><p>SQL</p><p>Python</p><p>LLM APIs</p><p>Analytics</p></div></section><section class="about-section" id="about"><div class="about-title"><span class="about-kicker">ABOUT ME</span><h2>理解技术，<br/><em>也理解人。</em></h2><div class="about-scribble">PRODUCT / TECHNOLOGY / PEOPLE</div></div><div class="about-content"><p class="about-lead">我是一名正在寻找新机会的 AI 产品经理，擅长把技术能力转化成清晰、可验证的产品方案。</p><div class="about-columns"><p>过去 4 年，我从 0 到 1 参与产品策略、用户研究与体验落地。比起追逐每一个新模型，我更关心它如何解决真实问题，并形成长期价值。</p><p>设计背景让我对体验细节敏感，产品训练则让我从目标、约束与结果出发。我喜欢与算法、工程和设计一起，把模糊问题推进到可以上线。</p></div></div></section><section class="resume-section" id="contact"><div class="resume-preview"><div class="resume-paper back-paper"></div><button type="button" class="resume-paper front-paper" data-resume-preview aria-label="全屏预览简历"><div class="resume-name"><b>YUN</b><span>AI Product Designer</span></div><div class="resume-rule"></div><div class="resume-layout"><div><b>EXPERIENCE</b><span></span><span></span><span class="short"></span></div><div><b>EDUCATION</b><span></span><span class="short"></span></div><div><b>SELECTED WORK</b><span></span><span></span><span></span></div><div><b>SKILLS</b><span></span><span class="short"></span></div></div><span class="resume-page">01 / 01</span><span class="resume-open-hint">点击全屏预览 ↗</span></button></div><div class="resume-copy"><p class="eyebrow">ONE MORE THING</p><h2>想了解<br/>更多细节？</h2><p>这里有一份更完整的工作经历与项目说明。<br/>也欢迎直接来信，说说你正在做的有趣事情。</p><div class="resume-actions"><button class="primary-button" type="button" disabled title="正式简历文件待补充">下载简历 <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></button><a class="text-link" href="mailto:hello@yun.design">hello@yun.design <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div></div></section></div><dialog class="resume-modal" id="resume-dialog" aria-label="简历全屏预览（模板占位）"><button class="resume-modal-backdrop" type="button" aria-label="关闭简历预览"></button><div class="resume-modal-toolbar"><span>YUN — RESUME PREVIEW</span><div><button type="button" disabled title="正式简历文件待补充">下载简历</button><button class="resume-close" type="button" autofocus>关闭 ×</button></div></div><div class="resume-modal-scroll"><article class="resume-modal-paper"><header><div><h2>YUN</h2><p>AI Product Manager</p></div><p>Shanghai, China<br/>hello@yun.design</p></header><section><h3>PROFILE</h3><p>AI 产品经理，专注于将模型能力转化为清晰、可验证的产品体验。具备产品策略、用户研究、交互设计和快速原型能力。</p></section><section class="resume-modal-grid"><div><h3>SELECTED EXPERIENCE</h3><h4>AI Product Manager</h4><span>2022—PRESENT</span><p>负责 AI 产品从机会识别、方案定义到跨团队交付，建立核心体验与迭代指标。</p><h4>Product Designer</h4><span>2020—2022</span><p>参与多个数字产品从 0 到 1 的体验策略、用户研究与设计落地。</p></div><div><h3>SELECTED WORK</h3><h4>MORI</h4><p>AI Creative Companion</p><h4>ECHO</h4><p>AI Voice Journal</p><h3>CAPABILITIES</h3><p>Product Strategy<br/>LLM Workflows<br/>Prototyping<br/>Data &amp; Evaluation</p></div></section><footer><span>YUN / RESUME</span><span>01 / 01</span></footer></article></div></dialog><footer><div class="footer-main"><p>期待下一次<br/><span>产品挑战</span>。</p><a href="mailto:hello@yun.design">SAY HELLO <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="footer-meta"><span>© 2025 YUN STUDIO</span><span>DESIGNED WITH CURIOSITY</span><span>SHANGHAI · 31°N</span></div></footer></div>
 </section>
 <section class="view" id="project-woma">
   <div class="case-page">
@@ -1357,7 +1231,7 @@ body[data-view="home"] > .studio-footer { display: none; }
     });
   });
   resumeDialog.querySelector('.resume-close').addEventListener('click', () => resumeDialog.close());
-  resumeDialog.addEventListener('click', event => { if (event.target === resumeDialog || event.target.classList.contains('resume-modal-scroll')) resumeDialog.close(); });
+  resumeDialog.addEventListener('click', event => { if (event.target === resumeDialog || (event.target.classList.contains('resume-modal-scroll') || event.target.classList.contains('resume-modal-backdrop'))) resumeDialog.close(); });
   resumeDialog.addEventListener('close', () => {
     document.body.style.overflow = resumePreviousOverflow;
     resumeTrigger?.focus({ preventScroll: true });
