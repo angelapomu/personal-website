@@ -12,8 +12,12 @@
 
 - Keep 我吗 (OhMee) and Why Bother as the two primary projects unless the owner changes that direction.
 - Treat shelter as an early exploration focused on hand-drawn visuals.
+- The supplied `figma-website-main.zip` is the visual authority for the homepage. Preserve its layout, typography and blue `#1616C5` / orange `#F05A24` palette; integrate the existing project cards and details into it. Keep shelter's card dark.
+- Make project types prominent. Keep homepage project descriptions, evidence labels, responsibilities and links at least 14px across responsive breakpoints; do not shrink these to fit a narrow card.
 - Preserve the homepage → project detail → return to projects flow, image previews, keyboard access, and responsive layout.
 - Use the supplied project evidence. Do not invent metrics, testimonials, contact details, or resume links.
+- Keep the personal interest statement in the hero and the resume preview/download area at the end. The owner approved a labelled resume placeholder until the real PDF is supplied; never enable a broken download.
+- Preserve the supplied homepage's long-page section flow; it supersedes the earlier full-screen snapping design. Keep content readable on mobile and respect reduced-motion preferences. Treat template identity, experience and contact text as placeholders, not facts about the owner.
 
 ## Verification
 
