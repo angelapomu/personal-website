@@ -44,6 +44,9 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 .figma-home .spring-sub { margin-top: 28px; max-width: 30em; font-size: clamp(16px,1.4vw,20px); line-height: 1.85; }
 .figma-home .spring-bio { margin-top: 8px; max-width: 38em; font-size: clamp(14px,1.1vw,16px); line-height: 1.85; color: var(--a-muted); }
 .figma-home .spring-hint { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--a-line); padding-top: 16px; font: 400 13px/1.7 var(--a-mono); color: var(--a-muted); }
+.figma-home .spring-motion-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
+.figma-home .spring-motion-toggle { background: transparent; color: var(--a-ink); border: 0; padding: 8px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--a-pink); }
+.figma-home .spring-motion-toggle:hover { text-decoration-thickness: 2px; }
 .figma-home .spring-hint a { flex-shrink: 0; padding: 5px 0 5px 12px; color: var(--a-ink); }
 .figma-home .spring-hint a span { display: inline-block; margin-left: 10px; transition: transform .4s var(--a-spring); }
 .figma-home .spring-hint a:hover span { transform: translateY(5px); }
@@ -111,8 +114,6 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
   .ohmee-case .oh-hero h1 { font-size: clamp(52px,15vw,68px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .figma-home .spring-glyph { transform: none !important; }
-  .figma-home .spring-instruction { display: none; }
-  .figma-home .spring-hint { justify-content: flex-end; }
+  .figma-home .spring-hero:not([data-motion-enabled="true"]) .spring-glyph { transform: none !important; }
   .figma-home .project-arrow, .figma-home .spring-hint a span, .figma-home .footer-main > a { transition: none; }
 }
