@@ -6,10 +6,8 @@
   const hero = document.querySelector('.spring-hero');
   if (!hero) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const toggle = hero.querySelector('.spring-motion-toggle');
-  const instruction = hero.querySelector('.spring-instruction');
-  // An explicit preview link or button choice overrides the system default.
-  let choice = new URLSearchParams(location.search).get('motion') === 'on' ? true : null;
+  // The requested motion preview overrides the system default without extra UI.
+  const choice = new URLSearchParams(location.search).get('motion') === 'on' ? true : null;
   const motionEnabled = () => choice === null ? !reduced.matches : choice;
   const letters = [...hero.querySelectorAll('.spring-char')].map(anchor => ({
     anchor, glyph: anchor.firstElementChild, x: 0, y: 0, vx: 0, vy: 0
@@ -20,10 +18,6 @@
     reset();
     const enabled = motionEnabled();
     hero.dataset.motionEnabled = String(enabled);
-    toggle.hidden = false;
-    toggle.textContent = enabled ? '暂停动效' : '开启动效';
-    toggle.setAttribute('aria-pressed', String(enabled));
-    instruction.textContent = enabled ? '把字推开试试。它们会自己回来。' : '文字动效已暂停。';
   }
   function reset() {
     cancelAnimationFrame(frame); frame = 0; lastTime = 0; pointer = null;
@@ -83,11 +77,11 @@
   window.addEventListener('hashchange', reset);
   window.addEventListener('blur', release);
   document.addEventListener('visibilitychange', reset);
-  toggle.addEventListener('click', () => { choice = !motionEnabled(); syncMotion(); });
   reduced.addEventListener('change', syncMotion);
   syncMotion();
   new IntersectionObserver(entries => {
     visible = entries[0].isIntersecting;
+    hero.dataset.heroVisible = String(visible);
     if (!visible) reset();
   }).observe(hero);
 })();
