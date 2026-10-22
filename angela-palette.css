@@ -27,7 +27,7 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 }
 .figma-home ::selection, .ohmee-case ::selection { background: var(--a-pink); color: var(--a-ink); }
 .figma-home :focus-visible, .ohmee-case :focus-visible { outline-color: var(--a-ink); }
-.figma-home footer :focus-visible { outline-color: var(--a-pink); }
+.figma-home :is(.capabilities-section,footer) :focus-visible { outline-color: var(--a-pink); }
 
 /* The supplied spring hero replaces the old blue hero, including its typography. */
 .figma-home .spring-hero {
@@ -71,12 +71,12 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 .figma-home .companion-type { color: var(--a-ink); }
 .figma-home .shelter-media { background: var(--a-ink); }
 .figma-home footer { background: var(--a-ink); color: var(--a-bg); }
-.figma-home .capabilities-section { background: #deded9; color: var(--a-ink); }
-.figma-home .capability-list, .figma-home .capability-list article, .figma-home .tool-line { border-color: #bdbdb7; }
-.figma-home .capability-number, .figma-home .tool-line span { color: var(--a-muted); }
-.figma-home .capabilities-heading > p:last-child, .figma-home .capability-list p { color: #51514d; opacity: 1; }
+.figma-home .capabilities-section { background: #2b2d31; color: var(--a-surface); }
+.figma-home .capability-list, .figma-home .capability-list article, .figma-home .tool-line { border-color: #5d6064; }
+.figma-home .capability-number, .figma-home .tool-line span { color: #c2c3bf; }
+.figma-home .capabilities-heading > p:last-child, .figma-home .capability-list p { color: #c2c3bf; opacity: 1; }
 .figma-home .capability-list h3 { transition: color .25s; }
-.figma-home .capability-list article:hover h3 { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .3em; }
+.figma-home .capability-list article:hover h3 { color: var(--a-surface); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .3em; }
 .figma-home .about-title em { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .18em; text-decoration-thickness: .035em; }
 .figma-home .about-scribble { color: var(--a-muted); }
 .figma-home .resume-section { background: var(--a-bg); color: var(--a-ink); border-top: 1px solid var(--a-line); }
