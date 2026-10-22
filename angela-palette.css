@@ -1,0 +1,124 @@
+/* Palette from Angela 徐晓萌.html. Keep the current project-card geometry. */
+:root {
+  --a-bg: #e9e9e6;
+  --a-ink: #15171a;
+  --a-pink: #ff2e93;
+  --a-surface: #f6f6f3;
+  --a-line: #c9c9c4;
+  --a-muted: #62625e;
+  --a-orange: #ef5a26;
+  --a-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --a-mono: 'IBM Plex Mono', 'Noto Sans SC', monospace;
+  --a-spring: cubic-bezier(.34,1.8,.64,1);
+}
+body[data-view="home"], body[data-project="woma"] { background: var(--a-bg); color: var(--a-ink); }
+body:is([data-view="home"],[data-project="woma"])::selection { background: var(--a-pink); color: var(--a-ink); }
+body:is([data-view="home"],[data-project="woma"]) > .studio-header {
+  background: var(--a-bg); color: var(--a-ink); border-bottom-color: transparent;
+}
+body:is([data-view="home"],[data-project="woma"]) .studio-brand b { font-family: var(--a-sans); font-weight: 500; letter-spacing: -.03em; }
+body:is([data-view="home"],[data-project="woma"]) .studio-brand :is(b span,span),
+body:is([data-view="home"],[data-project="woma"]) .studio-header nav a { color: var(--a-ink); }
+body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after { background: var(--a-pink); }
+.figma-home {
+  --blue: var(--a-pink); --blue-dark: var(--a-ink); --orange: var(--a-pink);
+  --cream: var(--a-bg); --paper: var(--a-surface); --ink: var(--a-ink); --line: var(--a-line);
+  --mono: var(--a-mono); --sans: var(--a-sans); --display: var(--a-sans);
+}
+.figma-home ::selection, .ohmee-case ::selection { background: var(--a-pink); color: var(--a-ink); }
+.figma-home :focus-visible, .ohmee-case :focus-visible { outline-color: var(--a-ink); }
+.figma-home footer :focus-visible { outline-color: var(--a-pink); }
+
+/* The supplied spring hero replaces the old blue hero, including its typography. */
+.figma-home .spring-hero {
+  min-height: calc(100svh - 36px); margin-top: 36px;
+  padding: 26px clamp(22px,4vw,60px) 30px; display: flex; flex-direction: column;
+  background: var(--a-bg); color: var(--a-ink); position: relative;
+}
+.figma-home .spring-content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 40px 62px; }
+.figma-home .spring-title { font: 900 clamp(48px,11.6vw,200px)/1.12 var(--a-sans); letter-spacing: -.03em; margin: 0; }
+.figma-home .spring-line { display: block; white-space: nowrap; }
+.figma-home .spring-char { display: inline-block; }
+.figma-home .spring-glyph { display: inline-block; transform-origin: center; }
+.figma-home .spring-pink { color: var(--a-pink); }
+.figma-home .spring-sub { margin-top: 28px; max-width: 30em; font-size: clamp(16px,1.4vw,20px); line-height: 1.85; }
+.figma-home .spring-bio { margin-top: 8px; max-width: 38em; font-size: clamp(14px,1.1vw,16px); line-height: 1.85; color: var(--a-muted); }
+.figma-home .spring-hint { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--a-line); padding-top: 16px; font: 400 13px/1.7 var(--a-mono); color: var(--a-muted); }
+.figma-home .spring-motion-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
+.figma-home .spring-motion-toggle { background: transparent; color: var(--a-ink); border: 0; padding: 8px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--a-pink); }
+.figma-home .spring-motion-toggle:hover { text-decoration-thickness: 2px; }
+.figma-home .spring-hint a { flex-shrink: 0; padding: 5px 0 5px 12px; color: var(--a-ink); }
+.figma-home .spring-hint a span { display: inline-block; margin-left: 10px; transition: transform .4s var(--a-spring); }
+.figma-home .spring-hint a:hover span { transform: translateY(5px); }
+
+/* Homepage: grey reading surfaces, a black footer, pink interactions. */
+.figma-home .work-section { border-top: 1px solid var(--a-ink); padding-top: 72px; }
+.figma-home .selected-work-heading { margin-top: 0; }
+.figma-home .lab-heading h2 { font: 600 clamp(28px,4vw,48px) var(--display); margin: 0; }
+.figma-home .section-heading h2, .figma-home .project-info h3 { font-weight: 900; }
+.figma-home .section-heading .eyebrow, .figma-home .project-number { color: var(--a-muted); }
+.figma-home .project-subtitle { font-weight: 500; }
+.figma-home .project-description { color: #3a3d44; opacity: 1; }
+.figma-home .project-arrow { border-color: var(--a-ink); transition: background .25s,border-color .25s,border-radius .5s var(--a-spring),transform .5s var(--a-spring); }
+.figma-home .project-arrow:hover, .figma-home .project-arrow:focus-visible {
+  background: var(--a-pink); color: var(--a-ink); border-color: var(--a-pink); border-radius: 50%; transform: rotate(12deg) scale(1.08);
+}
+.figma-home .tag-row span { border-color: var(--a-line); }
+.figma-home .featured-stage, .figma-home .dictionary-media { background: var(--a-surface); }
+.figma-home .imported-preview { --accent: var(--a-pink); --rust: var(--a-pink); --muted: var(--a-muted); }
+.figma-home .screen-switch button[aria-pressed="true"] { color: var(--a-ink); background: var(--a-pink); }
+.figma-home .companion-stage { background: var(--a-orange); color: var(--a-ink); }
+.figma-home .companion-type { color: var(--a-ink); }
+.figma-home .shelter-media { background: var(--a-ink); }
+.figma-home footer { background: var(--a-ink); color: var(--a-bg); }
+.figma-home .capabilities-section { background: #deded9; color: var(--a-ink); }
+.figma-home .capability-list, .figma-home .capability-list article, .figma-home .tool-line { border-color: #bdbdb7; }
+.figma-home .capability-number, .figma-home .tool-line span { color: var(--a-muted); }
+.figma-home .capabilities-heading > p:last-child, .figma-home .capability-list p { color: #51514d; opacity: 1; }
+.figma-home .capability-list h3 { transition: color .25s; }
+.figma-home .capability-list article:hover h3 { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .3em; }
+.figma-home .about-title em { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .18em; text-decoration-thickness: .035em; }
+.figma-home .about-scribble { color: var(--a-muted); }
+.figma-home .resume-section { background: var(--a-bg); color: var(--a-ink); border-top: 1px solid var(--a-line); }
+.figma-home .front-paper, .figma-home .resume-modal-paper { background: var(--a-surface); }
+.figma-home .back-paper { background: #dededa; }
+.figma-home .resume-open-hint { background: var(--a-ink); color: var(--a-bg); }
+.figma-home .primary-button, .figma-home .primary-button:disabled:hover { background: var(--a-ink); color: var(--a-bg); }
+.figma-home .primary-button:disabled { opacity: .55; }
+.figma-home .footer-main p span { color: inherit; }
+.figma-home .footer-main > a:hover { background: var(--a-pink); color: var(--a-ink); border-color: var(--a-pink); border-radius: 50%; }
+
+/* Only OhMee gets the new case-study palette in this review. */
+.ohmee-case {
+  --oh-blue: var(--a-pink); --oh-orange: var(--a-pink);
+  --oh-paper: var(--a-bg); --oh-surface: var(--a-surface);
+  --oh-ink: var(--a-ink); --oh-muted: var(--a-muted); --oh-line: var(--a-line);
+  --oh-display: var(--a-sans); --oh-sans: var(--a-sans); --oh-mono: var(--a-mono);
+}
+.ohmee-case .oh-hero { background: var(--a-bg); border-bottom: 1px solid var(--a-line); }
+.ohmee-case .oh-hero h1 { font-weight: 900; }
+.ohmee-case .oh-hero h1 > span { font-weight: 500; text-decoration: underline; text-decoration-color: var(--a-pink); text-decoration-thickness: .08em; text-underline-offset: .15em; }
+.ohmee-case .oh-hero-copy > .oh-eyebrow .oh-dot { background: var(--a-pink); }
+.ohmee-case .oh-button-blue { background: var(--a-ink); color: var(--a-bg); }
+.ohmee-case .oh-button-blue:hover { background: var(--a-pink); color: var(--a-ink); }
+.ohmee-case .oh-chapter-nav a.active { border-bottom-color: var(--a-pink); color: var(--a-ink); }
+.ohmee-case .oh-chapter-nav a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
+.ohmee-case .oh-chapter-toggle > strong { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.ohmee-case .oh-nav-name > span { color: var(--a-ink); }
+.ohmee-case .oh-demo-controls button[aria-pressed="true"] { background: var(--a-pink); color: var(--a-ink); }
+.ohmee-case .oh-next-questions > p > span { color: var(--a-ink); }
+.ohmee-case .oh-reflection { background: var(--a-ink); color: var(--a-bg); }
+.ohmee-case .oh-reflection > .oh-wrap > .oh-eyebrow { color: var(--a-pink); }
+.ohmee-case .oh-reflection h2 { font-weight: 900; }
+.ohmee-case .oh-case-footer a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
+@media (max-width: 600px) {
+  .figma-home .spring-title { font-size: clamp(40px,13.6vw,82px); }
+  .figma-home .spring-content { padding-block: 48px 58px; }
+  .figma-home .spring-hint { font-size: 11px; gap: 10px; }
+  .figma-home .spring-hint a { padding-left: 0; }
+  .ohmee-case .oh-hero h1 { font-size: clamp(52px,15vw,68px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .figma-home .spring-hero:not([data-motion-enabled="true"]) .spring-glyph { transform: none !important; }
+  .figma-home .project-arrow, .figma-home .spring-hint a span, .figma-home .footer-main > a { transition: none; }
+}
