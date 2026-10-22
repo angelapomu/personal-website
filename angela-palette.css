@@ -36,7 +36,7 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
   background: var(--a-bg); color: var(--a-ink); position: relative;
 }
 .figma-home .spring-content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 40px 62px; }
-.figma-home .spring-title { font: 900 clamp(48px,11.6vw,200px)/1.12 var(--a-sans); letter-spacing: -.03em; margin: 0; }
+.figma-home .spring-title { font: 900 clamp(28px,8.8vw,160px)/1.12 var(--a-sans); letter-spacing: -.03em; margin: 0; }
 .figma-home .spring-line { display: block; white-space: nowrap; }
 .figma-home .spring-char { display: inline-block; }
 .figma-home .spring-glyph { display: inline-block; transform-origin: center; }
@@ -53,18 +53,19 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 @keyframes spring-cue-float { 0%,100% { transform: translateY(-3px); } 50% { transform: translateY(3px); } }
 
 /* Homepage: grey reading surfaces, a black footer, pink interactions. */
-.figma-home .work-section { border-top: 0; padding-top: 72px; }
+.figma-home .work-section { border-top: 1px solid var(--a-ink); padding-top: 72px; }
 .figma-home .selected-work-heading { margin-top: 0; border-top: 0; padding-top: 0; }
 .figma-home .lab-heading h2 { font: 600 clamp(28px,4vw,48px) var(--display); margin: 0; }
 .figma-home .section-heading h2, .figma-home .project-info h3 { font-weight: 900; }
 .figma-home .section-heading .eyebrow, .figma-home .project-number { color: var(--a-muted); }
-.figma-home .project-subtitle { font-weight: 500; }
-.figma-home .project-description { color: #3a3d44; opacity: 1; }
+.figma-home .project-subtitle { font-size: 16px; line-height: 1.6; font-weight: 500; }
+.figma-home .project-description { font-size: 16px; line-height: 1.85; color: #3a3d44; opacity: 1; }
+.figma-home .project-number { font-size: 12px; }
 .figma-home .project-arrow { border-color: var(--a-ink); transition: background .25s,border-color .25s,border-radius .5s var(--a-spring),transform .5s var(--a-spring); }
 .figma-home .project-arrow:hover, .figma-home .project-arrow:focus-visible {
   background: var(--a-pink); color: var(--a-ink); border-color: var(--a-pink); border-radius: 50%; transform: rotate(12deg) scale(1.08);
 }
-.figma-home .tag-row span { border-color: var(--a-line); }
+.figma-home .project-card .tag-row span { font-size: 14px; line-height: 1.4; letter-spacing: .025em; padding: 9px 13px; border-color: #b9b9b4; }
 .figma-home .featured-stage, .figma-home .dictionary-media { background: var(--a-surface); }
 .figma-home .imported-preview { --accent: var(--a-pink); --rust: var(--a-pink); --muted: var(--a-muted); }
 .figma-home .screen-switch button[aria-pressed="true"] { color: var(--a-ink); background: var(--a-pink); }
@@ -113,7 +114,6 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 .ohmee-case .oh-reflection h2 { font-weight: 900; }
 .ohmee-case .oh-case-footer a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
 @media (max-width: 600px) {
-  .figma-home .spring-title { font-size: clamp(40px,13.6vw,82px); }
   .figma-home .spring-content { padding-block: 48px 58px; }
   .ohmee-case .oh-hero h1 { font-size: clamp(52px,15vw,68px); }
 }

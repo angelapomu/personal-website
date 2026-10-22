@@ -10,6 +10,8 @@
 
 ## Portfolio context
 
+- Latest review: hero has two lines, 做让用户 / 自己想回来的AI产品. Preserve the dark divider between hero/work, remove only the thin SELECTED WORK heading border. Card descriptions and subtitles use 16px; all tags use 14px, superseding old MORI tag sizing.
+
 - Latest owner direction (2026-10-22) supersedes the older palette and hero directions below: use `Angela 徐晓萌.html` for the homepage's grey/black/pink palette, and `首屏 想回来2 推开会自己弹回来.html` for the replacement spring typography hero. Preserve the existing project-card geometry and content. Apply the palette to OhMee's existing case-study layout only; keep other detail views independent. The downloaded references are read-only design sources.
 - Current palette: grey #E9E9E6, ink #15171A, pink #FF2E93, surface #F6F6F3; orange #EF5A26 is reserved for Why Bother's project image. Home/OhMee use a grey 36px navigation. Retain reduced-motion support, native scrolling, accessible headline text, and pause the spring loop offscreen.
 - Latest annotated refinement: use a single SELECTED WORK heading with PLAYGROUND's layout; capabilities uses softer charcoal #2B2D31 with off-white text (owner superseded the light-grey experiment); the shared 关于我 navigation targets #capabilities.
