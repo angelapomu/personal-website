@@ -1,0 +1,168 @@
+/* Palette from Angela 徐晓萌.html, with the approved compact gallery proportions. */
+:root {
+  --a-bg: #e9e9e6;
+  --a-ink: #15171a;
+  --a-pink: #ff2e93;
+  --a-surface: #f6f6f3;
+  --a-line: #c9c9c4;
+  --a-muted: #62625e;
+  --a-orange: #ef5a26;
+  --a-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --a-mono: 'IBM Plex Mono', 'Noto Sans SC', monospace;
+  --a-spring: cubic-bezier(.34,1.8,.64,1);
+}
+body[data-view="home"], body[data-project="woma"] { background: var(--a-bg); color: var(--a-ink); }
+body:is([data-view="home"],[data-project="woma"])::selection { background: var(--a-pink); color: var(--a-ink); }
+body:is([data-view="home"],[data-project="woma"]) > .studio-header {
+  background: var(--a-bg); color: var(--a-ink); border-bottom-color: transparent;
+}
+body:is([data-view="home"],[data-project="woma"]) .studio-brand b { font-family: var(--a-sans); font-weight: 500; letter-spacing: -.03em; }
+body:is([data-view="home"],[data-project="woma"]) .studio-brand :is(b span,span),
+body:is([data-view="home"],[data-project="woma"]) .studio-header nav a { color: var(--a-ink); }
+body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after { background: var(--a-pink); }
+.figma-home {
+  --blue: var(--a-pink); --blue-dark: var(--a-ink); --orange: var(--a-pink);
+  --cream: var(--a-bg); --paper: var(--a-surface); --ink: var(--a-ink); --line: var(--a-line);
+  --mono: var(--a-mono); --sans: var(--a-sans); --display: var(--a-sans);
+}
+.figma-home ::selection, .ohmee-case ::selection { background: var(--a-pink); color: var(--a-ink); }
+.figma-home :focus-visible, .ohmee-case :focus-visible { outline-color: var(--a-ink); }
+.figma-home :is(.capabilities-section,footer) :focus-visible { outline-color: var(--a-pink); }
+
+/* The supplied spring hero replaces the old blue hero, including its typography. */
+.figma-home .spring-hero {
+  min-height: calc(100svh - 36px); margin-top: 36px;
+  padding: 18px clamp(22px,3vw,56px) 20px; display: flex; flex-direction: column;
+  background: var(--a-bg); color: var(--a-ink); position: relative;
+}
+.figma-home .spring-content { flex: 1; display: grid; grid-template-columns: 1.15fr 1fr; align-content: center; column-gap: clamp(32px,7vw,130px); row-gap: 28px; padding-block: 18px 24px; }
+.figma-home .spring-title { grid-column: 1 / -1; width: 100%; container-type: inline-size; font: 900 clamp(40px,13vw,360px)/1.08 var(--a-sans); letter-spacing: -.05em; margin: 0; }
+.figma-home .spring-line { display: block; white-space: nowrap; }
+.figma-home .spring-line:last-child { text-align: right; }
+@supports (font-size: 1cqw) {
+  .figma-home .spring-line { font-size: min(14cqw,32svh); }
+}
+.figma-home .spring-char { display: inline-block; }
+.figma-home .spring-glyph { display: inline-block; transform-origin: center; }
+.figma-home .spring-pink { color: var(--a-pink); }
+.figma-home .spring-sub { margin: 0; max-width: 28em; font-size: clamp(16px,1.15vw,20px); line-height: 1.8; }
+.figma-home .spring-bio { margin: 0; max-width: 34em; font-size: 14px; line-height: 1.8; color: var(--a-muted); justify-self: end; }
+.figma-home .spring-scroll { display: flex; justify-content: center; padding-top: 8px; }
+.figma-home .spring-scroll-cue { display: inline-flex; min-height: 60px; padding: 8px 16px; color: var(--a-muted); font: 400 12px/1.6 var(--a-sans); letter-spacing: .06em; }
+.figma-home .spring-scroll-label { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; }
+.figma-home .spring-scroll-arrow { display: block; width: 16px; height: 30px; color: var(--a-ink); }
+.figma-home .spring-scroll-arrow svg { width: 100%; height: 100%; }
+.figma-home .spring-hero[data-motion-enabled="true"] .spring-scroll-arrow { animation: spring-cue-float 2.6s ease-in-out infinite !important; }
+.figma-home .spring-hero[data-hero-visible="false"] .spring-scroll-arrow,
+.figma-home .spring-scroll-cue:is(:hover,:focus-visible) .spring-scroll-arrow { animation-play-state: paused !important; }
+@keyframes spring-cue-float { 0%,100% { transform: translateY(-3px); } 50% { transform: translateY(3px); } }
+
+/* Homepage: grey reading surfaces, a black footer, pink interactions. */
+.figma-home .work-section { border-top: 1px solid var(--a-ink); padding-top: 72px; padding-inline: max(clamp(22px,5vw,72px),calc((100% - 1280px)/2)); }
+.figma-home .featured-grid, .figma-home .small-grid { gap: 72px 40px; }
+.figma-home .featured-project .project-preview { aspect-ratio: 1.4; }
+.figma-home .small-project .project-preview { aspect-ratio: 1.6; }
+.figma-home .project-info { padding-top: 22px; }
+.figma-home .project-info h3 { font-size: clamp(30px,2.5vw,40px); line-height: 1.15; letter-spacing: -.045em; }
+.figma-home .small-project .project-info h3 { font-size: clamp(28px,2.5vw,34px); }
+.figma-home .project-card.card-enter-pending { opacity: 0; transform: translateY(28px); }
+.figma-home .project-card.card-enter-pending:focus-within { opacity: 1; transform: none; }
+.figma-home .selected-work-heading { margin-top: 0; border-top: 0; padding-top: 0; }
+.figma-home .lab-heading h2 { font: 600 clamp(28px,4vw,48px) var(--display); margin: 0; }
+.figma-home .section-heading h2, .figma-home .project-info h3 { font-weight: 900; }
+.figma-home .section-heading .eyebrow, .figma-home .project-number { color: var(--a-muted); }
+.figma-home .project-subtitle { font-size: 16px; line-height: 1.6; font-weight: 500; }
+.figma-home .project-description { font-size: 16px; line-height: 1.85; color: #3a3d44; opacity: 1; }
+.figma-home .project-number { font-size: 12px; }
+.figma-home .project-arrow { border-color: var(--a-ink); transition: background .25s,border-color .25s,border-radius .5s var(--a-spring),transform .5s var(--a-spring); }
+.figma-home .project-arrow:hover, .figma-home .project-arrow:focus-visible {
+  background: var(--a-pink); color: var(--a-ink); border-color: var(--a-pink); border-radius: 50%; transform: rotate(12deg) scale(1.08);
+}
+.figma-home .project-card .tag-row span { font-size: 14px; line-height: 1.4; letter-spacing: .025em; padding: 9px 13px; border-color: #b9b9b4; }
+.figma-home .featured-stage, .figma-home .dictionary-media { background: var(--a-surface); }
+.figma-home .imported-preview { --accent: var(--a-pink); --rust: var(--a-pink); --muted: var(--a-muted); }
+.figma-home .imported-preview .stage-label { top: 18px; left: 24px; font-size: 12px; }
+.figma-home .imported-preview .stage-label > span { font-size: 11px; }
+.figma-home .imported-preview .product-phone { width: auto; height: 66%; aspect-ratio: 403 / 874; border-width: 3px; border-radius: 15px; }
+.figma-home .imported-preview .product-phone img { height: 100%; object-fit: contain; }
+.figma-home .imported-preview .identity-phone { left: 20%; top: 18%; }
+.figma-home .imported-preview .chat-phone { left: 51%; top: 18%; }
+.figma-home .imported-preview .screen-switch button { min-height: 36px; padding: 6px 10px; }
+.figma-home .imported-preview .art-label { top: 20px; left: 24px; font-size: 12px; }
+.figma-home .imported-preview .companion-type { top: 58px; left: 24px; font-size: clamp(64px,6vw,92px); }
+.figma-home .companion-stage > img { width: 36%; max-width: 225px; right: 24px; bottom: 24px; }
+.figma-home .screen-switch button[aria-pressed="true"] { color: var(--a-ink); background: var(--a-pink); }
+.figma-home .companion-stage { background: var(--a-orange); color: var(--a-ink); }
+.figma-home .companion-type { color: var(--a-ink); }
+.figma-home .shelter-media { background: var(--a-ink); }
+.figma-home > .site-shell > footer { background: #2b2d31; color: var(--a-surface); }
+.figma-home .capabilities-section { background: #2b2d31; color: var(--a-surface); }
+.figma-home .capability-list, .figma-home .capability-list article, .figma-home .tool-line { border-color: #5d6064; }
+.figma-home .capability-number, .figma-home .tool-line span { color: #c2c3bf; }
+.figma-home .capabilities-heading > p:last-child, .figma-home .capability-list p { color: #c2c3bf; opacity: 1; }
+.figma-home .capability-list h3 { transition: color .25s; }
+.figma-home .capability-list article:hover h3 { color: var(--a-surface); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .3em; }
+.figma-home .about-title em { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: .18em; text-decoration-thickness: .035em; }
+.figma-home .about-scribble { color: var(--a-muted); }
+.figma-home .resume-section { background: var(--a-bg); color: var(--a-ink); border-top: 1px solid var(--a-line); }
+.figma-home .front-paper, .figma-home .resume-modal-paper { background: var(--a-surface); }
+.figma-home .back-paper { background: #dededa; }
+.figma-home .resume-open-hint { background: var(--a-ink); color: var(--a-bg); }
+.figma-home .primary-button, .figma-home .primary-button:disabled:hover { background: var(--a-ink); color: var(--a-bg); }
+.figma-home .primary-button:disabled { opacity: .55; }
+.figma-home .footer-main p span { color: inherit; }
+.figma-home .footer-main > a:hover { background: var(--a-pink); color: var(--a-ink); border-color: var(--a-pink); border-radius: 50%; }
+
+/* Only OhMee gets the new case-study palette in this review. */
+.ohmee-case {
+  --oh-blue: var(--a-pink); --oh-orange: var(--a-pink);
+  --oh-paper: var(--a-bg); --oh-surface: var(--a-surface);
+  --oh-ink: var(--a-ink); --oh-muted: var(--a-muted); --oh-line: var(--a-line);
+  --oh-display: var(--a-sans); --oh-sans: var(--a-sans); --oh-mono: var(--a-mono);
+}
+.ohmee-case .oh-hero { background: var(--a-bg); border-bottom: 1px solid var(--a-line); }
+.ohmee-case .oh-hero h1 { font-weight: 900; }
+.ohmee-case .oh-hero h1 > span { font-weight: 500; text-decoration: underline; text-decoration-color: var(--a-pink); text-decoration-thickness: .08em; text-underline-offset: .15em; }
+.ohmee-case .oh-hero-copy > .oh-eyebrow .oh-dot { background: var(--a-pink); }
+.ohmee-case .oh-button-blue { background: var(--a-ink); color: var(--a-bg); }
+.ohmee-case .oh-button-blue:hover { background: var(--a-pink); color: var(--a-ink); }
+.ohmee-case .oh-chapter-nav a.active { border-bottom-color: var(--a-pink); color: var(--a-ink); }
+.ohmee-case .oh-chapter-nav a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
+.ohmee-case .oh-chapter-toggle > strong { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.ohmee-case .oh-nav-name > span { color: var(--a-ink); }
+.ohmee-case .oh-demo-controls button[aria-pressed="true"] { background: var(--a-pink); color: var(--a-ink); }
+.ohmee-case .oh-next-questions > p > span { color: var(--a-ink); }
+.ohmee-case .oh-reflection { background: var(--a-ink); color: var(--a-bg); }
+.ohmee-case .oh-reflection > .oh-wrap > .oh-eyebrow { color: var(--a-pink); }
+.ohmee-case .oh-reflection h2 { font-weight: 900; }
+.ohmee-case .oh-case-footer a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
+@media (max-width: 900px) {
+  .figma-home .work-section > :is(.lab-heading,.featured-grid,.small-grid) { max-width: 640px; margin-inline: auto; }
+  .figma-home .imported-preview .companion-type { font-size: clamp(64px,10vw,92px); }
+}
+@media (max-width: 560px) {
+  .figma-home .featured-grid, .figma-home .small-grid { row-gap: 60px; }
+  .figma-home .imported-preview .stage-label { top: 14px; left: 18px; }
+  .figma-home .imported-preview .stage-label > span { font-size: 10px; line-height: 1.35; margin-top: 2px; }
+  .figma-home .imported-preview .product-phone { height: 58%; border-width: 2px; border-radius: 10px; }
+  .figma-home .imported-preview .identity-phone, .figma-home .imported-preview .chat-phone { top: 23%; }
+  .figma-home .imported-preview .screen-switch { bottom: 10px; padding: 3px; }
+  .figma-home .imported-preview .screen-switch button { min-height: 32px; padding: 5px 9px; font-size: 12px; }
+  .figma-home .imported-preview .art-label { top: 16px; left: 18px; font-size: 10px; }
+  .figma-home .imported-preview .companion-type { top: 48px; left: 18px; font-size: clamp(50px,12vw,64px); }
+  .figma-home .imported-preview .companion-caption { left: 18px; bottom: 16px; font-size: 12px; }
+  .figma-home .companion-stage > img { width: 32%; right: 18px; bottom: 18px; }
+}
+@media (max-width: 600px) {
+  .figma-home .spring-content { grid-template-columns: 1fr; row-gap: 18px; padding-block: 28px 36px; }
+  .figma-home .spring-title { margin-bottom: 16px; }
+  .figma-home .spring-bio { justify-self: start; }
+  .ohmee-case .oh-hero h1 { font-size: clamp(52px,15vw,68px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .figma-home .spring-hero:not([data-motion-enabled="true"]) .spring-glyph { transform: none !important; }
+  .figma-home .project-arrow, .figma-home .footer-main > a { transition: none; }
+}
+@media print {
+  .figma-home .project-card.card-enter-pending { opacity: 1 !important; transform: none !important; }
+}
