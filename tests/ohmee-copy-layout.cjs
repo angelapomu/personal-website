@@ -40,6 +40,14 @@ assert.match(html, /\.case-detail-subtitle \{ font-size: 23px; \}/);
 assert.match(html, /\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{[^}]*font: 600 30px\/1\.5 var\(--oh-sans\);/);
 assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{ font-size: clamp\(21px,2\.1vw,26px\); line-height: 1\.36;/);
 assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{[^}]*color: var\(--oh-muted\);/);
+const journeyEyebrowRule = html.match(/\.ohmee-case \.oh-journey figcaption > \.oh-eyebrow \{[^}]*\}/)?.[0] || '';
+const journeyHeadingRule = html.match(/\.ohmee-case \.oh-journey h3 \{[^}]*\}/)?.[0] || '';
+const tableHeadingRule = html.match(/\.ohmee-case \.oh-decision-table thead th \{[^}]*\}/)?.[0] || '';
+const mobileTableHeadingRule = html.match(/\.ohmee-case \.oh-decision-table td::before \{[^}]*\}/)?.[0] || '';
+assert.match(journeyEyebrowRule, /font: 600 18px\/1\.5 var\(--oh-sans\);/);
+assert.match(journeyHeadingRule, /font-size: 16px; line-height: 1\.5;/);
+assert.match(tableHeadingRule, /font-size: 16px; font-weight: 600;/);
+assert.match(mobileTableHeadingRule, /font-size: 14px; font-weight: 600;/);
 assert.match(html, /@media \(max-width: 560px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{ font-size: 22px; \}[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 19px; line-height: 1\.42; \}/);
 assert.match(html, /@media \(max-width: 360px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{ font-size: 20px; \}[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 18px; line-height: 1\.42; \}/);
 
