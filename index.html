@@ -869,9 +869,9 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 /* Chapters receive programmatic focus; interactive controls retain focus rings. */
 .ohmee-case .oh-section[tabindex="-1"]:focus { outline: none; }
 .ohmee-case .oh-section-heading { margin-bottom: 36px; }
-.ohmee-case .oh-section-heading > .oh-eyebrow { display: flex; align-items: center; gap: 10px; color: var(--oh-ink); margin-bottom: 22px; font: 600 15px/1.5 var(--oh-sans); letter-spacing: .015em; }
+.ohmee-case .oh-section-heading > .oh-eyebrow { display: flex; align-items: center; gap: 10px; color: var(--oh-ink); margin-bottom: 22px; font: 600 30px/1.5 var(--oh-sans); letter-spacing: .015em; }
 .ohmee-case .oh-section-heading > .oh-eyebrow::before { content: ""; width: 22px; height: 3px; flex: 0 0 22px; background: var(--oh-orange); }
-.ohmee-case .oh-section-heading h2 { font-size: clamp(35px,4.3vw,56px); line-height: 1.36; font-weight: 600; letter-spacing: -.045em; }
+.ohmee-case .oh-section-heading h2 { font-size: clamp(21px,2.1vw,26px); line-height: 1.36; font-weight: 600; letter-spacing: -.045em; }
 .ohmee-case .oh-section-heading > p:not(.oh-eyebrow) { max-width: 690px; margin-top: 21px; color: var(--oh-muted); font-size: 16px; }
 .ohmee-case .oh-copy h3 { margin-bottom: 14px; }
 .ohmee-case .oh-copy p { color: var(--oh-muted); font-size: 16px; line-height: 1.95; }
@@ -1065,7 +1065,8 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
   .ohmee-case .oh-numbers > div { padding-left: 13px; }
   .ohmee-case .oh-numbers dd { font-size: 43px; }
   .ohmee-case .oh-numbers dt { font-size: 12px; }
-  .ohmee-case .oh-section-heading h2 { font-size: 33px; line-height: 1.42; }
+  .ohmee-case .oh-section-heading > .oh-eyebrow { font-size: 22px; }
+  .ohmee-case .oh-section-heading h2 { font-size: 19px; line-height: 1.42; }
   .ohmee-case .oh-section-heading { margin-bottom: 28px; }
   .ohmee-case .oh-insight-grid,.ohmee-case .oh-research-columns,.ohmee-case .oh-evidence-grid,.ohmee-case .oh-technical { grid-template-columns: 1fr; }
   .ohmee-case .oh-insight-grid { gap: 30px; }
@@ -1110,7 +1111,8 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 @media (max-width: 360px) {
   .ohmee-case .oh-hero h1 { font-size: 59px; }
   .ohmee-case .oh-hero h2 { font-size: 29px; }
-  .ohmee-case .oh-section-heading h2 { font-size: 30px; line-height: 1.42; }
+  .ohmee-case .oh-section-heading > .oh-eyebrow { font-size: 20px; }
+  .ohmee-case .oh-section-heading h2 { font-size: 18px; line-height: 1.42; }
   .ohmee-case .oh-numbers dd { font-size: 36px; }
   .ohmee-case .oh-numbers dt { font-size: 11px; }
   .ohmee-case .oh-demo-copy { min-height: 355px; }
