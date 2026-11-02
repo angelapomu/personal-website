@@ -5,10 +5,10 @@ Use this layout system for new project detail pages so each page reads like a vi
 ## Shared classes
 
 - `.case-detail-module` gives each sibling module the same vertical separation.
-- `.case-detail-intro` places a subtitle on the left and its explanation or action on the right. Use `.case-detail-intro-single` when the module has no supporting copy.
+- `.case-detail-intro` stacks the subtitle first and its explanation or action directly below it. Keep this vertical reading order on desktop and mobile.
 - `.case-detail-subtitle` sets the common detail heading size and weight. Apply it to every module-level `h3`.
 - `.case-detail-grid` creates a two-column content row. Add `.case-detail-full` to a direct child that should span the whole row.
-- At 560px and below, the intro and content grids become one column.
+- At 560px and below, the two-column content grid becomes one column. Intro blocks already use the same vertical order at every width.
 
 ## Content order
 

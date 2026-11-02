@@ -26,7 +26,7 @@ assert.match(architecture, /<div class="oh-section-heading[\s\S]*?<\/div>\s*<div
 assert.doesNotMatch(architecture, /从首次体验、等待感和长期记忆出发，把抽象的产品假设拆成可以实现、测试和调整的机制。/);
 assert.match(architecture, /class="case-detail-module oh-flow-module"[\s\S]*?class="case-detail-intro oh-diagram-heading"[\s\S]*?<h3 class="case-detail-subtitle">体验流程设计<\/h3>/);
 assert.match(architecture, /class="case-detail-module oh-workflow-module"[\s\S]*?class="case-detail-intro oh-ai-intro"[\s\S]*?<h3 class="case-detail-subtitle">AI 工作流设计<\/h3><\/div><p>围绕 MVP 拆分意图识别/);
-assert.match(architecture, /class="case-detail-module oh-implementation-module"[\s\S]*?class="case-detail-intro case-detail-intro-single oh-ai-intro"[\s\S]*?<h3 class="case-detail-subtitle">前后端实现技术选型<\/h3>/);
+assert.match(architecture, /class="case-detail-module oh-implementation-module"[\s\S]*?class="case-detail-intro oh-ai-intro"[\s\S]*?<h3 class="case-detail-subtitle">前后端实现技术选型<\/h3>/);
 assert.doesNotMatch(architecture, /前端使用 Next\.js、React 与 TypeScript，本地数据由 IndexedDB 持久化，后端使用 Supabase \/ PostgreSQL。/);
 assert.doesNotMatch(architecture, /对齐 PRD 完成全栈 MVP，把提示词测试做成可重复运行的工作流程。/);
 assert.match(architecture, /class="case-detail-module oh-vibe-module"[\s\S]*?class="case-detail-intro oh-ai-intro"[\s\S]*?<h3 class="case-detail-subtitle">Vibe Coding 全栈开发<\/h3><\/div><p>用 Figma、Figma Make/);
@@ -57,10 +57,14 @@ const promptColumn = labLayout.slice(promptColumnStart, imageColumnStart);
 assert.equal(promptColumn.includes('woma-prompt-lab.png'), false, 'the Prompt Lab screenshot is kept out of the Prompt testing column');
 assert.equal(promptColumn.includes('oh-lab-numbers'), false, 'the data metrics are kept out of the Prompt testing column');
 
-assert.match(html, /\.case-detail-intro \{ display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center;/);
+assert.match(html, /\.case-detail-intro \{ display: grid; grid-template-columns: 1fr; gap: 14px; align-items: start; margin-bottom: 28px; \}/);
+assert.match(html, /\.case-detail-intro > p \{ max-width: 800px; \}/);
+assert.doesNotMatch(html, /\.case-detail-intro\s*\{[^}]*grid-template-columns:\s*1fr 1fr/);
+assert.doesNotMatch(html, /case-detail-intro-single/);
+assert.match(html, /\.ohmee-case \.oh-diagram-heading > span \{ justify-self: start;/);
 assert.match(html, /\.case-detail-grid > \.case-detail-full \{ grid-column: 1 \/ -1; \}/);
 assert.match(html, /\.ohmee-case \.oh-lab-image img \{ height: auto; min-height: 250px; max-height: 460px;/);
-assert.match(html, /@media \(max-width: 560px\) \{[\s\S]*?\.case-detail-grid,\.case-detail-intro \{ grid-template-columns: 1fr; \}/);
+assert.match(html, /@media \(max-width: 560px\) \{[\s\S]*?\.case-detail-grid \{ grid-template-columns: 1fr; \}/);
 
 const ohmeeStoryEnd = html.indexOf('<section class="oh-reflection" aria-labelledby="oh-reflection-title">', architectureStart);
 const ohmeeStory = html.slice(overviewStart, ohmeeStoryEnd);
