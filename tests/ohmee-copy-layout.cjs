@@ -26,6 +26,7 @@ assert.match(architecture, /<div class="oh-section-heading[\s\S]*?<\/div>\s*<div
 assert.doesNotMatch(architecture, /从首次体验、等待感和长期记忆出发，把抽象的产品假设拆成可以实现、测试和调整的机制。/);
 assert.match(architecture, /class="case-detail-module oh-flow-module"[\s\S]*?class="case-detail-intro oh-diagram-heading"[\s\S]*?<h3 class="case-detail-subtitle">体验流程设计<\/h3>/);
 assert.match(architecture, /class="case-detail-module oh-workflow-module"[\s\S]*?class="case-detail-intro oh-ai-intro"[\s\S]*?<h3 class="case-detail-subtitle">AI 工作流设计<\/h3><\/div><p>围绕 MVP 拆分意图识别/);
+assert.doesNotMatch(architecture, /<p class="oh-eyebrow">(?:产品流程|AI 工作流|技术选型|开发方式)<\/p>/);
 assert.match(architecture, /class="case-detail-module oh-implementation-module"[\s\S]*?class="case-detail-intro oh-ai-intro"[\s\S]*?<h3 class="case-detail-subtitle">前后端实现技术选型<\/h3>/);
 assert.doesNotMatch(architecture, /前端使用 Next\.js、React 与 TypeScript，本地数据由 IndexedDB 持久化，后端使用 Supabase \/ PostgreSQL。/);
 assert.doesNotMatch(architecture, /对齐 PRD 完成全栈 MVP，把提示词测试做成可重复运行的工作流程。/);
@@ -38,6 +39,7 @@ assert.match(html, /\.case-detail-subtitle \{ margin: 0; font: 500 25px\/1\.6 va
 assert.match(html, /\.case-detail-subtitle \{ font-size: 23px; \}/);
 assert.match(html, /\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{[^}]*font: 600 30px\/1\.5 var\(--oh-sans\);/);
 assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{ font-size: clamp\(21px,2\.1vw,26px\); line-height: 1\.36;/);
+assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{[^}]*color: var\(--oh-muted\);/);
 assert.match(html, /@media \(max-width: 560px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{ font-size: 22px; \}[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 19px; line-height: 1\.42; \}/);
 assert.match(html, /@media \(max-width: 360px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{ font-size: 20px; \}[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 18px; line-height: 1\.42; \}/);
 
