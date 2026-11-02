@@ -39,6 +39,7 @@ assert.match(html, /\.case-detail-subtitle \{ margin: 0; font: 500 25px\/1\.6 va
 assert.match(html, /\.case-detail-subtitle \{ font-size: 23px; \}/);
 assert.match(html, /\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{[^}]*font: 600 30px\/1\.5 var\(--oh-sans\);/);
 assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{ font-size: clamp\(21px,2\.1vw,26px\); line-height: 1\.36;/);
+assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{[^}]*font-style: italic;[^}]*font-weight: 500;/);
 assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{[^}]*color: var\(--oh-muted\);/);
 assert.match(html, /@media \(max-width: 560px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{ font-size: 22px; \}[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 19px; line-height: 1\.42; \}/);
 assert.match(html, /@media \(max-width: 360px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{ font-size: 20px; \}[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 18px; line-height: 1\.42; \}/);
