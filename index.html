@@ -923,13 +923,12 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 .ohmee-case .oh-decision-table td:first-child,.ohmee-case .oh-decision-table td:last-child { color: var(--oh-muted); }
 .ohmee-case .oh-decision-table td:nth-child(2) { font-size: 18px; font-weight: 500; }
 .ohmee-case .oh-diagram-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin: 48px 0 22px; }
-.ohmee-case .oh-considerations-heading { margin: 32px 0 18px; }
 .ohmee-case .oh-diagram-heading .oh-eyebrow { color: var(--oh-muted); margin-bottom: 10px; }
 .ohmee-case .oh-diagram-heading h3 { font-size: 25px; line-height: 1.6; letter-spacing: -.03em; }
 .ohmee-case .oh-diagram-heading > span { flex-shrink: 0; font-size: 13px; color: var(--oh-muted); }
 .ohmee-case .oh-diagram > button { display: block; width: 100%; border: 1px solid var(--oh-line); padding: 12px; background: var(--oh-surface); cursor: zoom-in; }
 .ohmee-case .oh-diagram img { width: 100%; height: auto; }
-.ohmee-case .oh-ai-intro { display: grid; grid-template-columns: minmax(0,1fr); gap: 14px; align-items: start; margin: 48px 0 22px; }
+.ohmee-case .oh-ai-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; margin: 56px 0 28px; }
 .ohmee-case .oh-ai-intro .oh-eyebrow { color: var(--oh-muted); margin-bottom: 15px; }
 .ohmee-case .oh-ai-intro h3 { font-size: 25px; line-height: 1.6; letter-spacing: -.03em; }
 .ohmee-case .oh-ai-intro > p { color: var(--oh-muted); font-size: 16px; }
@@ -944,7 +943,8 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 .ohmee-case .oh-stack-details h4 { font-size: 17px; margin-bottom: 12px; }
 .ohmee-case .oh-stack-workspace { margin-top: 5px; }
 .ohmee-case .oh-delivery-module { margin-top: 56px; padding-top: 38px; border-top: 1px solid var(--oh-line); scroll-margin-top: 96px; }
-.ohmee-case .oh-lab-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 48px; }
+.ohmee-case .oh-lab-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: start; gap: 48px; }
+.ohmee-case .oh-lab-layout > .oh-copy .oh-lab-image { margin-top: 26px; }
 .ohmee-case .oh-lab-numbers { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; border-top: 1px solid var(--oh-line); margin-top: 30px; padding-top: 23px; }
 .ohmee-case .oh-lab-numbers > div { display: flex; flex-direction: column-reverse; }
 .ohmee-case .oh-lab-numbers dt { margin-top: 13px; font-size: 12px; color: var(--oh-muted); }
@@ -1261,7 +1261,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     </section>
 
     <section class="oh-section" id="case-architecture" aria-labelledby="oh-architecture-title">
-      <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">04 / 流程设计</p><h2 id="oh-architecture-title">从产品体验到产品架构，<br>设计 AI 原生的完整功能流程</h2></div><div class="oh-diagram-heading oh-considerations-heading"><div><h3>考虑方面</h3></div></div>
+      <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">04 / 流程设计</p><h2 id="oh-architecture-title">从产品体验到产品架构，<br>设计 AI 原生的完整功能流程</h2></div>
       <div class="oh-decision-table-wrap"><table class="oh-decision-table"><thead><tr><th scope="col">问题</th><th scope="col">思考</th><th scope="col">解决方案</th></tr></thead><tbody><tr><td data-label="问题">如何减少等待对测试体验的影响？</td><td data-label="思考">先看到自己的记录</td><td data-label="解决方案">可视化数据本地存储，后台异步更新。让界面保持响应，减少等待对测试体验的干扰。</td></tr><tr><td data-label="问题">如何降低匿名身份和数据用途带来的顾虑？</td><td data-label="思考">降低开始使用的顾虑</td><td data-label="解决方案">用匿名 ID 绑定数据库，以 PWA 进行测试，并清楚说明输入将用于产品迭代。</td></tr><tr><td data-label="问题">画像更新频率应该如何确定？</td><td data-label="思考">把更新频率当作假设</td><td data-label="解决方案">初始设定为每 6 轮输入更新画像，用真实使用反馈寻找合适的更新频率。</td></tr><tr><td data-label="问题">如何让用户感到自己在帮助自己？</td><td data-label="思考">让用户感觉在帮助自己</td><td data-label="解决方案">保留第一人称与 AI 开关，用轻松的绿色、粉色和身份卡片，形成区别于心理咨询的使用氛围。</td></tr></tbody></table></div>
       <div class="oh-diagram-heading"><div><p class="oh-eyebrow">产品流程</p><h3>体验流程设计</h3></div><span>点击图表放大 ↗</span></div>
       <figure class="oh-diagram"><button type="button" data-preview-src="images/woma-business-swimlane.png" data-preview-alt="我吗完整业务流程：访谈、进入聊天、记录聊天与画像更新" aria-label="放大完整业务流程图"><img src="images/woma-business-swimlane.png" alt="我吗业务流程泳道图" loading="lazy"></button></figure>
@@ -1269,7 +1269,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
       <figure class="oh-diagram"><button type="button" data-preview-src="images/woma-ai-pipeline-no-title.svg" data-preview-alt="我吗 AI Pipeline 原图：意图识别、重写、评论与画像维护" aria-label="放大 AI Pipeline 架构图"><img src="images/woma-ai-pipeline-no-title.svg" alt="我吗 AI Pipeline 架构图" loading="lazy"></button></figure>
       <div class="oh-technical oh-workflow-details"><div><h4>节点与记忆</h4><p>Intent、Rewrite、AI Comment、Profile Maintenance、Compact。通过结构化字段和分节点 Prompt 约束生成行为，区分当前事件、行为模式、长期身份和上下文压缩信息。</p></div><div><h4>模型接入</h4><p>DeepSeek · Gemini · OpenRouter</p><p>项目记录中的模型选型为 Gemini 3 Flash 与 DeepSeek 4 Flash；通过横向测试后进入多轮 Prompt 优化。</p></div></div>
       <div class="oh-stack-module oh-implementation-module"><div class="oh-ai-intro"><div><p class="oh-eyebrow">技术选型</p><h3>前后端实现技术选型</h3></div></div><div class="oh-technical oh-stack-details"><div><h4>前端</h4><p>Next.js · React · TypeScript · PWA</p></div><div><h4>本地存储</h4><p>IndexedDB</p></div><div><h4>后端与数据库</h4><p>Supabase / PostgreSQL</p></div></div></div>
-      <section class="oh-delivery-module" id="case-delivery" aria-labelledby="oh-delivery-title"><div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">05 / 提示词与测试</p><h2 id="oh-delivery-title">提示词和测试集产出</h2></div><div class="oh-lab-layout"><div class="oh-copy"><h3>vibe coding搭建提示词测试框架</h3><p>为多节点 Workflow 搭建批量测试框架，创建测试集，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，继续迭代。</p><dl class="oh-lab-numbers"><div><dt>LLM 对比</dt><dd>5</dd></div><div><dt>初期测试</dt><dd>10<span>+ 轮</span></dd></div><div><dt>内测后优化</dt><dd>3<span>+ 轮</span></dd></div></dl></div><figure class="oh-evidence oh-lab-image"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="Prompt Lab：Prompt 编辑、模型配置、测试集和结果面板" aria-label="放大 Prompt Lab 测试框架"><img src="images/woma-prompt-lab.png" alt="Prompt Lab 多节点批量测试框架" loading="lazy"></button><figcaption><span>Prompt Lab / 多节点批量测试</span><span>放大查看 ↗</span></figcaption></figure></div></section>
+      <section class="oh-delivery-module" id="case-delivery" aria-labelledby="oh-delivery-title"><div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">05 / 提示词与测试</p><h2 id="oh-delivery-title">提示词和测试集产出</h2></div><div class="oh-lab-layout"><div class="oh-copy"><h3>Vibe Coding 搭建测试框架</h3><p>为多节点 Workflow 搭建批量测试框架。</p></div><div class="oh-copy"><h3>Prompt 测试集创建</h3><p>创建测试集，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，继续迭代。</p><dl class="oh-lab-numbers"><div><dt>LLM 对比</dt><dd>5</dd></div><div><dt>初期测试</dt><dd>10<span>+ 轮</span></dd></div><div><dt>内测后优化</dt><dd>3<span>+ 轮</span></dd></div></dl><figure class="oh-evidence oh-lab-image"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="Prompt Lab：Prompt 编辑、模型配置、测试集和结果面板" aria-label="放大 Prompt Lab 测试框架"><img src="images/woma-prompt-lab.png" alt="Prompt Lab 多节点批量测试框架" loading="lazy"></button><figcaption><span>Prompt Lab / 多节点批量测试</span><span>放大查看 ↗</span></figcaption></figure></div></div></section>
       <div class="oh-stack-module oh-vibe-module"><div class="oh-ai-intro"><div><p class="oh-eyebrow">开发方式</p><h3>Vibe Coding 全栈开发</h3></div><p>用 Figma、Figma Make、Google Stitch、Claude 和 Codex 推进 UIUX。开发过程中手动维护 PRD、agent.md、plan 和 task，以 API、架构和 UI 文档保持前后端一致。</p></div><figure class="oh-diagram oh-stack-workspace"><button type="button" data-preview-src="images/woma-figma-workspace.png" data-preview-alt="我吗 Figma 项目工作区全景" aria-label="放大 Figma 设计工作区"><img src="images/woma-figma-workspace.png" alt="我吗 Figma 工作区全景" loading="lazy"></button></figure></div>
     </section>
 
