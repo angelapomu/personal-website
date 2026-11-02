@@ -36,6 +36,10 @@ assert.match(html, /\.case-detail-grid \{ display: grid; grid-template-columns: 
 assert.match(html, /\.case-detail-grid > \.case-detail-full \{ grid-column: 1 \/ -1; \}/);
 assert.match(html, /\.case-detail-subtitle \{ margin: 0; font: 500 25px\/1\.6 var\(--display\); letter-spacing: -\.03em; \}/);
 assert.match(html, /\.case-detail-subtitle \{ font-size: 23px; \}/);
+assert.match(html, /\.ohmee-case \.oh-section-heading > \.oh-eyebrow \{[^}]*font: 600 13px\/1\.5 var\(--oh-sans\);/);
+assert.match(html, /\.ohmee-case \.oh-section-heading h2 \{ font-size: clamp\(39px,5vw,64px\); line-height: 1\.36;/);
+assert.match(html, /@media \(max-width: 560px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 35px; line-height: 1\.42; \}/);
+assert.match(html, /@media \(max-width: 360px\) \{[\s\S]*?\.ohmee-case \.oh-section-heading h2 \{ font-size: 32px; line-height: 1\.42; \}/);
 
 const deliveryStart = architecture.indexOf('<section class="oh-delivery-module" id="case-delivery"');
 const vibeStart = architecture.indexOf('<div class="case-detail-module oh-vibe-module"', deliveryStart);
