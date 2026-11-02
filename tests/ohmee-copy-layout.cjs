@@ -15,6 +15,7 @@ assert.match(research, /02 \/ 需求初步验证/);
 const architectureStart = html.indexOf('<section class="oh-section" id="case-architecture"', experienceStart);
 const experience = html.slice(experienceStart, architectureStart);
 assert.match(experience, /03 \/ 核心假设/);
+assert.ok(html.includes('<h2 id="oh-background-title">从网络热点，<br>捕捉深层需求</h2>'), 'the opening headline uses the approved shorter copy');
 
 const iterationStart = html.indexOf('<section class="oh-section" id="case-iteration"', architectureStart);
 const architecture = html.slice(architectureStart, iterationStart);
@@ -29,13 +30,27 @@ assert.doesNotMatch(architecture, /对齐 PRD 完成全栈 MVP，把提示词测
 const deliveryStart = architecture.indexOf('<section class="oh-delivery-module" id="case-delivery"');
 const vibeStart = architecture.indexOf('<div class="oh-stack-module oh-vibe-module"', deliveryStart);
 const delivery = architecture.slice(deliveryStart, vibeStart);
-assert.match(delivery, /<div class="oh-lab-layout">\s*<div class="oh-copy"><h3>Vibe Coding 搭建测试框架<\/h3><p>为多节点 Workflow 搭建批量测试框架。<\/p><\/div>\s*<div class="oh-copy"><h3>Prompt 测试集创建<\/h3><p>创建测试集，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，继续迭代。<\/p><dl class="oh-lab-numbers">[\s\S]*?<\/dl><figure class="oh-evidence oh-lab-image">[\s\S]*?images\/woma-prompt-lab\.png[\s\S]*?<\/figure><\/div><\/div>/);
+const labLayoutStart = delivery.indexOf('<div class="oh-lab-layout">');
+const labLayout = delivery.slice(labLayoutStart);
+const promptColumnStart = labLayout.indexOf('<div class="oh-copy"><h3>Prompt 测试集创建</h3>');
+const dataColumnStart = labLayout.indexOf('<div class="oh-copy oh-lab-data">');
+const imagePosition = labLayout.indexOf('images/woma-prompt-lab.png');
+const dataHeadingPosition = labLayout.indexOf('<h3>测试数据</h3>');
+const metricsPosition = labLayout.indexOf('class="oh-lab-numbers"');
+assert.equal((labLayout.match(/<div class="oh-copy/g) || []).length, 3, 'delivery content is split into three columns');
+assert.ok(labLayout.indexOf('<h3>Vibe Coding 搭建测试框架</h3>') < promptColumnStart && promptColumnStart < dataColumnStart,
+  'Vibe Coding, Prompt testing, and data appear as separate columns');
+assert.ok(imagePosition > dataColumnStart && imagePosition < dataHeadingPosition && dataHeadingPosition < metricsPosition,
+  'the Prompt Lab screenshot sits above the data metrics in its own column');
+const promptColumn = labLayout.slice(promptColumnStart, dataColumnStart);
+assert.equal(promptColumn.includes('woma-prompt-lab.png'), false, 'the Prompt Lab screenshot is kept out of the Prompt testing column');
+assert.equal(promptColumn.includes('oh-lab-numbers'), false, 'the data metrics are kept out of the Prompt testing column');
 
 assert.match(html, /\.ohmee-case \.oh-ai-intro \{[^}]*grid-template-columns: 1fr 1fr;[^}]*align-items: center;/);
 assert.match(html, /\.ohmee-case \.oh-ai-intro h3 \{ font-size: 25px;/);
 assert.match(html, /\.ohmee-case \.oh-ai-intro h3 \{ font-size: 23px;/);
-assert.match(html, /\.ohmee-case \.oh-lab-layout \{ display: grid; grid-template-columns: \.85fr 1\.15fr;/);
-assert.match(html, /\.ohmee-case \.oh-lab-layout \{ grid-template-columns: 1fr;/);
+assert.match(html, /\.ohmee-case \.oh-lab-layout \{ display: grid; grid-template-columns: \.85fr \.95fr 1\.2fr;/);
+assert.match(html, /@media \(max-width: 960px\) \{\s*\.ohmee-case \.oh-lab-layout \{ grid-template-columns: 1fr; gap: 30px; \}/);
 assert.match(html, /\.ohmee-case \.oh-diagram-heading h3 \{ font-size: 25px;/);
 assert.match(html, /\.ohmee-case \.oh-diagram-heading h3 \{ font-size: 23px;/);
 assert.equal(html.includes('.ohmee-case .oh-insight-grid,.ohmee-case .oh-ai-intro { gap: 35px; }'), false,
