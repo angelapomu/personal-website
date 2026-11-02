@@ -200,6 +200,12 @@ body[data-view="home"] > .studio-footer { display: none; }
 .case-section p { font-size: 15px; color: var(--muted); line-height: 2; }
 .case-section > p + p { margin-top: 15px; }
 .case-insight { border-left: 2px solid var(--ink); padding: 7px 0 7px 23px; margin: 25px 0; font-size: 20px; line-height: 1.85; font-weight: 500; }
+.case-detail-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 8%; row-gap: 32px; }
+.case-detail-grid > .case-detail-full { grid-column: 1 / -1; }
+.case-detail-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; margin-bottom: 28px; }
+.case-detail-intro-single { grid-template-columns: 1fr; }
+.case-detail-module { margin-top: 56px; }
+.case-detail-subtitle { margin: 0; font: 500 25px/1.6 var(--display); letter-spacing: -.03em; }
 .case-research-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-block: 26px; }
 .case-research-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin-top: 24px; }
 .case-research-shot { min-width: 0; }
@@ -318,6 +324,10 @@ body[data-view="home"] > .studio-footer { display: none; }
   .concept-copy h2 { font-size: 22px; }
   .studio-lightbox { max-width: calc(100vw - 20px); padding-inline: 10px; }
   .studio-lightbox > img { max-width: calc(100vw - 40px); }
+}
+@media (max-width: 560px) {
+  .case-detail-grid,.case-detail-intro { grid-template-columns: 1fr; }
+  .case-detail-subtitle { font-size: 23px; }
 }
 .case-hero h1 { font-family: var(--display); }
 .case-stat b, .case-outcome b { color: var(--accent); font-family: var(--display); }
@@ -863,17 +873,16 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 .ohmee-case .oh-section-heading > .oh-eyebrow::before { content: ""; width: 22px; height: 3px; flex: 0 0 22px; background: var(--oh-orange); }
 .ohmee-case .oh-section-heading h2 { font-size: clamp(35px,4.3vw,56px); line-height: 1.36; font-weight: 600; letter-spacing: -.045em; }
 .ohmee-case .oh-section-heading > p:not(.oh-eyebrow) { max-width: 690px; margin-top: 21px; color: var(--oh-muted); font-size: 16px; }
-.ohmee-case .oh-copy h3 { font-size: 21px; font-weight: 500; letter-spacing: -.025em; line-height: 1.6; margin-bottom: 14px; }
+.ohmee-case .oh-copy h3 { margin-bottom: 14px; }
 .ohmee-case .oh-copy p { color: var(--oh-muted); font-size: 16px; line-height: 1.95; }
 .ohmee-case .oh-copy p + p { margin-top: 19px; }
 .ohmee-case .oh-copy strong { color: var(--oh-ink); }
-.ohmee-case .oh-insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: center; }
+.ohmee-case .oh-insight-grid { align-items: center; }
 .ohmee-case .oh-hypothesis { position: relative; border-left: 3px solid var(--oh-orange); padding-left: 34px; }
 .ohmee-case .oh-hypothesis > img { position: absolute; top: -5px; right: 0; width: 65px; height: auto; mix-blend-mode: multiply; }
 .ohmee-case .oh-hypothesis > p { font-size: clamp(28px,2.8vw,38px); font-weight: 500; line-height: 1.65; letter-spacing: -.04em; margin: 15px 0 17px; }
 .ohmee-case .oh-hypothesis em { font-style: normal; text-decoration: underline; text-decoration-color: var(--oh-orange); text-decoration-thickness: 3px; text-underline-offset: 7px; }
 .ohmee-case .oh-hypothesis > .oh-small { display: block; color: var(--oh-muted); }
-.ohmee-case .oh-research-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; }
 .ohmee-case .oh-research-numbers { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin-block: 36px; border-block: 1px solid var(--oh-line); }
 .ohmee-case .oh-research-numbers > div { display: flex; flex-direction: column-reverse; padding: 26px 0; }
 .ohmee-case .oh-research-numbers dd { font: 500 52px/1 var(--oh-display); letter-spacing: -.055em; }
@@ -905,7 +914,7 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 .ohmee-case .oh-product-shot img { width: 100%; height: auto; }
 .ohmee-case .oh-journey figcaption { padding-top: 23px; }
 .ohmee-case .oh-journey figcaption > .oh-eyebrow { font-size: 11px; color: var(--oh-muted); }
-.ohmee-case .oh-journey h3 { font-size: 21px; font-weight: 500; line-height: 1.5; margin-top: 10px; }
+.ohmee-case .oh-journey h3 { margin-top: 10px; }
 .ohmee-case .oh-journey p { margin-top: 12px; font-size: 15px; color: var(--oh-muted); }
 .ohmee-case .oh-details { border-block: 1px solid var(--oh-line); margin-top: 32px; }
 .ohmee-case .oh-details summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 65px; padding-block: 16px; list-style: none; cursor: pointer; font-size: 15px; }
@@ -922,41 +931,33 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
 .ohmee-case .oh-decision-table td { padding: 23px 22px 23px 0; vertical-align: top; font-size: 15px; line-height: 1.9; }
 .ohmee-case .oh-decision-table td:first-child,.ohmee-case .oh-decision-table td:last-child { color: var(--oh-muted); }
 .ohmee-case .oh-decision-table td:nth-child(2) { font-size: 18px; font-weight: 500; }
-.ohmee-case .oh-diagram-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin: 48px 0 22px; }
 .ohmee-case .oh-diagram-heading .oh-eyebrow { color: var(--oh-muted); margin-bottom: 10px; }
-.ohmee-case .oh-diagram-heading h3 { font-size: 25px; line-height: 1.6; letter-spacing: -.03em; }
-.ohmee-case .oh-diagram-heading > span { flex-shrink: 0; font-size: 13px; color: var(--oh-muted); }
+.ohmee-case .oh-diagram-heading > span { justify-self: end; font-size: 13px; color: var(--oh-muted); }
 .ohmee-case .oh-diagram > button { display: block; width: 100%; border: 1px solid var(--oh-line); padding: 12px; background: var(--oh-surface); cursor: zoom-in; }
 .ohmee-case .oh-diagram img { width: 100%; height: auto; }
-.ohmee-case .oh-ai-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; margin: 56px 0 28px; }
-.ohmee-case .oh-ai-intro .oh-eyebrow { color: var(--oh-muted); margin-bottom: 15px; }
-.ohmee-case .oh-ai-intro h3 { font-size: 25px; line-height: 1.6; letter-spacing: -.03em; }
-.ohmee-case .oh-ai-intro > p { color: var(--oh-muted); font-size: 16px; }
+.ohmee-case .case-detail-intro .oh-eyebrow { color: var(--oh-muted); margin-bottom: 15px; }
+.ohmee-case .case-detail-intro > p { color: var(--oh-muted); font-size: 16px; }
 .ohmee-case .oh-technical { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; padding: 12px 0 30px; }
+.ohmee-case .oh-workflow-module > .oh-technical,.ohmee-case .oh-implementation-module > .oh-technical { padding-block: 0; }
 .ohmee-case .oh-technical h4 { font-size: 17px; margin-bottom: 12px; }
 .ohmee-case .oh-technical p,.ohmee-case .oh-detail-body p { font-size: 15px; color: var(--oh-muted); line-height: 1.95; }
 .ohmee-case .oh-detail-body { padding: 10px 0 28px; }
 .ohmee-case .oh-detail-body .oh-diagram { margin-top: 25px; }
-.ohmee-case .oh-stack-module { margin-top: 56px; padding-top: 34px; border-top: 1px solid var(--oh-line); }
-.ohmee-case .oh-stack-module .oh-ai-intro { margin-top: 0; }
 .ohmee-case .oh-stack-details { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .ohmee-case .oh-stack-details h4 { font-size: 17px; margin-bottom: 12px; }
-.ohmee-case .oh-stack-workspace { margin-top: 5px; }
 .ohmee-case .oh-delivery-module { margin-top: 56px; padding-top: 38px; border-top: 1px solid var(--oh-line); scroll-margin-top: 96px; }
-.ohmee-case .oh-lab-layout { display: grid; grid-template-columns: .85fr .95fr 1.2fr; align-items: start; gap: 32px; }
-.ohmee-case .oh-lab-data > h3 { margin-top: 18px; }
 .ohmee-case .oh-lab-data .oh-lab-numbers { margin-top: 17px; }
 .ohmee-case .oh-lab-numbers { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; border-top: 1px solid var(--oh-line); margin-top: 30px; padding-top: 23px; }
 .ohmee-case .oh-lab-numbers > div { display: flex; flex-direction: column-reverse; }
 .ohmee-case .oh-lab-numbers dt { margin-top: 13px; font-size: 12px; color: var(--oh-muted); }
 .ohmee-case .oh-lab-numbers dd { font: 500 38px/1 var(--oh-display); letter-spacing: -.05em; color: var(--oh-ink); }
 .ohmee-case .oh-lab-numbers dd > span { font-size: .42em; }
-.ohmee-case .oh-lab-image img { height: auto; min-height: 250px; }
+.ohmee-case .oh-lab-image img { height: auto; min-height: 250px; max-height: 460px; object-fit: contain; }
 .ohmee-case .oh-analysis { display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; background: var(--oh-surface); color: var(--oh-ink); padding: 48px; border-top: 3px solid var(--oh-orange); }
 .ohmee-case .oh-analysis-number > strong { display: block; font: 500 clamp(90px,10vw,145px)/1.3 var(--oh-display); letter-spacing: -.08em; margin-top: 15px; }
 .ohmee-case .oh-analysis-number > strong > span { font: 400 19px var(--oh-sans); margin-left: 9px; letter-spacing: 0; }
 .ohmee-case .oh-analysis-number > p { font-size: 15px; }
-.ohmee-case .oh-analysis-copy > h3 { font-size: 26px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 18px; }
+.ohmee-case .oh-analysis-copy > h3 { margin-bottom: 18px; }
 .ohmee-case .oh-analysis-copy > p { color: var(--oh-muted); }
 .ohmee-case .oh-analysis-focus { display: flex; flex-wrap: wrap; gap: 13px 22px; margin-block: 25px; font-size: 14px; }
 .ohmee-case .oh-analysis-focus span { border-bottom: 2px solid var(--oh-orange); padding-bottom: 5px; }
@@ -1002,7 +1003,6 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
   .ohmee-case .oh-analysis { gap: 35px; padding: 36px; }
 }
 @media (max-width: 960px) {
-  .ohmee-case .oh-lab-layout { grid-template-columns: 1fr; gap: 30px; }
   .ohmee-case .oh-chapter-track { position: relative; display: block; }
   .ohmee-case .oh-nav-name { display: none; }
   .ohmee-case .oh-chapter-toggle { display: flex; align-items: center; gap: 18px; width: 100%; min-height: 58px; padding: 12px 0; border: 0; background: transparent; color: var(--oh-ink); text-align: left; cursor: pointer; }
@@ -1067,7 +1067,7 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
   .ohmee-case .oh-numbers dt { font-size: 12px; }
   .ohmee-case .oh-section-heading h2 { font-size: 33px; line-height: 1.42; }
   .ohmee-case .oh-section-heading { margin-bottom: 28px; }
-  .ohmee-case .oh-insight-grid,.ohmee-case .oh-research-columns,.ohmee-case .oh-evidence-grid,.ohmee-case .oh-ai-intro,.ohmee-case .oh-technical { grid-template-columns: 1fr; }
+  .ohmee-case .oh-insight-grid,.ohmee-case .oh-research-columns,.ohmee-case .oh-evidence-grid,.ohmee-case .oh-technical { grid-template-columns: 1fr; }
   .ohmee-case .oh-insight-grid { gap: 30px; }
   .ohmee-case .oh-hypothesis > p { font-size: 31px; }
   .ohmee-case .oh-research-columns { gap: 25px; }
@@ -1092,14 +1092,9 @@ body[data-project="woma"] .studio-header :focus-visible { outline-color: #171713
   .ohmee-case .oh-decision-table td::before { content: attr(data-label); color: var(--oh-muted); font-size: 12px; }
   .ohmee-case .oh-decision-table td:nth-child(2) { font-size: 15px; }
   .ohmee-case .oh-delivery-module { margin-top: 38px; padding-top: 28px; scroll-margin-top: 87px; }
-  .ohmee-case .oh-diagram-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
-  .ohmee-case .oh-diagram-heading h3 { font-size: 23px; }
-  .ohmee-case .oh-ai-intro { gap: 12px; }
-  .ohmee-case .oh-ai-intro h3 { font-size: 23px; }
   .ohmee-case .oh-diagram > button { padding: 5px; }
   .ohmee-case .oh-lab-image img { height: auto; min-height: 150px; }
   .ohmee-case .oh-analysis { padding: 27px 24px; }
-  .ohmee-case .oh-analysis-copy > h3 { font-size: 23px; }
   .ohmee-case .oh-result-numbers { gap: 12px; }
   .ohmee-case .oh-result-numbers dd { font-size: 53px; }
   .ohmee-case .oh-result-numbers dt { font-size: 12px; }
@@ -1240,43 +1235,40 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
   <div class="oh-story oh-wrap">
     <section class="oh-section" id="case-background" aria-labelledby="oh-background-title">
       <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">01 / 发现需求</p><h2 id="oh-background-title">从网络热点，<br>捕捉深层需求</h2></div>
-      <div class="oh-insight-grid"><div class="oh-copy"><p>“爱你老几”“强者思维”“自我主体性”等话题反复出现，背后是年轻人对正反馈和自我认知的需要。许多人习惯强调失败，却很少认真看见已经做成的事。</p><p>我把切入点放在<strong>负面的自我叙事</strong>：如果记录日常时，有机会换一种看待自己的方式，会发生什么？</p></div><aside class="oh-hypothesis"><span class="oh-eyebrow">产品假设</span><img src="images/woma.png" alt="我吗的手绘人物形象" width="512" height="512" loading="lazy"><p>让用户<br><em>自己鼓励自己。</em></p><span class="oh-small">从经历里认领能力，再把能力变成能看见的身份。</span></aside></div>
+      <div class="case-detail-grid oh-insight-grid"><div class="oh-copy"><p>“爱你老几”“强者思维”“自我主体性”等话题反复出现，背后是年轻人对正反馈和自我认知的需要。许多人习惯强调失败，却很少认真看见已经做成的事。</p><p>我把切入点放在<strong>负面的自我叙事</strong>：如果记录日常时，有机会换一种看待自己的方式，会发生什么？</p></div><aside class="oh-hypothesis"><span class="oh-eyebrow">产品假设</span><img src="images/woma.png" alt="我吗的手绘人物形象" width="512" height="512" loading="lazy"><p>让用户<br><em>自己鼓励自己。</em></p><span class="oh-small">从经历里认领能力，再把能力变成能看见的身份。</span></aside></div>
     </section>
 
     <section class="oh-section" id="case-research" aria-labelledby="oh-research-title">
-      <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">02 / 需求初步验证</p><h2 id="oh-research-title">发现未被满足痛点，<br>设计差异化垂直功能并验证</h2><p>从竞品、概念测试到一对一访谈，为一个足够具体的产品入口找依据。</p></div>
-      <div class="oh-research-columns"><div class="oh-copy"><h3>竞品分析</h3><p>研究 Tolan、Mindsera、Mindcraft、Mindback 的目标人群、AI 能力边界和商业模式，寻找围绕日常经历与身份认领的差异化空间。</p></div><div class="oh-copy"><h3>获得种子用户</h3><p>用 Figma 和 UI 概念测试市场反馈，结合社媒内容反馈与目标用户访谈，确定 MVP 的核心定位、使用场景和功能范围。</p></div></div>
+      <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">02 / 需求初步验证</p><h2 id="oh-research-title">发现未被满足痛点，<br>设计差异化垂直功能并验证</h2></div>
+      <div class="case-detail-grid oh-research-columns"><div class="oh-copy"><h3 class="case-detail-subtitle">竞品分析</h3><p>研究 Tolan、Mindsera、Mindcraft、Mindback 的目标人群、AI 能力边界和商业模式，寻找围绕日常经历与身份认领的差异化空间。</p></div><div class="oh-copy"><h3 class="case-detail-subtitle">获得种子用户</h3><p>用 Figma 和 UI 概念测试市场反馈，结合社媒内容反馈与目标用户访谈，确定 MVP 的核心定位、使用场景和功能范围。</p></div></div>
       <dl class="oh-research-numbers"><div><dt>用户加群</dt><dd>200<span>+</span></dd></div><div><dt>内容互动率</dt><dd>12.5<span>%</span></dd></div><div><dt>目标用户深访</dt><dd>5<span> 位</span></dd></div></dl>
       <div class="oh-evidence-grid"><figure class="oh-evidence"><button type="button" data-preview-src="images/woma-research-note-detail.jpg" data-preview-alt="我吗概念测试：笔记详情与数据概览" aria-label="放大笔记数据截图"><img src="images/woma-research-note-detail.jpg" alt="概念测试笔记的数据概览" loading="lazy"></button><figcaption><span>内容表现</span><span>查看完整截图 ↗</span></figcaption></figure><figure class="oh-evidence"><button type="button" data-preview-src="images/woma-research-audience.jpg" data-preview-alt="我吗概念测试：笔记观众画像" aria-label="放大观众画像截图"><img src="images/woma-research-audience.jpg" alt="概念测试笔记的观众画像" loading="lazy"></button><figcaption><span>谁对它感兴趣</span><span>查看完整截图 ↗</span></figcaption></figure></div>
       <p class="oh-footnote">加群人数是早期兴趣信号，与后续进入 MVP 测试的用户数量分别记录。</p>
     </section>
 
     <section class="oh-section" id="case-experience" aria-labelledby="oh-experience-title">
-      <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">03 / 核心假设</p><h2 id="oh-experience-title">核心功能设计</h2><p>用第一人称重新表达，让鼓励听起来像来自自己。下面这段对话取自现有产品截图。</p></div>
+      <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">03 / 核心假设</p><h2 id="oh-experience-title">核心功能设计</h2></div>
       <div class="oh-rewrite-demo" id="ohmee-rewrite-demo" data-mode="original">
         <div class="oh-demo-top"><span class="oh-eyebrow">换个角度看自己</span><div class="oh-demo-controls" role="group" aria-label="查看原话或 AI 重写"><button type="button" data-ohmee-mode="original" aria-pressed="true" aria-controls="ohmee-demo-copy">我的原话</button><button type="button" data-ohmee-mode="rewrite" aria-pressed="false" aria-controls="ohmee-demo-copy">换个说法 <span aria-hidden="true">↗</span></button></div></div>
         <div class="oh-demo-copy" id="ohmee-demo-copy" aria-live="polite" aria-atomic="true"><p data-ohmee-copy="original">从建筑自学到aipm</p><p data-ohmee-copy="rewrite" hidden>我主动从建筑自学到AI产品管理，跨越领域壁垒这件事让我看到了自己掌握新技能的能力。</p></div>
         <div class="oh-demo-bottom"><span>同一段经历，另一种看见自己的方式。</span><span class="oh-demo-identity" data-ohmee-copy="rewrite" hidden>被看见的能力 <strong>自学者</strong></span><span data-ohmee-copy="original">点击「换个说法」试试看 →</span></div>
       </div>
-      <div class="oh-journey"><figure><div class="oh-journey-stage"><button class="oh-product-shot" type="button" data-preview-src="images/woma-app-question.png" data-preview-alt="我吗首次访谈：从经历开始理解用户" aria-label="放大访谈提问界面"><img src="images/woma-app-question.png" alt="我吗首次访谈提问界面" loading="lazy"></button></div><figcaption><span class="oh-eyebrow">01 / 从故事开始</span><h3>从自然的访谈开始</h3><p>先聊经历，再进入记录，降低第一次使用的心理摩擦。</p></figcaption></figure><figure><div class="oh-journey-stage oh-journey-stage-chat"><button class="oh-product-shot" type="button" data-preview-src="images/woma-app-chat.png" data-preview-alt="我吗记录与重写：AI 功能可自由开关" aria-label="放大记录与重写界面"><img src="images/woma-app-chat.png" alt="我吗的日常记录与重写界面" loading="lazy"></button></div><figcaption><span class="oh-eyebrow">02 / 重新看见日常</span><h3>保留表达的主动权</h3><p>AI 重写可以自由开关，记录仍然属于用户自己。</p></figcaption></figure><figure><div class="oh-journey-stage"><button class="oh-product-shot" type="button" data-preview-src="images/woma-app-profile.png" data-preview-alt="我吗身份页：让日常经历沉淀为可认领的能力" aria-label="放大身份卡片界面"><img src="images/woma-app-profile.png" alt="从经历中提炼的自学者身份卡" loading="lazy"></button></div><figcaption><span class="oh-eyebrow">03 / 把能力认领回来</span><h3>把能力慢慢认领回来</h3><p>从输入中提炼可视化身份标签，探索持续使用的理由。</p></figcaption></figure></div>
+      <div class="oh-journey"><figure><div class="oh-journey-stage"><button class="oh-product-shot" type="button" data-preview-src="images/woma-app-question.png" data-preview-alt="我吗首次访谈：从经历开始理解用户" aria-label="放大访谈提问界面"><img src="images/woma-app-question.png" alt="我吗首次访谈提问界面" loading="lazy"></button></div><figcaption><span class="oh-eyebrow">01 / 从故事开始</span><h3 class="case-detail-subtitle">从自然的访谈开始</h3><p>先聊经历，再进入记录，降低第一次使用的心理摩擦。</p></figcaption></figure><figure><div class="oh-journey-stage oh-journey-stage-chat"><button class="oh-product-shot" type="button" data-preview-src="images/woma-app-chat.png" data-preview-alt="我吗记录与重写：AI 功能可自由开关" aria-label="放大记录与重写界面"><img src="images/woma-app-chat.png" alt="我吗的日常记录与重写界面" loading="lazy"></button></div><figcaption><span class="oh-eyebrow">02 / 重新看见日常</span><h3 class="case-detail-subtitle">保留表达的主动权</h3><p>AI 重写可以自由开关，记录仍然属于用户自己。</p></figcaption></figure><figure><div class="oh-journey-stage"><button class="oh-product-shot" type="button" data-preview-src="images/woma-app-profile.png" data-preview-alt="我吗身份页：让日常经历沉淀为可认领的能力" aria-label="放大身份卡片界面"><img src="images/woma-app-profile.png" alt="从经历中提炼的自学者身份卡" loading="lazy"></button></div><figcaption><span class="oh-eyebrow">03 / 把能力认领回来</span><h3 class="case-detail-subtitle">把能力慢慢认领回来</h3><p>从输入中提炼可视化身份标签，探索持续使用的理由。</p></figcaption></figure></div>
     </section>
 
     <section class="oh-section" id="case-architecture" aria-labelledby="oh-architecture-title">
       <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">04 / 流程设计</p><h2 id="oh-architecture-title">从产品体验到产品架构，<br>设计 AI 原生的完整功能流程</h2></div>
       <div class="oh-decision-table-wrap"><table class="oh-decision-table"><thead><tr><th scope="col">问题</th><th scope="col">思考</th><th scope="col">解决方案</th></tr></thead><tbody><tr><td data-label="问题">如何减少等待对测试体验的影响？</td><td data-label="思考">先看到自己的记录</td><td data-label="解决方案">可视化数据本地存储，后台异步更新。让界面保持响应，减少等待对测试体验的干扰。</td></tr><tr><td data-label="问题">如何降低匿名身份和数据用途带来的顾虑？</td><td data-label="思考">降低开始使用的顾虑</td><td data-label="解决方案">用匿名 ID 绑定数据库，以 PWA 进行测试，并清楚说明输入将用于产品迭代。</td></tr><tr><td data-label="问题">画像更新频率应该如何确定？</td><td data-label="思考">把更新频率当作假设</td><td data-label="解决方案">初始设定为每 6 轮输入更新画像，用真实使用反馈寻找合适的更新频率。</td></tr><tr><td data-label="问题">如何让用户感到自己在帮助自己？</td><td data-label="思考">让用户感觉在帮助自己</td><td data-label="解决方案">保留第一人称与 AI 开关，用轻松的绿色、粉色和身份卡片，形成区别于心理咨询的使用氛围。</td></tr></tbody></table></div>
-      <div class="oh-diagram-heading"><div><p class="oh-eyebrow">产品流程</p><h3>体验流程设计</h3></div><span>点击图表放大 ↗</span></div>
-      <figure class="oh-diagram"><button type="button" data-preview-src="images/woma-business-swimlane.png" data-preview-alt="我吗完整业务流程：访谈、进入聊天、记录聊天与画像更新" aria-label="放大完整业务流程图"><img src="images/woma-business-swimlane.png" alt="我吗业务流程泳道图" loading="lazy"></button></figure>
-      <div class="oh-ai-intro"><div><p class="oh-eyebrow">AI 工作流</p><h3>AI 工作流设计</h3></div><p>围绕 MVP 拆分意图识别、重写、评论和画像维护，降低 Prompt 优化的难度，控制回复等待与测试成本。</p></div>
-      <figure class="oh-diagram"><button type="button" data-preview-src="images/woma-ai-pipeline-no-title.svg" data-preview-alt="我吗 AI Pipeline 原图：意图识别、重写、评论与画像维护" aria-label="放大 AI Pipeline 架构图"><img src="images/woma-ai-pipeline-no-title.svg" alt="我吗 AI Pipeline 架构图" loading="lazy"></button></figure>
-      <div class="oh-technical oh-workflow-details"><div><h4>节点与记忆</h4><p>Intent、Rewrite、AI Comment、Profile Maintenance、Compact。通过结构化字段和分节点 Prompt 约束生成行为，区分当前事件、行为模式、长期身份和上下文压缩信息。</p></div><div><h4>模型接入</h4><p>DeepSeek · Gemini · OpenRouter</p><p>项目记录中的模型选型为 Gemini 3 Flash 与 DeepSeek 4 Flash；通过横向测试后进入多轮 Prompt 优化。</p></div></div>
-      <div class="oh-stack-module oh-implementation-module"><div class="oh-ai-intro"><div><p class="oh-eyebrow">技术选型</p><h3>前后端实现技术选型</h3></div></div><div class="oh-technical oh-stack-details"><div><h4>前端</h4><p>Next.js · React · TypeScript · PWA</p></div><div><h4>本地存储</h4><p>IndexedDB</p></div><div><h4>后端与数据库</h4><p>Supabase / PostgreSQL</p></div></div></div>
-      <section class="oh-delivery-module" id="case-delivery" aria-labelledby="oh-delivery-title"><div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">05 / 提示词与测试</p><h2 id="oh-delivery-title">提示词和测试集产出</h2></div><div class="oh-lab-layout"><div class="oh-copy"><h3>Vibe Coding 搭建测试框架</h3><p>为多节点 Workflow 搭建批量测试框架。</p></div><div class="oh-copy"><h3>Prompt 测试集创建</h3><p>创建测试集，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，继续迭代。</p></div><div class="oh-copy oh-lab-data"><figure class="oh-evidence oh-lab-image"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="Prompt Lab：Prompt 编辑、模型配置、测试集和结果面板" aria-label="放大 Prompt Lab 测试框架"><img src="images/woma-prompt-lab.png" alt="Prompt Lab 多节点批量测试框架" loading="lazy"></button><figcaption><span>Prompt Lab / 多节点批量测试</span><span>放大查看 ↗</span></figcaption></figure><h3>测试数据</h3><dl class="oh-lab-numbers"><div><dt>LLM 对比</dt><dd>5</dd></div><div><dt>初期测试</dt><dd>10<span>+ 轮</span></dd></div><div><dt>内测后优化</dt><dd>3<span>+ 轮</span></dd></div></dl></div></div></section>
-      <div class="oh-stack-module oh-vibe-module"><div class="oh-ai-intro"><div><p class="oh-eyebrow">开发方式</p><h3>Vibe Coding 全栈开发</h3></div><p>用 Figma、Figma Make、Google Stitch、Claude 和 Codex 推进 UIUX。开发过程中手动维护 PRD、agent.md、plan 和 task，以 API、架构和 UI 文档保持前后端一致。</p></div><figure class="oh-diagram oh-stack-workspace"><button type="button" data-preview-src="images/woma-figma-workspace.png" data-preview-alt="我吗 Figma 项目工作区全景" aria-label="放大 Figma 设计工作区"><img src="images/woma-figma-workspace.png" alt="我吗 Figma 工作区全景" loading="lazy"></button></figure></div>
+      <div class="case-detail-module oh-flow-module"><div class="case-detail-intro oh-diagram-heading"><div><p class="oh-eyebrow">产品流程</p><h3 class="case-detail-subtitle">体验流程设计</h3></div><span>点击图表放大 ↗</span></div><figure class="oh-diagram"><button type="button" data-preview-src="images/woma-business-swimlane.png" data-preview-alt="我吗完整业务流程：访谈、进入聊天、记录聊天与画像更新" aria-label="放大完整业务流程图"><img src="images/woma-business-swimlane.png" alt="我吗业务流程泳道图" loading="lazy"></button></figure></div>
+      <div class="case-detail-module oh-workflow-module"><div class="case-detail-intro oh-ai-intro"><div><p class="oh-eyebrow">AI 工作流</p><h3 class="case-detail-subtitle">AI 工作流设计</h3></div><p>围绕 MVP 拆分意图识别、重写、评论和画像维护，降低 Prompt 优化的难度，控制回复等待与测试成本。</p></div><figure class="oh-diagram"><button type="button" data-preview-src="images/woma-ai-pipeline-no-title.svg" data-preview-alt="我吗 AI Pipeline 原图：意图识别、重写、评论与画像维护" aria-label="放大 AI Pipeline 架构图"><img src="images/woma-ai-pipeline-no-title.svg" alt="我吗 AI Pipeline 架构图" loading="lazy"></button></figure><div class="oh-technical oh-workflow-details"><div><h4>节点与记忆</h4><p>Intent、Rewrite、AI Comment、Profile Maintenance、Compact。通过结构化字段和分节点 Prompt 约束生成行为，区分当前事件、行为模式、长期身份和上下文压缩信息。</p></div><div><h4>模型接入</h4><p>DeepSeek · Gemini · OpenRouter</p><p>项目记录中的模型选型为 Gemini 3 Flash 与 DeepSeek 4 Flash；通过横向测试后进入多轮 Prompt 优化。</p></div></div></div>
+      <div class="case-detail-module oh-implementation-module"><div class="case-detail-intro case-detail-intro-single oh-ai-intro"><div><p class="oh-eyebrow">技术选型</p><h3 class="case-detail-subtitle">前后端实现技术选型</h3></div></div><div class="oh-technical oh-stack-details"><div><h4>前端</h4><p>Next.js · React · TypeScript · PWA</p></div><div><h4>本地存储</h4><p>IndexedDB</p></div><div><h4>后端与数据库</h4><p>Supabase / PostgreSQL</p></div></div></div>
+      <section class="oh-delivery-module" id="case-delivery" aria-labelledby="oh-delivery-title"><div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">05 / 提示词与测试</p><h2 id="oh-delivery-title">提示词和测试集产出</h2></div><div class="case-detail-grid oh-lab-layout"><div class="oh-copy"><h3 class="case-detail-subtitle">Vibe Coding 搭建测试框架</h3><p>为多节点 Workflow 搭建批量测试框架。</p></div><div class="oh-copy"><h3 class="case-detail-subtitle">Prompt 测试集创建</h3><p>创建测试集，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，继续迭代。</p></div><figure class="oh-evidence oh-lab-image case-detail-full"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="Prompt Lab：Prompt 编辑、模型配置、测试集和结果面板" aria-label="放大 Prompt Lab 测试框架"><img src="images/woma-prompt-lab.png" alt="Prompt Lab 多节点批量测试框架" loading="lazy"></button><figcaption><span>Prompt Lab / 多节点批量测试</span><span>放大查看 ↗</span></figcaption></figure><div class="oh-lab-data case-detail-full"><h3 class="case-detail-subtitle">测试数据</h3><dl class="oh-lab-numbers"><div><dt>LLM 对比</dt><dd>5</dd></div><div><dt>初期测试</dt><dd>10<span>+ 轮</span></dd></div><div><dt>内测后优化</dt><dd>3<span>+ 轮</span></dd></div></dl></div></div></section>
+      <div class="case-detail-module oh-vibe-module"><div class="case-detail-intro oh-ai-intro"><div><p class="oh-eyebrow">开发方式</p><h3 class="case-detail-subtitle">Vibe Coding 全栈开发</h3></div><p>用 Figma、Figma Make、Google Stitch、Claude 和 Codex 推进 UIUX。开发过程中手动维护 PRD、agent.md、plan 和 task，以 API、架构和 UI 文档保持前后端一致。</p></div><figure class="oh-diagram oh-stack-workspace"><button type="button" data-preview-src="images/woma-figma-workspace.png" data-preview-alt="我吗 Figma 项目工作区全景" aria-label="放大 Figma 设计工作区"><img src="images/woma-figma-workspace.png" alt="我吗 Figma 工作区全景" loading="lazy"></button></figure></div>
     </section>
 
     <section class="oh-section" id="case-iteration" aria-labelledby="oh-iteration-title">
       <div class="oh-section-heading oh-reveal"><p class="oh-eyebrow">06 / 数据分析与迭代</p><h2 id="oh-iteration-title">由数据分析和访谈决定的的产品迭代</h2></div>
-      <div class="oh-analysis"><div class="oh-analysis-number"><span class="oh-eyebrow">从真实输入里找线索</span><strong>553<span>条</span></strong><p>用户消息聚类分析</p></div><div class="oh-analysis-copy"><h3>看行为，也听用户怎么说。</h3><p>结合使用漏斗、消息聚类和 1 对 1 深访，理解用户从首次体验到持续使用的问题，再调整访谈引导、身份页面与 Prompt 机制。</p><div class="oh-analysis-focus"><span>首次体验</span><span>身份认领</span><span>持续使用</span></div><p class="oh-small">形成 5 类分析画像，关注 5 位较高粘性用户的使用方式。分析分组与用户人数分别记录。</p></div></div>
+      <div class="oh-analysis"><div class="oh-analysis-number"><span class="oh-eyebrow">从真实输入里找线索</span><strong>553<span>条</span></strong><p>用户消息聚类分析</p></div><div class="oh-analysis-copy"><h3 class="case-detail-subtitle">看行为，也听用户怎么说。</h3><p>结合使用漏斗、消息聚类和 1 对 1 深访，理解用户从首次体验到持续使用的问题，再调整访谈引导、身份页面与 Prompt 机制。</p><div class="oh-analysis-focus"><span>首次体验</span><span>身份认领</span><span>持续使用</span></div><p class="oh-small">形成 5 类分析画像，关注 5 位较高粘性用户的使用方式。分析分组与用户人数分别记录。</p></div></div>
     </section>
 
     <section class="oh-section oh-results" id="case-results" aria-labelledby="oh-results-title">
