@@ -44,3 +44,5 @@
 ## Implementation
 
 The site is a dependency-free static document in `index.html`, with images in `images/`. Keep it directly previewable unless a different architecture is explicitly requested.
+
+For new project detail pages, reuse the section intro, module spacing, subtitle, two-column grid, and full-width evidence/data patterns documented in `docs/detail-module-layout.md`. Keep project-specific typography and color themes scoped to each case study.
