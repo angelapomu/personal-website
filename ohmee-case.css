@@ -114,3 +114,30 @@ body[data-project="woma"] > .studio-footer { display:none; }
 @media(prefers-reduced-motion:reduce) {
   .ohmee-case *, .ohmee-case *::before, .ohmee-case *::after { animation:none!important; transition:none!important; }
 }
+
+/* Four-card overview and document layout from the merged reference. */
+.ohmee-case .hero { background:var(--blush); padding:clamp(32px,5vw,72px) var(--px) clamp(28px,4vw,52px); }
+.ohmee-case .c { padding:0; }
+.ohmee-case .tags { margin:0 0 20px; }
+.ohmee-case .lead { margin:22px 0; }
+.ohmee-case .meta { border-top:1.5px solid var(--ink); padding:16px 0 0; }
+.ohmee-case .q { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding:clamp(20px,3vw,40px) var(--px); }
+.ohmee-case .q > div { padding:clamp(24px,3vw,40px); }
+.ohmee-case .q h3 { font:900 clamp(22px,2.2vw,30px)/1.3 "Noto Sans SC",sans-serif; margin:8px 0 10px; }
+.ohmee-case .q p { color:var(--ink); font-size:clamp(17px,1.4vw,19px); line-height:1.85; margin:0; }
+.ohmee-case .q-problem { background:var(--blush); }
+.ohmee-case .q-solution { background:var(--rose); }
+.ohmee-case .q-solution .mono { color:var(--ink); }
+.ohmee-case .q-result { background:#EBE3DB; }
+.ohmee-case .q-role { background:#fff; border:1px solid var(--line); }
+.ohmee-case .gal { margin:0 auto; }
+.ohmee-case .w { padding:clamp(48px,7vw,96px) var(--px) 140px; }
+.ohmee-case .doc { max-width:760px; }
+.ohmee-case .doc section { padding-bottom:96px; }
+.ohmee-case .doc section + section { padding-top:72px; }
+.ohmee-case .doc h2 { font-size:clamp(30px,3vw,44px); line-height:1.2; margin:4px 0 28px; }
+.ohmee-case .doc p, .ohmee-case .doc li { max-width:32em; font-size:clamp(18px,1.45vw,20px); line-height:2.05; }
+.ohmee-case .mets { gap:24px; padding-top:22px; margin:34px 0 22px; }
+.ohmee-case .mets b { font-size:clamp(36px,4.2vw,60px); }
+.ohmee-case .mets span { font-size:16px; }
+@media(max-width:900px) { .ohmee-case .q { grid-template-columns:1fr; } }

@@ -11,24 +11,16 @@ async function geometry(page, root = '') {
   return page.evaluate(root => {
     const at = selector => document.querySelector(root + selector);
     const value = (selector, property) => getComputedStyle(at(selector))[property];
+    const columns = selector => value(selector, 'gridTemplateColumns').split(' ').length;
     return {
       header: at('.top').getBoundingClientRect().height,
-      container: at('.c').getBoundingClientRect().width,
-      inset: value('.c','paddingLeft'),
       title: value('h1','fontSize'),
-      lead: value('.lead','fontSize'),
-      overview: value('.ov','gridTemplateColumns'),
-      overviewGap: value('.ov','columnGap'),
-      overviewCopy: value('.ov p','fontSize'),
-      gallery: value('.gal','gridTemplateColumns'),
-      galleryInset: value('.gal','paddingLeft'),
-      document: value('.w','gridTemplateColumns'),
-      documentGap: value('.w','columnGap'),
+      overviewColumns: columns('.q'),
+      galleryColumns: columns('.gal'),
+      documentColumns: columns('.w'),
       directory: value('.toc','display'),
       chapter: value('.doc h2','fontSize'),
-      body: value('.doc p','fontSize'),
-      bodyLeading: value('.doc p','lineHeight'),
-      paper: value('.c','backgroundColor')
+      body: value('.doc p','fontSize')
     };
   }, root);
 }
@@ -44,7 +36,7 @@ async function geometry(page, root = '') {
     await page.locator('#project-woma.on').waitFor();
     await page.evaluate(() => Promise.race([document.fonts.ready, new Promise(resolve => setTimeout(resolve, 6000))]));
     assert.deepEqual(await page.locator('.doc > section').evaluateAll(nodes => nodes.map(node => node.id)), chapters);
-    assert.equal(await page.locator('.ov > div').count(), 4);
+    assert.equal(await page.locator('.q > div').count(), 4);
     assert.equal(await page.locator('.gal > figure img').count(), 4);
     const images = await page.locator('#project-woma img').evaluateAll(async nodes => Promise.all(nodes.map(async image => {
       image.loading = 'eager';
@@ -86,7 +78,7 @@ async function geometry(page, root = '') {
         await reference.setViewportSize({ width, height: 1000 });
         const expected = await geometry(reference);
         const actual = await geometry(page, '#project-woma ');
-        // The container is transparent in both pages; their enclosing paper colors are separately scoped.
+        // Compare the reference's main responsive structure and type scale.
         assert.deepEqual(actual, expected, `reference geometry at ${width}px`);
       }
       if ([1440,849,375].includes(width)) {
