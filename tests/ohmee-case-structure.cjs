@@ -1,29 +1,10 @@
-const { readFileSync } = require('node:fs');
-const { join } = require('node:path');
+const fs = require('node:fs');
 const assert = require('node:assert/strict');
-const html = readFileSync(join(__dirname, '../index.html'), 'utf8');
-const ids = ['case-background','case-research','case-experience','case-architecture','case-delivery','case-iteration','case-results'];
-const positions = ids.map(id => html.indexOf(`id="${id}"`));
-positions.forEach((position, i) => {
-  assert.ok(position > 0, `${ids[i]} exists`);
-  if (i) assert.ok(position > positions[i - 1], `${ids[i]} follows the previous chapter`);
-});
-const experience = html.slice(positions[2], positions[3]);
-const architecture = html.slice(positions[3], positions[4]);
-const delivery = html.slice(positions[4], positions[5]);
-assert.doesNotMatch(experience, /class="oh-journey"/);
-const decision = architecture.indexOf('class="oh-decision-table-wrap"');
-const journey = architecture.indexOf('class="oh-journey"');
-const flow = architecture.indexOf('class="case-detail-module oh-flow-module"');
-assert.ok(decision >= 0 && decision < journey && journey < flow, 'decisions precede product screens and the process diagram');
-assert.doesNotMatch(architecture, /oh-implementation-module|oh-prompt-module|oh-vibe-module/);
-const implementation = delivery.indexOf('oh-implementation-module');
-const prompt = delivery.indexOf('oh-prompt-module');
-const vibe = delivery.indexOf('oh-vibe-module');
-assert.ok(implementation >= 0 && implementation < prompt && prompt < vibe, 'MVP implementation contains technology, Prompt Lab, then development');
-assert.match(delivery.slice(implementation, prompt), /Next\.js · React · TypeScript · PWA[\s\S]*IndexedDB[\s\S]*Supabase \/ PostgreSQL/);
-assert.match(delivery.slice(vibe), /Figma、Figma Make、Google Stitch、Claude 和 Codex[\s\S]*woma-figma-workspace\.png/);
-const screenshot = delivery.indexOf('class="oh-evidence oh-lab-image case-detail-full"');
-const data = delivery.indexOf('class="oh-lab-data case-detail-full"');
-assert.ok(screenshot > prompt && data > screenshot, 'the screenshot and full-width metrics follow both text columns');
-console.log('PASS: seven ordered chapters and evidence stay in their intended modules');
+const html = fs.readFileSync(require('node:path').join(__dirname, '../index.html'), 'utf8');
+const ids = ['case-background','case-research','case-experience','case-architecture','case-results','case-next'];
+for (const id of ids) {
+  assert.equal((html.match(new RegExp('id="' + id + '"', 'g')) || []).length, 1, id + ' is unique');
+  assert.equal((html.match(new RegExp('data-case-section="' + id + '"', 'g')) || []).length, 2, id + ' has desktop and mobile navigation');
+}
+assert.doesNotMatch(html, /setOhmeeChaptersOpen|ohmeeChapterToggle|data-ohmee-mode/, 'obsolete interactions are removed');
+console.log('PASS: unique document destinations and both navigation surfaces');

@@ -1,5 +1,7 @@
 # OhMee document layout implementation plan
 
+**Owner correction (2026-11-10):** The hybrid below was rejected. Follow the supplied HTML directly: its four-column summary, four real screenshots, six-chapter document, 220px directory, paper/rose theme, type scale, and responsive horizontal tabs. Remove the annotation-heavy modules and unused disclosure/rewrite code. The original work list below records the superseded first pass; the final specification is docs/detail-module-layout.md.
+
 **Goal:** Combine the supplied left-navigation document reference with the existing evidence-rich OhMee case, so the page reads as a visual product document.
 
 **Architecture:** Keep the static page and existing routes, rewrite interaction, image viewer, chapter selection, and return navigation. Give OhMee one scoped stylesheet and one document shell with seven sibling chapters. The supplied reference is a read-only layout source; its placeholders, model choices, and new metrics are not project evidence.

@@ -10,6 +10,8 @@
 
 ## Portfolio context
 
+- Latest owner direction (2026-11-10) supersedes the older OhMee layout, palette, chapter hierarchy, and compact-menu directions below: follow `项目详情 · 左侧目录文档型.html` directly. Use its paper/rose palette, 64px header, four-column problem/solution/result/role overview, four-image screenshot gallery, 220px desktop directory, six reading chapters, and horizontal tabs at 900px and below. Remove scattered annotations, repeated subtitles, and duplicate evidence modules. Populate reference placeholders with real assets and verified project facts, without importing its unverified metrics or model names. Keep other portfolio views unchanged.
+
 - Latest headline highlight: only 自己 uses pink; 想回来 uses the default dark ink. Preserve the current two-line layout. This supersedes older highlight references.
 
 - Latest poster refinement: name the homepage sections 主要项目 and 早期探索. Cap work width at 1120px, primary previews at ratio 1.6, early explorations at 1.9, and tablet content at 540px. Mobile ratios remain 1.35/1.6 for legibility; keep 16px descriptions and 14px tags. This supersedes earlier 1280px gallery dimensions.

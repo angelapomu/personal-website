@@ -1,10 +1,37 @@
-// Optional browser check: provide Playwright Core through PLAYWRIGHT_CORE_PATH.
+// Optional: supply Playwright Core through PLAYWRIGHT_CORE_PATH.
 const { chromium } = require(process.env.PLAYWRIGHT_CORE_PATH || 'playwright-core');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { pathToFileURL } = require('node:url');
 const output = path.resolve(process.env.OHMEE_SCREENSHOT_DIR || 'work/ohmee-document-review');
-const chapters = ['case-background','case-research','case-experience','case-architecture','case-delivery','case-iteration','case-results'];
+const chapters = ['case-background','case-research','case-experience','case-architecture','case-results','case-next'];
+
+async function geometry(page, root = '') {
+  return page.evaluate(root => {
+    const at = selector => document.querySelector(root + selector);
+    const value = (selector, property) => getComputedStyle(at(selector))[property];
+    return {
+      header: at('.top').getBoundingClientRect().height,
+      container: at('.c').getBoundingClientRect().width,
+      inset: value('.c','paddingLeft'),
+      title: value('h1','fontSize'),
+      lead: value('.lead','fontSize'),
+      overview: value('.ov','gridTemplateColumns'),
+      overviewGap: value('.ov','columnGap'),
+      overviewCopy: value('.ov p','fontSize'),
+      gallery: value('.gal','gridTemplateColumns'),
+      galleryInset: value('.gal','paddingLeft'),
+      document: value('.w','gridTemplateColumns'),
+      documentGap: value('.w','columnGap'),
+      directory: value('.toc','display'),
+      chapter: value('.doc h2','fontSize'),
+      body: value('.doc p','fontSize'),
+      bodyLeading: value('.doc p','lineHeight'),
+      paper: value('.c','backgroundColor')
+    };
+  }, root);
+}
 
 (async () => {
   fs.mkdirSync(output, { recursive: true });
@@ -13,90 +40,84 @@ const chapters = ['case-background','case-research','case-experience','case-arch
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
     page.on('pageerror', error => errors.push(error.message));
-    await page.goto(process.env.OHMEE_URL || 'http://127.0.0.1:4394/?motion=off#project/woma', { waitUntil: 'domcontentloaded' });
+    await page.goto(process.env.OHMEE_URL || 'http://127.0.0.1:4394/?motion=off&v=reference-layout#project/woma', { waitUntil: 'domcontentloaded' });
     await page.locator('#project-woma.on').waitFor();
     await page.evaluate(() => Promise.race([document.fonts.ready, new Promise(resolve => setTimeout(resolve, 6000))]));
-    assert.deepEqual(await page.locator('.oh-story > section').evaluateAll(nodes => nodes.map(node => node.id)), chapters);
-    assert.equal(await page.locator('.oh-story section[id]').count(), 7, 'chapters are siblings, with no nested directory destinations');
-    const images = await page.locator('#project-woma img').evaluateAll(async nodes => {
-      return Promise.all(nodes.map(async image => {
-        image.loading = 'eager';
-        try { await image.decode(); return null; } catch { return image.getAttribute('src'); }
-      }));
-    });
-    assert.deepEqual(images.filter(Boolean), [], 'all real case images decode successfully');
-    const metricStyles = await page.locator('.oh-data-facts').evaluateAll(nodes => nodes.map(node => {
-      const style = getComputedStyle(node);
-      return { top: style.borderTopWidth, bottom: style.borderBottomWidth, number: getComputedStyle(node.querySelector('dd')).fontSize };
-    }));
-    assert.equal(new Set(metricStyles.map(style => style.number)).size, 1, 'all five metric groups share the number size');
-    assert.deepEqual([metricStyles[0].top, metricStyles[0].bottom], ['0px','0px']);
-    metricStyles.slice(1).forEach(style => assert.deepEqual([style.top, style.bottom], ['1px','1px']));
-    const logo = await page.locator('.oh-app-logo').boundingBox();
-    assert.ok(Math.abs(logo.width - logo.height) < 1, 'logo is square');
-    await page.screenshot({ path: path.join(output, 'after-desktop-top.png') });
+    assert.deepEqual(await page.locator('.doc > section').evaluateAll(nodes => nodes.map(node => node.id)), chapters);
+    assert.equal(await page.locator('.ov > div').count(), 4);
+    assert.equal(await page.locator('.gal > figure img').count(), 4);
+    const images = await page.locator('#project-woma img').evaluateAll(async nodes => Promise.all(nodes.map(async image => {
+      try { await image.decode(); return null; } catch { return image.getAttribute('src'); }
+    })));
+    assert.deepEqual(images.filter(Boolean), [], 'real screenshots and icon decode');
+    assert.equal(await page.locator('.studio-header').isVisible(), false, 'one project header');
+    assert.equal(await page.locator('html').evaluate(node => getComputedStyle(node).scrollBehavior), 'auto', 'reduced motion');
 
     async function select(id) {
-      console.log(`Checking chapter ${id} at ${page.viewportSize().width}px`);
-      if (await page.locator('.oh-chapter-toggle').isVisible()) await page.locator('.oh-chapter-toggle').click();
-      await page.locator(`.oh-chapter-links [data-case-section="${id}"]`).click();
+      const nav = page.viewportSize().width <= 900 ? '.tabs' : '.toc';
+      await page.locator(`${nav} [data-case-section="${id}"]`).click();
       await page.waitForFunction(id => {
-        const rect = document.getElementById(id).getBoundingClientRect();
-        return rect.top >= 34 && rect.top <= 120;
+        const section = document.getElementById(id);
+        return section === document.activeElement && document.querySelector('.toc [aria-current="location"]').dataset.caseSection === id;
       }, id);
-      assert.equal(await page.locator('.oh-chapter-links [aria-current="location"]').getAttribute('data-case-section'), id);
-      assert.equal(await page.locator(`#${id}`).evaluate(node => node === document.activeElement), true);
+      const heading = await page.locator(`#${id} h2`).boundingBox();
+      const chrome = page.viewportSize().width <= 900 ? (await page.locator('.tabs').boundingBox()).y + (await page.locator('.tabs').boundingBox()).height : 64;
+      assert.ok(heading.y >= chrome - 1, `chapter ${id} visible below navigation`);
     }
-    for (const [id, name] of [['case-research','research'],['case-architecture','flow'],['case-delivery','delivery']]) {
-      await select(id);
-      await page.screenshot({ path: path.join(output, `after-desktop-${name}.png`) });
-      assert.ok(Math.abs((await page.locator('.oh-chapter-nav').boundingBox()).y - 76) < 2, 'desktop directory remains sticky');
+
+    // Optional direct comparison against the owner's local, read-only reference.
+    const referencePath = process.env.OHMEE_REFERENCE_HTML;
+    const reference = referencePath ? await browser.newPage({ reducedMotion: 'reduce' }) : null;
+    if (reference) await reference.goto(pathToFileURL(referencePath).href, { waitUntil: 'domcontentloaded' });
+    for (const width of [1440, 1100, 1024, 849, 600, 375, 320]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+      await page.waitForFunction(() => document.querySelector('.toc [aria-current="location"]').dataset.caseSection === 'case-background');
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, `no page overflow at ${width}px`);
+      const logo = await page.locator('.oh-app-logo').boundingBox();
+      assert.ok(Math.abs(logo.width - logo.height) < 1, `square icon at ${width}px`);
+      assert.equal(await page.locator('.tabs').isVisible(), width <= 900);
+      assert.equal(await page.locator('.toc').isVisible(), width > 900);
+      if (reference) {
+        await reference.setViewportSize({ width, height: 1000 });
+        const expected = await geometry(reference);
+        const actual = await geometry(page, '#project-woma ');
+        // The container is transparent in both pages; their enclosing paper colors are separately scoped.
+        assert.deepEqual(actual, expected, `reference geometry at ${width}px`);
+      }
+      if ([1440,849,375].includes(width)) {
+        await page.screenshot({ path: path.join(output, `reference-${width}-top.png`) });
+        await page.locator('.gal').scrollIntoViewIfNeeded();
+        await page.screenshot({ path: path.join(output, `reference-${width}-gallery.png`) });
+        await select('case-architecture');
+        await page.screenshot({ path: path.join(output, `reference-${width}-document.png`) });
+      } else await select('case-architecture');
+      if (width > 900) assert.ok(Math.abs((await page.locator('.toc').boundingBox()).y - 96) < 1, 'sticky directory');
+      await select('case-results');
+      await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
+      await page.waitForFunction(() => document.querySelector('.toc [aria-current="location"]').dataset.caseSection === 'case-next');
+      assert.ok(await page.locator('#ohmee-progress').evaluate(node => parseFloat(node.style.width) > 99), 'reading progress reaches the end');
+      console.log(`PASS: reference layout and chapter navigation at ${width}px`);
     }
-    await select('case-experience');
-    await page.locator('[data-ohmee-mode="rewrite"]').click();
-    assert.equal(await page.locator('#ohmee-rewrite-demo').getAttribute('data-mode'), 'rewrite');
-    await page.locator('[data-ohmee-mode="original"]').click();
-    assert.equal(await page.locator('#ohmee-rewrite-demo').getAttribute('data-mode'), 'original');
-    await page.locator('#case-research [data-preview-src]').first().click();
+    if (reference) await reference.close();
+    await page.locator('.gal button').first().click();
     assert.equal(await page.locator('#image-dialog').evaluate(node => node.open), true);
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#image-dialog').evaluate(node => node.open), false);
-
-    for (const width of [1024, 849, 600, 375, 320]) {
-      await page.setViewportSize({ width, height: 892 });
-      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
-      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-      await page.waitForFunction(() => document.querySelector('.oh-chapter-links [aria-current="location"]').dataset.caseSection === 'case-background');
-      const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
-      assert.equal(overflow, false, `no horizontal page overflow at ${width}px`);
-      const box = await page.locator('.oh-app-logo').boundingBox();
-      assert.ok(Math.abs(box.width - box.height) < 1, `square logo at ${width}px`);
-      if (width <= 960) {
-        assert.equal(await page.locator('.oh-chapter-toggle').isVisible(), true);
-        assert.equal(await page.locator('.oh-chapter-links').isVisible(), false);
-        await page.locator('.oh-chapter-toggle').click();
-        await page.keyboard.press('Escape');
-        assert.equal(await page.locator('.oh-chapter-toggle').getAttribute('aria-expanded'), 'false');
-        assert.equal(await page.locator('.oh-chapter-toggle').evaluate(node => node === document.activeElement), true);
-        await select('case-delivery');
-        assert.equal(await page.locator('.oh-chapter-links').isVisible(), false);
-      }
-      if (width === 849 || width === 375) {
-        await page.screenshot({ path: path.join(output, `after-${width}-delivery.png`) });
-        await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
-        await page.waitForFunction(() => document.querySelector('.oh-chapter-links [aria-current="location"]').dataset.caseSection === 'case-background');
-        await page.screenshot({ path: path.join(output, `after-${width}-top.png`) });
-        await select('case-background');
-        await page.screenshot({ path: path.join(output, `after-${width}-document.png`) });
-      }
-    }
-    await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
-    await page.waitForFunction(() => document.querySelector('.oh-chapter-links [aria-current="location"]').dataset.caseSection === 'case-results');
-    await page.locator('.oh-case-footer > a').first().click();
+    assert.equal(await page.locator('.gal button').first().evaluate(node => node === document.activeElement), true);
+    await page.locator('.top .cvb').click();
     await page.locator('#home.on').waitFor();
-    assert.equal(await page.locator('#project-woma').isVisible(), false, 'return to portfolio works');
-    assert.deepEqual(errors, [], 'no page JavaScript errors');
-    console.log('PASS: seven sibling chapters, real images, metrics, square icon, sticky directory, compact menu, focus, rewrite, image viewer, 6 viewport widths, reduced motion, and portfolio return');
+    assert.equal(await page.locator('.studio-header').isVisible(), true, 'homepage header restored');
+    await page.goto('http://127.0.0.1:4394/?motion=off#project/woma');
+    await page.locator('.top > a').first().click();
+    await page.locator('#home.on').waitFor();
+    for (const slug of ['contextual','whybother','shelter']) {
+      await page.goto(`http://127.0.0.1:4394/?motion=off#project/${slug}`);
+      await page.locator(`#project-${slug}.on`).waitFor();
+      assert.equal(await page.locator('.studio-header').isVisible(), true);
+    }
+    assert.deepEqual(errors, [], 'no JavaScript page errors');
+    console.log('PASS: real images, image viewer/Escape/focus, reduced motion, resume/return routes, other project routes, and no JavaScript errors');
     console.log(`Screenshots: ${output}`);
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
