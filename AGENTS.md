@@ -10,6 +10,8 @@
 
 ## Portfolio context
 
+- Owner follow-up on the document revision: keep the supplied HTML's layout and data presentation, but retain the case's concrete evidence and depth. Include research screenshots, three contextual metric strips, business and AI diagrams, implementation and decision tables, Figma workspace, and Prompt Lab. Remove scattered annotations without reducing the case to generic summaries. The owner explicitly confirmed keeping existing verified numbers, not the sample data in the reference.
+
 - Latest owner direction (2026-11-10) supersedes the older OhMee layout, palette, chapter hierarchy, and compact-menu directions below: follow `项目详情 · 左侧目录文档型.html` directly. Use its paper/rose palette, 64px header, four-column problem/solution/result/role overview, four-image screenshot gallery, 220px desktop directory, six reading chapters, and horizontal tabs at 900px and below. Remove scattered annotations, repeated subtitles, and duplicate evidence modules. Populate reference placeholders with real assets and verified project facts, without importing its unverified metrics or model names. Keep other portfolio views unchanged.
 
 - Latest headline highlight: only 自己 uses pink; 想回来 uses the default dark ink. Preserve the current two-line layout. This supersedes older highlight references.

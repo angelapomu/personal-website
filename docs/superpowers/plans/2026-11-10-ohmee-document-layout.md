@@ -1,5 +1,7 @@
 # OhMee document layout implementation plan
 
+**Evidence follow-up:** Keep the reference layout while restoring the actual case depth: early research screenshots/data; business/AI diagrams, implementation table and Figma workspace; original problem/thinking/solution table; MVP data and Prompt Lab/evaluation data. The owner confirmed existing numbers remain authoritative. Use the reference's type scale and spacing, with semantic, internally scrollable tables on phones. Check real screenshot containment as well as layout geometry and navigation at all seven existing viewport widths. Update the existing review PR with the verified revision.
+
 **Owner correction (2026-11-10):** The hybrid below was rejected. Follow the supplied HTML directly: its four-column summary, four real screenshots, six-chapter document, 220px directory, paper/rose theme, type scale, and responsive horizontal tabs. Remove the annotation-heavy modules and unused disclosure/rewrite code. The original work list below records the superseded first pass; the final specification is docs/detail-module-layout.md.
 
 **Goal:** Combine the supplied left-navigation document reference with the existing evidence-rich OhMee case, so the page reads as a visual product document.

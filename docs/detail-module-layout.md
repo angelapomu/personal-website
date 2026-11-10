@@ -10,7 +10,7 @@ The owner-supplied 项目详情 · 左侧目录文档型.html is the layout auth
 4. One rose-backed gallery with four real product screenshots and short captions.
 5. A 220px left directory beside six sibling chapters: 背景与目标、用户与洞察、方案概览、关键决策、指标与验证、风险与下一步.
 
-No repeated screenshot journeys, demonstration panels, annotation chips, enlargement hints, nested module subtitles, collapsible footnotes, or closing reflection panel. Screenshot enlargement remains available through the images themselves and accessible button labels.
+No repeated screenshot journeys, demonstration panels, annotation chips, enlargement hints, collapsible footnotes, or closing reflection panel. Screenshot enlargement remains available through the images themselves and accessible button labels. Keep meaningful h3 headings and concrete project evidence; visual restraint must not turn the case into generic summaries.
 
 ## Reference dimensions
 
@@ -26,4 +26,10 @@ No repeated screenshot journeys, demonstration panels, annotation chips, enlarge
 
 ## Evidence and navigation
 
-Reference placeholders are not evidence. Use existing product screenshots and approved facts; do not import sample model names, north-star definitions, or numbers. Omit empty chart placeholders. Keep the existing image viewer, chapter focus, scroll-linked current location, reading progress, and return to portfolio flow. Scope every style and special header behavior to OhMee.
+Reference placeholders are not evidence. The owner explicitly confirmed using existing verified numbers rather than the sample numbers in the supplied HTML. Present the early research (200+, 12.5%, five interviews), MVP test/analysis (50+, 553 messages, five higher-stickiness users, one recommendation), and prompt evaluation (five models, 10+ initial rounds, 3+ optimization rounds) as separate strips using the reference's number scale, labels, spacing, and top rule.
+
+Restore the two research screenshots, business swimlane, AI pipeline, Figma workspace, and Prompt Lab in the relevant chapters. Give each one a full image frame and short caption; omit enlargement instructions. Use the reference's chapter spacing and typography for meaningful module headings. Real screenshots must use contain fitting within the gallery frames, rather than inheriting placeholder sizing.
+
+The reference has no traditional table; the retained implementation and decision content uses plain semantic tables with the same paper, ink, light rules, and generous spacing. Use 20px headers, 17px cell text, 24px row padding, and horizontal scrolling within the table region below 640px. Do not compress every column to fit a phone or force the page itself to scroll sideways.
+
+Omit empty chart placeholders and unverified model names or north-star definitions. Keep the existing image viewer, chapter focus, scroll-linked current location, reading progress, and return to portfolio flow. Scope every style and special header behavior to OhMee.

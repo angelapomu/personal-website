@@ -47,11 +47,15 @@ async function geometry(page, root = '') {
     assert.equal(await page.locator('.ov > div').count(), 4);
     assert.equal(await page.locator('.gal > figure img').count(), 4);
     const images = await page.locator('#project-woma img').evaluateAll(async nodes => Promise.all(nodes.map(async image => {
+      image.loading = 'eager';
       try { await image.decode(); return null; } catch { return image.getAttribute('src'); }
     })));
     assert.deepEqual(images.filter(Boolean), [], 'real screenshots and icon decode');
     assert.equal(await page.locator('.studio-header').isVisible(), false, 'one project header');
     assert.equal(await page.locator('html').evaluate(node => getComputedStyle(node).scrollBehavior), 'auto', 'reduced motion');
+    assert.equal(await page.locator('.evidence img').count(), 6, 'research, workflow, architecture, design workspace, and test evidence are present');
+    assert.equal(await page.locator('.document-table').count(), 2, 'decision and implementation tables are present');
+    assert.equal(await page.locator('.mets').count(), 3, 'research, user testing, and prompt evaluation are separate');
 
     async function select(id) {
       const nav = page.viewportSize().width <= 900 ? '.tabs' : '.toc';
@@ -91,7 +95,27 @@ async function geometry(page, root = '') {
         await page.screenshot({ path: path.join(output, `reference-${width}-gallery.png`) });
         await select('case-architecture');
         await page.screenshot({ path: path.join(output, `reference-${width}-document.png`) });
+        await select('case-research');
+        await page.screenshot({ path: path.join(output, `evidence-${width}-research.png`) });
+        await page.locator('.evidence-pair').screenshot({ path: path.join(output, `evidence-${width}-screenshots.png`) });
+        await select('case-results');
+        await page.screenshot({ path: path.join(output, `evidence-${width}-data.png`) });
+        await page.locator('#case-results .diagram').screenshot({ path: path.join(output, `evidence-${width}-prompt.png`) });
       } else await select('case-architecture');
+      const tables = await page.locator('.table-wrap').evaluateAll(nodes => nodes.map(node => ({
+        outer: node.clientWidth, inner: node.scrollWidth, overflow: getComputedStyle(node).overflowX,
+        headers: [...node.querySelectorAll('thead th')].map(header => header.textContent)
+      })));
+      tables.forEach(table => {
+        assert.equal(table.overflow, 'auto');
+        assert.equal(table.headers.length, 3);
+        if (width < 560) assert.ok(table.inner > table.outer, 'small-screen tables scroll within their own region');
+      });
+      const frames = await page.locator('.p,.research-shot > button').evaluateAll(nodes => nodes.map(node => {
+        const frame = node.getBoundingClientRect(), image = node.querySelector('img').getBoundingClientRect();
+        return image.left >= frame.left - 1 && image.right <= frame.right + 1 && image.top >= frame.top - 1 && image.bottom <= frame.bottom + 1;
+      }));
+      assert.ok(frames.every(Boolean), 'screenshots fit inside their frames');
       if (width > 900) assert.ok(Math.abs((await page.locator('.toc').boundingBox()).y - 96) < 1, 'sticky directory');
       await select('case-results');
       await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));

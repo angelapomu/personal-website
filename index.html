@@ -813,7 +813,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 </style>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="angela-palette.css">
-<link rel="stylesheet" href="ohmee-case.css">
+<link rel="stylesheet" href="ohmee-case.css?v=evidence-2">
 </head>
 <body data-view="home">
 <a class="skip-link" href="#main-content">跳到正文</a>
@@ -879,37 +879,74 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
         <section id="case-background" aria-labelledby="oh-background-title">
           <h2 id="oh-background-title"><small>01</small>背景与目标</h2>
           <p>“爱你老己”“强者思维”“自我主体性”等话题反复出现，背后是年轻人对正反馈和自我认知的需要。许多人习惯强调失败，却很少认真看见已经做成的事。</p>
-          <p>我把切入点放在负面的自我叙事：如果记录日常时，有机会换一种看待自己的方式，会发生什么？目标是让用户从经历里认领能力，慢慢建立对自己的新认识。</p>
+          <p>我把切入点放在负面的自我叙事：如果记录日常时，有机会换一种看待自己的方式，会发生什么？我吗用第一人称重新表达日常经历，让用户从自己的故事里认领能力，再把能力积累成可看见的身份。</p>
+          <p>MVP 要验证两件事：重写能否帮助用户重新理解经历；身份认领能否成为用户持续记录、再次回来的理由。</p>
         </section>
         <section id="case-research" aria-labelledby="oh-research-title">
           <h2 id="oh-research-title"><small>02</small>用户与洞察</h2>
+          <h3>从竞品和目标用户确定切入点</h3>
           <p>研究 Tolan、Mindsera、Mindcraft、Mindback 的目标人群、AI 能力边界和商业模式，寻找围绕日常经历与身份认领的差异化空间。</p>
-          <p>用 Figma 和 UI 概念测试市场反馈，结合社媒内容反馈与目标用户访谈，确定 MVP 的核心定位、使用场景和功能范围。</p>
-          <p>核心假设是：当鼓励来自用户自己的经历，并以第一人称说出来，它更有机会成为用户对自己的认识。产品需要把表达的主动权留给用户。</p>
+          <p>用 Figma 和 UI 概念测试市场反馈，结合社媒内容反馈与目标用户访谈，确定 MVP 的核心定位、使用场景和功能范围。早期内容吸引用户加群，再通过深访理解他们如何记录、如何看待自己，以及为什么愿意尝试这类产品。</p>
+          <div class="mets" style="--metric-columns:3" aria-label="早期概念测试与用户研究数据"><div><b>200+</b><span>早期用户加群</span></div><div><b>12.5%</b><span>内容互动率</span></div><div><b>5 位</b><span>目标用户深访</span></div></div>
+          <div class="evidence-pair">
+            <figure class="evidence research-shot"><button type="button" data-preview-src="images/woma-research-note-detail.jpg" data-preview-alt="概念测试 · 内容表现" aria-label="放大概念测试 · 内容表现"><img src="images/woma-research-note-detail.jpg" alt="概念测试 · 内容表现" loading="lazy"></button><figcaption class="mono">概念测试 · 内容表现</figcaption></figure>
+            <figure class="evidence research-shot"><button type="button" data-preview-src="images/woma-research-audience.jpg" data-preview-alt="概念测试 · 用户数据" aria-label="放大概念测试 · 用户数据"><img src="images/woma-research-audience.jpg" alt="概念测试 · 用户数据" loading="lazy"></button><figcaption class="mono">概念测试 · 用户数据</figcaption></figure>
+          </div>
+          <p>加群人数是早期兴趣信号，与后续进入 MVP 测试的用户数分别记录。研究进一步聚焦到一个假设：鼓励需要基于用户自己的经历，并把表达和解释的主动权留给用户。</p>
         </section>
         <section id="case-experience" aria-labelledby="oh-experience-title">
           <h2 id="oh-experience-title"><small>03</small>方案概览</h2>
-          <p>先从自然的访谈开始，再进入日常记录。AI 重写可以自由开关，记录仍然属于用户自己；从输入中提炼身份标签，探索持续使用的理由。</p>
+          <p>产品由访谈、日常记录和身份积累三个环节组成。先聊具体经历，再进入记录，降低第一次使用的心理摩擦；AI 重写可以自由开关，记录仍然属于用户自己。</p>
           <div class="flow" aria-label="我吗核心使用流程"><span>访谈与日常记录</span><i aria-hidden="true">→</i><span>意图识别<br>第一人称重写</span><i aria-hidden="true">→</i><span>能力认领<br>身份积累</span></div>
+          <h3>从使用体验到业务流程</h3>
+          <p>把访谈、进入聊天、保存记录和画像更新串成完整流程。用户先看到自己的记录，后台再异步处理；日常输入逐步沉淀为可认领的能力与身份。</p>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-business-swimlane.png" data-preview-alt="我吗业务流程 · 访谈、记录与画像更新" aria-label="放大我吗业务流程 · 访谈、记录与画像更新"><img src="images/woma-business-swimlane.png" alt="我吗业务流程 · 访谈、记录与画像更新" loading="lazy"></button><figcaption class="mono">我吗业务流程 · 访谈、记录与画像更新</figcaption></figure>
+          <h3>分节点的 AI 工作流与记忆</h3>
+          <p>将 Intent、Rewrite、AI Comment、Profile Maintenance、Compact 拆开，通过结构化字段和分节点 Prompt 约束生成行为，区分当前事件、行为模式、长期身份和上下文压缩信息。</p>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-ai-pipeline-no-title.svg" data-preview-alt="AI Pipeline · 意图识别、重写、评论与画像维护" aria-label="放大AI Pipeline · 意图识别、重写、评论与画像维护"><img src="images/woma-ai-pipeline-no-title.svg" alt="AI Pipeline · 意图识别、重写、评论与画像维护" loading="lazy"></button><figcaption class="mono">AI Pipeline · 意图识别、重写、评论与画像维护</figcaption></figure>
+          <h3>前后端实现技术选型</h3>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="前后端实现技术选型表">
+            <table class="document-table stack-table"><thead><tr><th scope="col">环节</th><th scope="col">实现</th><th scope="col">对应职责</th></tr></thead><tbody>
+              <tr><th scope="row">前端</th><td>Next.js · React · TypeScript · PWA</td><td>访谈、聊天、重写开关与身份展示。</td></tr>
+              <tr><th scope="row">本地存储</th><td>IndexedDB</td><td>保存可视化数据，让界面先响应。</td></tr>
+              <tr><th scope="row">后端与数据库</th><td>Supabase / PostgreSQL</td><td>以匿名 ID 关联记录与画像，后台异步更新。</td></tr>
+              <tr><th scope="row">模型接入</th><td>DeepSeek · Gemini · OpenRouter</td><td>横向测试模型输出，再进行多轮 Prompt 优化。</td></tr>
+            </tbody></table>
+          </div>
+          <h3>Vibe Coding 全栈开发</h3>
+          <p>用 Figma、Figma Make、Google Stitch、Claude 和 Codex 推进 UIUX。开发过程中手动维护 PRD、agent.md、plan 和 task，以 API、架构和 UI 文档保持前后端一致。</p>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-figma-workspace.png" data-preview-alt="我吗 Figma 工作区" aria-label="放大我吗 Figma 工作区"><img src="images/woma-figma-workspace.png" alt="我吗 Figma 工作区" loading="lazy"></button><figcaption class="mono">我吗 Figma 工作区</figcaption></figure>
         </section>
         <section id="case-architecture" aria-labelledby="oh-architecture-title">
           <h2 id="oh-architecture-title"><small>04</small>关键决策</h2>
+          <p>围绕第一次使用、等待反馈和身份积累，把体验中的具体问题转成实现决策。</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="产品决策：问题、思考与解决方案">
+            <table class="document-table decision-table"><thead><tr><th scope="col">问题</th><th scope="col">思考</th><th scope="col">解决方案</th></tr></thead><tbody>
+              <tr><td>如何减少等待对测试体验的影响？</td><td>先看到自己的记录</td><td>可视化数据本地存储，后台异步更新，让界面保持响应，减少等待对测试体验的干扰。</td></tr>
+              <tr><td>如何降低匿名身份和数据用途带来的顾虑？</td><td>降低开始使用的顾虑</td><td>用匿名 ID 绑定数据库，以 PWA 进行测试，并清楚说明输入将用于产品迭代。</td></tr>
+              <tr><td>画像更新频率应该如何确定？</td><td>把更新频率当作假设</td><td>初始设定为每 6 轮输入更新画像，用真实使用反馈寻找合适的更新频率。</td></tr>
+              <tr><td>如何让用户感到自己在帮助自己？</td><td>保留第一人称和自主选择</td><td>保留 AI 开关，用轻松的绿色、粉色和身份卡片，形成区别于心理咨询的使用氛围。</td></tr>
+            </tbody></table>
+          </div>
           <div class="dec">
-            <div><h3>第一人称重写，保留表达的主动权</h3><p><span class="mono">为什么</span><span>让鼓励听起来像来自自己，并允许用户随时切回原话，保留对记录的控制。</span></p><p><span class="mono">代价</span><span>重写必须贴近用户的经历和语气，需要持续检查输出是否准确。</span></p></div>
-            <div><h3>先看到自己的记录</h3><p><span class="mono">为什么</span><span>可视化数据在本地存储，后台异步更新，让界面保持响应，减少等待对测试体验的干扰。</span></p><p><span class="mono">代价</span><span>需要处理本地记录与后台数据的一致性。</span></p></div>
-            <div><h3>把 AI 工作流拆成独立节点</h3><p><span class="mono">为什么</span><span>拆分意图识别、重写、评论和画像维护，分别约束生成行为，降低 Prompt 优化与回归测试的难度。</span></p><p><span class="mono">代价</span><span>需要维护节点之间的上下文，并跟踪每个环节的输出质量与成本。</span></p></div>
-            <div><h3>把画像更新频率当作假设</h3><p><span class="mono">为什么</span><span>初始设定为每 6 轮输入更新画像，再用真实使用反馈寻找合适的更新频率。</span></p><p><span class="mono">代价</span><span>身份积累不会即时反映每次输入，需要平衡反馈速度与更新成本。</span></p></div>
+            <div><h3>第一人称重写必须贴近真实的经历</h3><p><span class="mono">为什么</span><span>让鼓励听起来像来自自己。用户可以切回原话，保留对记录的解释权。</span></p><p><span class="mono">代价</span><span>需要用具体对话检查语气、事实和边界，持续扩充评测样本。</span></p></div>
+            <div><h3>节点拆分后，分别优化输出与记忆</h3><p><span class="mono">为什么</span><span>把意图识别、重写和画像维护分别约束，便于定位问题并做回归测试。</span></p><p><span class="mono">代价</span><span>需要维护节点间的上下文，以及本地记录与后台更新的一致性。</span></p></div>
           </div>
         </section>
         <section id="case-results" aria-labelledby="oh-results-title">
           <h2 id="oh-results-title"><small>05</small>指标与验证</h2>
-          <p>早期用社媒内容和目标用户访谈验证需求，再进入 MVP 内测。加群人数是早期兴趣信号，与后续进入 MVP 测试的用户数分别记录。</p>
-          <div class="mets" aria-label="我吗研究与内测数据"><div><b>50+</b><span>MVP 测试用户</span></div><div><b>553</b><span>条用户消息分析</span></div><div><b>5 位</b><span>目标用户深访</span></div><div><b>200+</b><span>早期用户加群</span></div></div>
-          <p>对用户消息做聚类分析，并结合真实用户反馈，把 bad case、good case 和边缘 case 加入测试集。持续验证重写质量、重复使用和长期留存。</p>
+          <h3>用真实使用记录检验核心假设</h3>
+          <p>完成全栈 MVP 后进入小范围内测。结合使用漏斗、消息聚类和 1 对 1 深访，理解用户从首次体验到持续使用的问题，再调整访谈引导、身份页面与 Prompt 机制。</p>
+          <div class="mets" style="--metric-columns:4" aria-label="MVP 内测与用户分析数据"><div><b>50+</b><span>MVP 测试用户</span></div><div><b>553</b><span>条用户消息分析</span></div><div><b>5</b><span>较高粘性用户</span></div><div><b>1</b><span>用户自发推荐</span></div></div>
+          <p>消息分析形成 5 类分析画像，并关注 5 位较高粘性用户的使用方式。分析分组和用户人数分别记录；这些早期反馈支持继续迭代，仍需进一步验证重复使用与长期留存。</p>
+          <h3>Prompt 评测与回归</h3>
+          <p>为多节点 Workflow 搭建批量测试框架，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，持续迭代意图识别、第一人称重写和画像维护。</p>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="Prompt Lab · 多节点批量测试" aria-label="放大Prompt Lab · 多节点批量测试"><img src="images/woma-prompt-lab.png" alt="Prompt Lab · 多节点批量测试" loading="lazy"></button><figcaption class="mono">Prompt Lab · 多节点批量测试</figcaption></figure>
+          <div class="mets" style="--metric-columns:3" aria-label="Prompt 测试与优化记录"><div><b>5</b><span>LLM 对比</span></div><div><b>10+ 轮</b><span>初期测试</span></div><div><b>3+ 轮</b><span>内测后优化</span></div></div>
         </section>
         <section id="case-next" aria-labelledby="oh-next-title">
           <h2 id="oh-next-title"><small>06</small>风险与下一步</h2>
-          <ul><li>重写是否贴近用户真实的语气，仍需结合对话样本与反馈持续验证。</li><li>身份认领能否形成重复使用的理由，需要继续观察回访与长期留存。</li><li>继续扩充测试集，迭代 Prompt 与画像更新机制，再用真实使用反馈检验核心假设。</li></ul>
+          <ul><li>重写质量：结合真实对话样本和用户反馈，检查输出是否贴近用户的经历、语气和边界。</li><li>重复使用：继续观察用户从日常记录到身份认领的使用路径，验证身份积累能否成为回访的理由。</li><li>长期留存：延长观察窗口，完善统计口径，并继续调整访谈引导、Prompt 与画像更新机制。</li></ul>
         </section>
       </article>
     </div>
