@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/figma-favicon.svg">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root {
@@ -1206,6 +1210,10 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 <dialog class="studio-lightbox" id="image-dialog" aria-label="项目图片放大预览"><button class="dialog-close" type="button" aria-label="关闭图片预览">关闭 ×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p></dialog>
 <script>(() => {
   'use strict';
+  const trackAnalyticsEvent = (name, data) => {
+    if (typeof window.va !== 'function') return;
+    window.va('event', data ? { name, data } : { name });
+  };
   const views = [...document.querySelectorAll('main > .view')];
   const sectionIds = { intro: 'top', projects: 'work', capabilities: 'capabilities', about: 'about', contact: 'contact' };
   const dialog = document.getElementById('image-dialog');
@@ -1216,6 +1224,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
   let resumePreviousOverflow = '';
   document.querySelectorAll('[data-resume-preview]').forEach(button => {
     button.addEventListener('click', () => {
+      trackAnalyticsEvent('Resume Preview Opened');
       resumeTrigger = button;
       resumePreviousOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
@@ -1230,6 +1239,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
   });
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let activeView = 'home';
+  let lastTrackedView = null;
   let homeScrollY = null;
   let pendingSection = null;
   let caseObserver = null;
@@ -1346,6 +1356,12 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
       view.hidden = !active;
     }
     activeView = id;
+    if (lastTrackedView !== id) {
+      lastTrackedView = id;
+      trackAnalyticsEvent('Portfolio Page View', {
+        page: id === 'home' ? 'home' : id.slice('project-'.length),
+      });
+    }
     document.body.dataset.view = id === 'home' ? 'home' : 'case';
     document.body.dataset.project = id === 'home' ? '' : id.slice('project-'.length);
     document.title = id === 'home' ? 'Angela 徐晓萌 — AI 产品作品集' : (target.querySelector('h1')?.textContent.trim() || '项目') + ' — Angela 徐晓萌';
