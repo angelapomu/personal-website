@@ -116,29 +116,6 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 .figma-home .footer-main p span { color: inherit; }
 .figma-home .footer-main > a:hover { background: var(--a-pink); color: var(--a-ink); border-color: var(--a-pink); border-radius: 50%; }
 
-/* Only OhMee gets the new case-study palette in this review. */
-.ohmee-case {
-  --oh-blue: var(--a-pink); --oh-orange: var(--a-pink);
-  --oh-paper: var(--a-bg); --oh-surface: var(--a-surface);
-  --oh-ink: var(--a-ink); --oh-muted: var(--a-muted); --oh-line: var(--a-line);
-  --oh-display: var(--a-sans); --oh-sans: var(--a-sans); --oh-mono: var(--a-mono);
-}
-.ohmee-case .oh-hero { background: var(--a-bg); border-bottom: 1px solid var(--a-line); }
-.ohmee-case .oh-hero h1 { font-weight: 900; }
-.ohmee-case .oh-hero h1 > span { font-weight: 500; text-decoration: underline; text-decoration-color: var(--a-pink); text-decoration-thickness: .08em; text-underline-offset: .15em; }
-.ohmee-case .oh-hero-copy > .oh-eyebrow .oh-dot { background: var(--a-pink); }
-.ohmee-case .oh-button-blue { background: var(--a-ink); color: var(--a-bg); }
-.ohmee-case .oh-button-blue:hover { background: var(--a-pink); color: var(--a-ink); }
-.ohmee-case .oh-chapter-nav a.active { border-bottom-color: var(--a-pink); color: var(--a-ink); }
-.ohmee-case .oh-chapter-nav a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
-.ohmee-case .oh-chapter-toggle > strong { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 6px; text-decoration-thickness: 2px; }
-.ohmee-case .oh-nav-name > span { color: var(--a-ink); }
-.ohmee-case .oh-demo-controls button[aria-pressed="true"] { background: var(--a-pink); color: var(--a-ink); }
-.ohmee-case .oh-next-questions > p > span { color: var(--a-ink); }
-.ohmee-case .oh-reflection { background: var(--a-ink); color: var(--a-bg); }
-.ohmee-case .oh-reflection > .oh-wrap > .oh-eyebrow { color: var(--a-pink); }
-.ohmee-case .oh-reflection h2 { font-weight: 900; }
-.ohmee-case .oh-case-footer a:hover { color: var(--a-ink); text-decoration: underline; text-decoration-color: var(--a-pink); text-underline-offset: 7px; }
 @media (max-width: 900px) {
   .figma-home .work-section > :is(.lab-heading,.featured-grid,.small-grid) { max-width: 540px; margin-inline: auto; }
   .figma-home .imported-preview .companion-type { font-size: clamp(62px,10vw,80px); }
@@ -162,7 +139,7 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
   .figma-home .spring-content { grid-template-columns: 1fr; row-gap: 18px; padding-block: 28px 36px; }
   .figma-home .spring-title { margin-bottom: 16px; }
   .figma-home .spring-bio { justify-self: start; }
-  .ohmee-case .oh-hero h1 { font-size: clamp(52px,15vw,68px); }
+
 }
 @media (prefers-reduced-motion: reduce) {
   .figma-home .spring-hero:not([data-motion-enabled="true"]) .spring-glyph { transform: none !important; }
