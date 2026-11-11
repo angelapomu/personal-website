@@ -914,10 +914,10 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
           <h3>前后端实现技术选型</h3>
           <div class="table-wrap" tabindex="0" role="region" aria-label="前后端实现技术选型表">
             <table class="document-table stack-table"><thead><tr><th scope="col">环节</th><th scope="col">实现</th><th scope="col">对应职责</th></tr></thead><tbody>
-              <tr><th scope="row">前端</th><td>Next.js · React · TypeScript · PWA</td><td>访谈、聊天、重写开关与身份展示。</td></tr>
-              <tr><th scope="row">本地存储</th><td>IndexedDB</td><td>保存可视化数据，让界面先响应。</td></tr>
-              <tr><th scope="row">后端与数据库</th><td>Supabase / PostgreSQL</td><td>以匿名 ID 关联记录与画像，后台异步更新。</td></tr>
-              <tr><th scope="row">模型接入</th><td>DeepSeek · Gemini · OpenRouter</td><td>横向测试模型输出，再进行多轮 Prompt 优化。</td></tr>
+              <tr><th scope="row" data-label="环节">前端</th><td data-label="实现">Next.js · React · TypeScript · PWA</td><td data-label="对应职责">访谈、聊天、重写开关与身份展示。</td></tr>
+              <tr><th scope="row" data-label="环节">本地存储</th><td data-label="实现">IndexedDB</td><td data-label="对应职责">保存可视化数据，让界面先响应。</td></tr>
+              <tr><th scope="row" data-label="环节">后端与数据库</th><td data-label="实现">Supabase / PostgreSQL</td><td data-label="对应职责">以匿名 ID 关联记录与画像，后台异步更新。</td></tr>
+              <tr><th scope="row" data-label="环节">模型接入</th><td data-label="实现">DeepSeek · Gemini · OpenRouter</td><td data-label="对应职责">横向测试模型输出，再进行多轮 Prompt 优化。</td></tr>
             </tbody></table>
           </div>
           <h3>Vibe Coding 全栈开发</h3>
@@ -929,10 +929,10 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
           <p>围绕第一次使用、等待反馈和身份积累，把体验中的具体问题转成实现决策。</p>
           <div class="table-wrap" tabindex="0" role="region" aria-label="产品决策：问题、思考与解决方案">
             <table class="document-table decision-table"><thead><tr><th scope="col">问题</th><th scope="col">思考</th><th scope="col">解决方案</th></tr></thead><tbody>
-              <tr><td>如何减少等待对测试体验的影响？</td><td>先看到自己的记录</td><td>可视化数据本地存储，后台异步更新，让界面保持响应，减少等待对测试体验的干扰。</td></tr>
-              <tr><td>如何降低匿名身份和数据用途带来的顾虑？</td><td>降低开始使用的顾虑</td><td>用匿名 ID 绑定数据库，以 PWA 进行测试，并清楚说明输入将用于产品迭代。</td></tr>
-              <tr><td>画像更新频率应该如何确定？</td><td>把更新频率当作假设</td><td>初始设定为每 6 轮输入更新画像，用真实使用反馈寻找合适的更新频率。</td></tr>
-              <tr><td>如何让用户感到自己在帮助自己？</td><td>保留第一人称和自主选择</td><td>保留 AI 开关，用轻松的绿色、粉色和身份卡片，形成区别于心理咨询的使用氛围。</td></tr>
+              <tr><td data-label="问题">如何减少等待对测试体验的影响？</td><td data-label="思考">先看到自己的记录</td><td data-label="解决方案">可视化数据本地存储，后台异步更新，让界面保持响应，减少等待对测试体验的干扰。</td></tr>
+              <tr><td data-label="问题">如何降低匿名身份和数据用途带来的顾虑？</td><td data-label="思考">降低开始使用的顾虑</td><td data-label="解决方案">用匿名 ID 绑定数据库，以 PWA 进行测试，并清楚说明输入将用于产品迭代。</td></tr>
+              <tr><td data-label="问题">画像更新频率应该如何确定？</td><td data-label="思考">把更新频率当作假设</td><td data-label="解决方案">初始设定为每 6 轮输入更新画像，用真实使用反馈寻找合适的更新频率。</td></tr>
+              <tr><td data-label="问题">如何让用户感到自己在帮助自己？</td><td data-label="思考">保留第一人称和自主选择</td><td data-label="解决方案">保留 AI 开关，用轻松的绿色、粉色和身份卡片，形成区别于心理咨询的使用氛围。</td></tr>
             </tbody></table>
           </div>
           <div class="dec">

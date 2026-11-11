@@ -96,12 +96,22 @@ async function geometry(page, root = '') {
       } else await select('case-architecture');
       const tables = await page.locator('.table-wrap').evaluateAll(nodes => nodes.map(node => ({
         outer: node.clientWidth, inner: node.scrollWidth, overflow: getComputedStyle(node).overflowX,
-        headers: [...node.querySelectorAll('thead th')].map(header => header.textContent)
+        headers: [...node.querySelectorAll('thead th')].map(header => header.textContent),
+        rowDisplay: getComputedStyle(node.querySelector('tbody tr')).display,
+        rowWidth: node.querySelector('tbody tr').getBoundingClientRect().width,
+        cellWidths: [...node.querySelectorAll('tbody tr:first-child > *')].map(cell => cell.getBoundingClientRect().width),
+        cellBorders: [...node.querySelectorAll('tbody tr:first-child > *')].map(cell => getComputedStyle(cell).borderLeftWidth),
+        labelled: [...node.querySelectorAll('tbody :is(td,th)')].every(cell => cell.hasAttribute('data-label'))
       })));
       tables.forEach(table => {
-        assert.equal(table.overflow, 'auto');
         assert.equal(table.headers.length, 3);
-        if (width < 560) assert.ok(table.inner > table.outer, 'small-screen tables scroll within their own region');
+        assert.ok(table.labelled, 'responsive cells retain their column labels');
+        assert.ok(table.inner <= table.outer + 1, 'tables fit without horizontal scrolling');
+        if (width <= 700) {
+          assert.equal(table.rowDisplay, 'grid', 'phone rows become vertical entries');
+          assert.ok(table.cellWidths.every(cellWidth => Math.abs(cellWidth - table.rowWidth) < 1), 'phone entries use the full available width');
+        }
+        else assert.ok(table.cellBorders.every(border => border === '1px'), 'desktop cells have vertical grid lines');
       });
       const frames = await page.locator('.p,.research-shot > button').evaluateAll(nodes => nodes.map(node => {
         const frame = node.getBoundingClientRect(), image = node.querySelector('img').getBoundingClientRect();
