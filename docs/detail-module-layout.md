@@ -8,7 +8,7 @@ The owner-supplied 项目详情 · 左侧目录文档型.html is the layout auth
 2. Three tags, square rounded app icon with project name, lead, and metadata.
 3. Four overview columns: 问题、方案、结果、我的角色.
 4. One rose-backed gallery with four real product screenshots and short captions.
-5. A 220px left directory beside six sibling chapters: 背景、初步验证、关键决策、产品设计、内测、风险与下一步.
+5. A 220px left directory beside six sibling chapters: 背景、初步验证、关键决策、产品设计、内测、成果.
 
 No repeated screenshot journeys, demonstration panels, annotation chips, enlargement hints, collapsible footnotes, or closing reflection panel. Screenshot enlargement remains available through the images themselves and accessible button labels. Keep meaningful h3 headings and concrete project evidence; visual restraint must not turn the case into generic summaries.
 
