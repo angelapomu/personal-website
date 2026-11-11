@@ -817,7 +817,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 </style>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="angela-palette.css">
-<link rel="stylesheet" href="ohmee-case.css?v=18970e7332c0">
+<link rel="stylesheet" href="ohmee-case.css?v=case-layout-20261111">
 <link rel="stylesheet" href="home-reference.css">
 </head>
 <body data-view="home">
@@ -961,253 +961,242 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 </section>
 
 
-<section class="view" id="project-contextual">
-  <div class="case-page contextual-case-page">
-    <a class="case-back" href="#home" onclick="backToProjects(event)">← 返回作品</a>
-    <section class="case-hero" aria-labelledby="contextual-project-title">
-      <div class="case-hero-grid">
-        <div class="case-visual" aria-label="截图词典（Contextual Collector）产品图标展示">
-          <div class="case-product-icon"><img src="images/contextual-logo.png" alt="截图词典图标" onload="this.parentNode.classList.add('has-image')" onerror="this.remove()"></div>
-        </div>
-        <div>
-          <h1 id="contextual-project-title">截图词典 <span>Contextual Collector</span></h1>
-          <div class="case-eyebrow">个人工具 · 产品设计 · 非商业化</div>
-          <h2>让单词回到你遇见它的那句话里。</h2>
-          <p class="case-lede">一个把截图、OCR 原句和生词卡关联起来的个人词汇工具。十格容量和倒计时让收集回到处理，而不是无限囤积。</p>
-          <div class="case-screenshots" role="region" aria-label="截图词典 App 界面截图">
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：单词卡片与例句" data-lightbox-src="images/contextual-app-01.png" data-lightbox-alt="单词卡片展示 proactive、例句和发音">
-              <img src="images/contextual-app-01.png" alt="单词卡片展示 proactive、例句和发音" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：来源页面语境与单词释义" data-lightbox-src="images/contextual-app-02.png" data-lightbox-alt="来源页面语境和 proactive 的释义、词性与比较级">
-              <img src="images/contextual-app-02.png" alt="来源页面语境和 proactive 的释义、词性与比较级" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：单词详情与更多例句" data-lightbox-src="images/contextual-app-03.png" data-lightbox-alt="proactive 单词详情，包含词义、比较级、更多例句和补充说明">
-              <img src="images/contextual-app-03.png" alt="proactive 单词详情，包含词义、比较级、更多例句和补充说明" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：稍后处理卡片" data-lightbox-src="images/contextual-app-04.png" data-lightbox-alt="单词卡片界面提示下滑稍后处理">
-              <img src="images/contextual-app-04.png" alt="单词卡片界面提示下滑稍后处理" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：短语卡片与记忆操作" data-lightbox-src="images/contextual-app-05.png" data-lightbox-alt="proactive in 短语卡片界面提示上滑记住">
-              <img src="images/contextual-app-05.png" alt="proactive in 短语卡片界面提示上滑记住" loading="lazy">
-            </figure>
-          </div>
-          <div class="case-tags" aria-label="项目标签"><span class="case-tag">语境消歧</span><span class="case-tag">OCR</span><span class="case-tag">词汇复习</span><span class="case-tag">个人工具</span></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="case-stats" aria-label="产品特点">
-      <div class="case-stat"><b>10 格</b><span>单次容量</span></div>
-      <div class="case-stat"><b>截图</b><span>收词入口</span></div>
-      <div class="case-stat"><b>原句</b><span>保留语境</span></div>
-      <div class="case-stat"><b>个人用</b><span>非商业化</span></div>
+<section class="view ohmee-case contextual-case" id="project-contextual" aria-label="截图词典项目详情">
+  <div class="pgb" aria-hidden="true"></div>
+  <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
+  <nav class="tabs" aria-label="截图词典章节导航">
+    <a href="#project/contextual" data-case-section="contextual-background" onclick="scrollProjectCaseTo(event,'contextual','contextual-background')" class="on" aria-current="location">项目背景</a>
+    <a href="#project/contextual" data-case-section="contextual-research" onclick="scrollProjectCaseTo(event,'contextual','contextual-research')">需求验证</a>
+    <a href="#project/contextual" data-case-section="contextual-flow" onclick="scrollProjectCaseTo(event,'contextual','contextual-flow')">产品流程</a>
+    <a href="#project/contextual" data-case-section="contextual-constraint" onclick="scrollProjectCaseTo(event,'contextual','contextual-constraint')">容量设计</a>
+    <a href="#project/contextual" data-case-section="contextual-context" onclick="scrollProjectCaseTo(event,'contextual','contextual-context')">语境复习</a>
+    <a href="#project/contextual" data-case-section="contextual-result" onclick="scrollProjectCaseTo(event,'contextual','contextual-result')">项目结论</a>
+  </nav>
+  <div class="hero"><div class="c">
+    <div class="tags"><span>OCR</span><span>语境消歧</span><span>词汇复习</span><span>个人工具</span></div>
+    <div class="hd"><img class="ic" src="images/contextual-logo.png" alt="截图词典应用图标" width="512" height="512"><h1 id="contextual-project-title">截图词典<small>Contextual Collector</small></h1></div>
+    <p class="lead">让单词回到你遇见它的那句话里。</p>
+    <div class="meta"><div><span>定位</span>个人工具 · 非商业化</div><div><span>收词入口</span>截图与 OCR</div><div><span>复习机制</span>十格容量 · 倒计时</div></div>
+  </div></div>
+  <div class="c">
+    <div class="q">
+      <div class="q-problem"><span class="mono">01</span><h3>问题</h3><p>离开原句查词，容易丢掉单词出现时的语境；同一个词的不同意思也容易混在一起。</p></div>
+      <div class="q-solution"><span class="mono">02</span><h3>方案</h3><p>截图时把单词和 OCR 原句一起收集，复习时再把词放回真实阅读场景。</p></div>
+      <div class="q-result"><span class="mono">03</span><h3>结果</h3><p>完成个人词汇工具，将截图、原句、词卡和复习收进一个轻量流程。</p></div>
+      <div class="q-role"><span class="mono">04</span><h3>项目角色</h3><p>个人项目：围绕语境优先和有限容量，完成产品定位与主要交互流程设计。</p></div>
     </div>
-
-    <div class="case-layout">
-      <aside class="case-sidebar" aria-label="项目目录">
-        <div class="case-toc">
-          <div class="case-toc-title">项目目录</div>
-          <a class="case-toc-link active" href="#project/contextual" data-case-section="contextual-background" onclick="scrollProjectCaseTo(event,'contextual','contextual-background')">01　项目背景</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-research" onclick="scrollProjectCaseTo(event,'contextual','contextual-research')">02　需求验证</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-flow" onclick="scrollProjectCaseTo(event,'contextual','contextual-flow')">03　产品流程</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-constraint" onclick="scrollProjectCaseTo(event,'contextual','contextual-constraint')">04　容量设计</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-context" onclick="scrollProjectCaseTo(event,'contextual','contextual-context')">05　语境复习</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-result" onclick="scrollProjectCaseTo(event,'contextual','contextual-result')">06　结论</a>
-        </div>
-      </aside>
-
-      <div class="case-content">
-        <section id="contextual-background" class="case-section">
-          <div class="case-section-no">01 / 项目背景</div>
-          <h2>词典给出定义，却没有你读到它时的那句话</h2>
+    <div class="gal" aria-label="截图词典产品界面截图">
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-01.png" data-preview-alt="单词卡片与例句" aria-label="放大单词卡片与例句"><img src="images/contextual-app-01.png" alt="单词卡片展示 proactive、例句和发音" loading="eager"></button><figcaption class="mono">01 · 单词卡片</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-02.png" data-preview-alt="来源页面语境与单词释义" aria-label="放大来源页面语境与单词释义"><img src="images/contextual-app-02.png" alt="来源页面语境和 proactive 的释义、词性与比较级" loading="lazy"></button><figcaption class="mono">02 · 来源语境</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-03.png" data-preview-alt="单词详情与更多例句" aria-label="放大单词详情与更多例句"><img src="images/contextual-app-03.png" alt="proactive 单词详情，包含词义、比较级、更多例句和补充说明" loading="lazy"></button><figcaption class="mono">03 · 单词详情</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-04.png" data-preview-alt="稍后处理卡片" aria-label="放大稍后处理卡片"><img src="images/contextual-app-04.png" alt="单词卡片界面提示下滑稍后处理" loading="lazy"></button><figcaption class="mono">04 · 稍后处理</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-05.png" data-preview-alt="短语卡片与记忆操作" aria-label="放大短语卡片与记忆操作"><img src="images/contextual-app-05.png" alt="proactive in 短语卡片界面提示上滑记住" loading="lazy"></button><figcaption class="mono">05 · 记忆操作</figcaption></figure>
+    </div>
+    <div class="w">
+      <nav class="toc" aria-label="截图词典项目目录"><span class="mono">目录</span>
+        <a href="#project/contextual" data-case-section="contextual-background" onclick="scrollProjectCaseTo(event,'contextual','contextual-background')" class="on" aria-current="location"><span>01</span>项目背景</a>
+        <a href="#project/contextual" data-case-section="contextual-research" onclick="scrollProjectCaseTo(event,'contextual','contextual-research')"><span>02</span>需求验证</a>
+        <a href="#project/contextual" data-case-section="contextual-flow" onclick="scrollProjectCaseTo(event,'contextual','contextual-flow')"><span>03</span>产品流程</a>
+        <a href="#project/contextual" data-case-section="contextual-constraint" onclick="scrollProjectCaseTo(event,'contextual','contextual-constraint')"><span>04</span>容量设计</a>
+        <a href="#project/contextual" data-case-section="contextual-context" onclick="scrollProjectCaseTo(event,'contextual','contextual-context')"><span>05</span>语境复习</a>
+        <a href="#project/contextual" data-case-section="contextual-result" onclick="scrollProjectCaseTo(event,'contextual','contextual-result')"><span>06</span>项目结论</a>
+      </nav>
+      <article class="doc">
+        <section class="doc-chapter" id="contextual-background">
+          <h2><small>01</small>项目背景</h2>
           <p>总是遇到只懂一半的英文单词。离开原句查词，得到的是词典定义，却丢掉了当时的语境；同一个词的不同意思也容易混在一起。</p>
           <div class="case-insight">记住一个词，往往要先找回它出现时的真实语境。</div>
           <p>Contextual Collector 因此把单词和它所在的原始句子一起收集，让复习能回到真实阅读场景。</p>
         </section>
-
-        <section id="contextual-research" class="case-section">
-          <div class="case-section-no">02 / 需求调研与产品定位</div>
-          <h2>确认这是一个有价值的小众需求</h2>
+        <section class="doc-chapter" id="contextual-research">
+          <h2><small>02</small>需求验证</h2>
+          <h3>确认这是一个有价值的小众需求</h3>
           <div class="case-cards">
-            <div class="case-info-card"><div class="case-card-no">01</div><h4>语境优先</h4><p>围绕用户实际遇到单词时的原句设计收集和复习体验。</p></div>
-            <div class="case-info-card"><div class="case-card-no">02</div><h4>个人工具</h4><p>调研潜在用户后，确认需求存在但受众小众，因此保留为自用工具，没有商业化。</p></div>
+            <div class="case-info-card"><h4>语境优先</h4><p>围绕用户实际遇到单词时的原句设计收集和复习体验。</p></div>
+            <div class="case-info-card"><h4>个人工具</h4><p>调研潜在用户后，确认需求存在但受众小众，因此保留为自用工具，没有商业化。</p></div>
           </div>
         </section>
-
-        <section id="contextual-flow" class="case-section">
-          <div class="case-section-no">03 / 产品机制</div>
-          <h2>从截图捕获，到带着语境复习</h2>
+        <section class="doc-chapter" id="contextual-flow">
+          <h2><small>03</small>产品流程</h2>
+          <h3>从截图捕获，到带着语境复习</h3>
           <p>截图将单词与 OCR 识别出的原句一起放进悬浮气泡。复习时通过词卡浏览，把词重新放回当时的阅读语境。</p>
           <div class="case-process" aria-label="截图、保留原句、整理词卡、复习">
-            <div class="case-process-step"><b>截图</b><small>遇到生词</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>识别</b><small>保留原句</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>收集</b><small>悬浮气泡</small></div><span class="case-process-arrow">→</span>
+            <div class="case-process-step"><b>截图</b><small>遇到生词</small></div><span class="case-process-arrow" aria-hidden="true">→</span>
+            <div class="case-process-step"><b>识别</b><small>保留原句</small></div><span class="case-process-arrow" aria-hidden="true">→</span>
+            <div class="case-process-step"><b>收集</b><small>悬浮气泡</small></div><span class="case-process-arrow" aria-hidden="true">→</span>
             <div class="case-process-step"><b>复习</b><small>词卡浏览</small></div>
           </div>
         </section>
-
-        <section id="contextual-constraint" class="case-section">
-          <div class="case-section-no">04 / 交互约束</div>
-          <h2>十个格子，让收集必须回到处理</h2>
+        <section class="doc-chapter" id="contextual-constraint">
+          <h2><small>04</small>容量设计</h2>
+          <h3>十个格子，让收集必须回到处理</h3>
           <p>词库只有十个格子。倒计时促使用户处理已有词条后再补充；容量有限是产品的主动设计，让稀缺帮助用户完成复习。</p>
           <div class="case-decisions">
             <div class="case-decision"><h4>容量上限</h4><p>最多十个待处理词条，避免收集变成无限堆积。</p></div>
             <div class="case-decision"><h4>倒计时</h4><p>用时间压力提示处理已有内容，再继续收集。</p></div>
           </div>
         </section>
-
-        <section id="contextual-context" class="case-section">
-          <div class="case-section-no">05 / 语境与复习</div>
-          <h2>用真实句子区分相近词义</h2>
+        <section class="doc-chapter" id="contextual-context">
+          <h2><small>05</small>语境复习</h2>
+          <h3>用真实句子区分相近词义</h3>
           <div class="case-feature"><h4>原始 OCR 语境</h4><p>单词不脱离它出现时的句子，用户可以回忆原来的阅读上下文。</p></div>
           <div class="case-feature"><h4>短视频式卡片</h4><p>复习以连续浏览词卡的方式进行，让查词和回顾形成轻量闭环。</p></div>
           <p>真实句子帮助用户分辨同义词和多义词，补上单独词典释义缺少的语境信息。</p>
         </section>
-
-        <section id="contextual-result" class="case-section">
-          <div class="case-section-no">06 / 项目结论</div>
-          <h2>为明确的小众场景，做好一个轻量工具</h2>
-          <div class="case-outcomes">
-            <div class="case-outcome"><b>10</b><span>词条容量</span></div>
-            <div class="case-outcome"><b>原句</b><span>保留阅读语境</span></div>
-            <div class="case-outcome"><b>自用</b><span>不做商业化</span></div>
-          </div>
+        <section class="doc-chapter" id="contextual-result">
+          <h2><small>06</small>项目结论</h2>
+          <h3>为明确的小众场景，做好一个轻量工具</h3>
+          <div class="mets" style="--metric-columns:3" aria-label="截图词典产品特点"><div><b>10</b><span>词条容量</span></div><div><b>原句</b><span>保留阅读语境</span></div><div><b>自用</b><span>不做商业化</span></div></div>
           <p>用户调研确认这是小众需求，因此产品定位为个人工具。它的核心价值是将生词、原句和复习放在同一个轻量流程里。</p>
-          <div class="case-closing"><div class="case-eyebrow">产品复盘</div><h3>收集的上限不是缺陷，而是让每个词重新回到阅读和处理之中。</h3><p>语境是记忆的一部分，有限容量则让复习有机会真正发生。</p></div>
+          <div class="case-closing"><div class="case-eyebrow">项目复盘</div><h3>收集的上限不是缺陷，而是让每个词重新回到阅读和处理之中。</h3><p>语境是记忆的一部分，有限容量则让复习有机会真正发生。</p></div>
         </section>
-      </div>
+      </article>
     </div>
   </div>
 </section>
-
-<section class="view" id="project-whybother">
-  <div class="case-page whybother-case-page">
-    <a class="case-back" href="#home" onclick="backToProjects(event)">← 返回作品</a>
-    <section class="case-hero" aria-labelledby="whybother-project-title">
-      <div class="case-hero-grid">
-        <div class="case-visual" aria-label="减肥搭子产品图标展示">
-          <div class="case-product-icon"><img src="images/whybother.png" alt="减肥搭子图标" onload="this.parentNode.classList.add('has-image')" onerror="this.remove()"></div>
-        </div>
-        <div>
-          <h1 id="whybother-project-title">减肥搭子 <span>Why Bother.</span></h1>
-          <div class="case-eyebrow">独立产品 · 陪伴型 AI · 开发中</div>
-          <h2>减肥这件事，需要一个愿意说真话、也一直在的朋友。</h2>
-          <p class="case-lede">一款围绕闺蜜人设设计的陪伴型聊天机器人。不要求用户记卡路里，通过三阶段语气和关系熟悉度，提供持续、直接的陪伴。</p>
-          <div class="case-tags" aria-label="项目标签"><span class="case-tag">陪伴型 AI</span><span class="case-tag">三阶段语气</span><span class="case-tag">Affiliate</span><span class="case-tag">开发中</span></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="case-stats" aria-label="项目早期信号">
-      <div class="case-stat"><b>300</b><span>单条帖子曝光</span></div>
-      <div class="case-stat"><b>20+</b><span>兴趣表达</span></div>
-      <div class="case-stat"><b>9</b><span>加群人数</span></div>
-      <div class="case-stat"><b>2</b><span>测试用户表达购买意愿</span></div>
+<section class="view ohmee-case whybother-case" id="project-whybother" aria-label="减肥搭子项目详情">
+  <div class="pgb" aria-hidden="true"></div>
+  <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
+  <nav class="tabs" aria-label="减肥搭子章节导航">
+    <a href="#project/whybother" data-case-section="whybother-background" onclick="scrollProjectCaseTo(event,'whybother','whybother-background')" class="on" aria-current="location">项目背景</a>
+    <a href="#project/whybother" data-case-section="whybother-research" onclick="scrollProjectCaseTo(event,'whybother','whybother-research')">早期需求信号</a>
+    <a href="#project/whybother" data-case-section="whybother-experience" onclick="scrollProjectCaseTo(event,'whybother','whybother-experience')">陪伴体验</a>
+    <a href="#project/whybother" data-case-section="whybother-model" onclick="scrollProjectCaseTo(event,'whybother','whybother-model')">模型与语气</a>
+    <a href="#project/whybother" data-case-section="whybother-business" onclick="scrollProjectCaseTo(event,'whybother','whybother-business')">商业模式</a>
+    <a href="#project/whybother" data-case-section="whybother-result" onclick="scrollProjectCaseTo(event,'whybother','whybother-result')">测试信号</a>
+  </nav>
+  <div class="hero"><div class="c">
+    <div class="tags"><span>陪伴体验</span><span>语气设计</span><span>用户验证</span><span>Affiliate</span></div>
+    <div class="hd"><img class="ic" src="images/whybother.png" alt="减肥搭子项目插画" width="512" height="512"><h1 id="whybother-project-title">减肥搭子<small>Why Bother.</small></h1></div>
+    <p class="lead">减肥这件事，需要一个愿意说真话、也一直在的朋友。</p>
+    <div class="meta"><div><span>阶段</span>开发中</div><div><span>产品方式</span>陪伴型聊天机器人</div><div><span>商业设想</span>Affiliate 分成</div></div>
+  </div></div>
+  <div class="c">
+    <div class="q">
+      <div class="q-problem"><span class="mono">01</span><h3>问题</h3><p>很多减肥 App 把重点放在记录卡路里，却难以形成持续陪伴，用户很快会放弃。</p></div>
+      <div class="q-solution"><span class="mono">02</span><h3>方案</h3><p>以闺蜜关系作为产品入口，通过三阶段语气和逐步建立的熟悉感，承接用户的日常状态。</p></div>
+      <div class="q-result"><span class="mono">03</span><h3>早期信号</h3><p>内容触达约 300 次曝光、20+ 兴趣表达、9 人入群；两位测试用户表达购买意愿。</p></div>
+      <div class="q-role"><span class="mono">04</span><h3>项目角色</h3><p>独立产品：推进产品定义、陪伴体验设计、早期需求验证与商业模式探索。</p></div>
     </div>
-
-    <div class="case-layout">
-      <aside class="case-sidebar" aria-label="项目目录">
-        <div class="case-toc">
-          <div class="case-toc-title">项目目录</div>
-          <a class="case-toc-link active" href="#project/whybother" data-case-section="whybother-background" onclick="scrollProjectCaseTo(event,'whybother','whybother-background')">01　项目背景</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-research" onclick="scrollProjectCaseTo(event,'whybother','whybother-research')">02　早期需求信号</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-experience" onclick="scrollProjectCaseTo(event,'whybother','whybother-experience')">03　陪伴体验</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-model" onclick="scrollProjectCaseTo(event,'whybother','whybother-model')">04　模型与语气</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-business" onclick="scrollProjectCaseTo(event,'whybother','whybother-business')">05　商业模式</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-result" onclick="scrollProjectCaseTo(event,'whybother','whybother-result')">06　测试信号</a>
-        </div>
-      </aside>
-
-      <div class="case-content">
-        <section id="whybother-background" class="case-section">
-          <div class="case-section-no">01 / 项目背景</div>
-          <h2>为什么减肥 App 常常坚持不到一周</h2>
+    <div class="gal" style="--gallery-columns:1" aria-label="减肥搭子项目视觉">
+      <figure class="ph landscape"><button class="p" type="button" data-preview-src="images/whybother.png" data-preview-alt="减肥搭子项目插画" aria-label="放大减肥搭子项目插画"><img src="images/whybother.png" alt="减肥搭子的饭碗与对话气泡插画" loading="eager"></button><figcaption class="mono">项目主视觉 · 有人陪，也有人说真话</figcaption></figure>
+    </div>
+    <div class="w">
+      <nav class="toc" aria-label="减肥搭子项目目录"><span class="mono">目录</span>
+        <a href="#project/whybother" data-case-section="whybother-background" onclick="scrollProjectCaseTo(event,'whybother','whybother-background')" class="on" aria-current="location"><span>01</span>项目背景</a>
+        <a href="#project/whybother" data-case-section="whybother-research" onclick="scrollProjectCaseTo(event,'whybother','whybother-research')"><span>02</span>早期需求信号</a>
+        <a href="#project/whybother" data-case-section="whybother-experience" onclick="scrollProjectCaseTo(event,'whybother','whybother-experience')"><span>03</span>陪伴体验</a>
+        <a href="#project/whybother" data-case-section="whybother-model" onclick="scrollProjectCaseTo(event,'whybother','whybother-model')"><span>04</span>模型与语气</a>
+        <a href="#project/whybother" data-case-section="whybother-business" onclick="scrollProjectCaseTo(event,'whybother','whybother-business')"><span>05</span>商业模式</a>
+        <a href="#project/whybother" data-case-section="whybother-result" onclick="scrollProjectCaseTo(event,'whybother','whybother-result')"><span>06</span>测试信号</a>
+      </nav>
+      <article class="doc">
+        <section class="doc-chapter" id="whybother-background">
+          <h2><small>01</small>项目背景</h2>
+          <h3>为什么减肥 App 常常坚持不到一周</h3>
           <p>很多减肥 App 把重点放在记录卡路里，用户很快就会放弃。产品观察发现，人们需要的可能不是更多数字，而是一个会说真话、又持续在场的朋友。</p>
           <div class="case-insight">把“监督我完成记录”换成“有人理解我，也愿意直接说”。</div>
           <p>减肥搭子以闺蜜关系作为产品入口，用陪伴和逐步建立的熟悉感承接用户的日常状态。</p>
         </section>
-
-        <section id="whybother-research" class="case-section">
-          <div class="case-section-no">02 / 早期需求信号</div>
-          <h2>从内容互动到社群兴趣</h2>
-          <p>早期内容发布后，单条帖子获得 300 次曝光，20 多人表达兴趣，9 人加入社群。这些信号用于观察用户是否愿意继续了解产品。</p>
+        <section class="doc-chapter" id="whybother-research">
+          <h2><small>02</small>早期需求信号</h2>
+          <h3>从内容互动到社群兴趣</h3>
+          <p>早期内容发布后，单条帖子获得约 300 次曝光，20 多人表达兴趣，9 人加入社群。这些信号用于观察用户是否愿意继续了解产品。</p>
+          <div class="mets" style="--metric-columns:3" aria-label="早期内容和社群数据"><div><b>300</b><span>单条帖子曝光</span></div><div><b>20+</b><span>兴趣表达</span></div><div><b>9</b><span>加群人数</span></div></div>
           <div class="case-cards">
-            <div class="case-info-card"><div class="case-card-no">01</div><h4>内容触达</h4><p>单条帖子曝光约 300，初步触达对减肥陪伴有兴趣的人。</p></div>
-            <div class="case-info-card"><div class="case-card-no">02</div><h4>持续兴趣</h4><p>20+ 人表达兴趣，9 人加入社群，形成早期用户沟通入口。</p></div>
+            <div class="case-info-card"><h4>内容触达</h4><p>单条帖子曝光约 300，初步触达对减肥陪伴有兴趣的人。</p></div>
+            <div class="case-info-card"><h4>持续兴趣</h4><p>20+ 人表达兴趣，9 人加入社群，形成早期用户沟通入口。</p></div>
           </div>
-          <figure class="case-image-slot" role="img" aria-label="帖子反馈和社群反馈占位">
-            <svg class="case-image-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 6"/></svg>
-            <strong>内容反馈 / 社群互动</strong><small>可补充帖子数据和早期社群反馈截图</small>
-          </figure>
         </section>
-
-        <section id="whybother-experience" class="case-section">
-          <div class="case-section-no">03 / 陪伴体验设计</div>
-          <h2>关系逐步熟悉，语气也随之解锁</h2>
+        <section class="doc-chapter" id="whybother-experience">
+          <h2><small>03</small>陪伴体验</h2>
+          <h3>关系逐步熟悉，语气也随之解锁</h3>
           <p>闺蜜人设一次性生成，避免每次对话都重新定义角色。随着对用户的了解增加，聊天语气从试探、直接逐步走向犀利。</p>
           <div class="case-process three-step" aria-label="试探、直接、犀利三阶段">
-            <div class="case-process-step"><b>试探</b><small>建立熟悉感</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>直接</b><small>表达更坦率</small></div><span class="case-process-arrow">→</span>
+            <div class="case-process-step"><b>试探</b><small>建立熟悉感</small></div><span class="case-process-arrow" aria-hidden="true">→</span>
+            <div class="case-process-step"><b>直接</b><small>表达更坦率</small></div><span class="case-process-arrow" aria-hidden="true">→</span>
             <div class="case-process-step"><b>犀利</b><small>关系更熟悉</small></div>
           </div>
           <div class="case-insight">语气随了解逐步变化，不靠套路推着用户走。</div>
         </section>
-
-        <section id="whybother-model" class="case-section">
-          <div class="case-section-no">04 / 模型与语气</div>
-          <h2>中文情感场景里，语气选择就是产品体验</h2>
+        <section class="doc-chapter" id="whybother-model">
+          <h2><small>04</small>模型与语气</h2>
+          <h3>中文情感场景里，语气选择就是产品体验</h3>
           <div class="case-feature"><h4>角色生成</h4><p>闺蜜人设一次性生成，保证陪伴关系有连续性。</p></div>
           <div class="case-feature"><h4>模型选择</h4><p>项目选择 Sonnet。测试中，DeepSeek 在中文情感场景里的表达被评价为“太爹味”，不符合预期的朋友语气。</p></div>
-          <figure class="case-image-slot tall" role="img" aria-label="对话语气和模型输出对比占位">
-            <svg class="case-image-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
-            <strong>对话样例 / 模型输出比较</strong><small>可补充不同阶段的真实对话和模型评估记录</small>
-          </figure>
         </section>
-
-        <section id="whybother-business" class="case-section">
-          <div class="case-section-no">05 / 商业模式</div>
-          <h2>用户免费，尝试由转化覆盖陪伴成本</h2>
+        <section class="doc-chapter" id="whybother-business">
+          <h2><small>05</small>商业模式</h2>
+          <h3>用户免费，尝试由转化覆盖陪伴成本</h3>
           <p>计划采用 ToB affiliate 分成，用户不付费。每位用户的模型成本约 ¥70/月，按现有估算，两笔转化可以覆盖成本。</p>
           <div class="case-decisions">
             <div class="case-decision"><h4>用户侧</h4><p>不向用户收费，保留轻量的陪伴体验。</p></div>
             <div class="case-decision"><h4>商业侧</h4><p>通过 affiliate 分成覆盖模型调用成本。</p></div>
           </div>
         </section>
-
-        <section id="whybother-result" class="case-section">
-          <div class="case-section-no">06 / 测试信号</div>
-          <h2>一句自然的回应，触发了购买意愿</h2>
-          <div class="case-outcomes">
-            <div class="case-outcome"><b>2</b><span>测试用户表达购买意愿</span></div>
-            <div class="case-outcome"><b>9</b><span>加入社群</span></div>
-            <div class="case-outcome"><b>开发中</b><span>产品阶段</span></div>
-          </div>
+        <section class="doc-chapter" id="whybother-result">
+          <h2><small>06</small>测试信号</h2>
+          <h3>一句自然的回应，触发了购买意愿</h3>
+          <div class="mets" style="--metric-columns:3" aria-label="测试反馈"><div><b>2</b><span>测试用户表达购买意愿</span></div><div><b>9</b><span>加入社群</span></div><div><b>开发中</b><span>产品阶段</span></div></div>
           <p>两位测试用户在机器人随口说了一句话之后，就表达了购买意愿。这是早期的体验信号，说明角色语气可能影响用户对产品价值的感知。</p>
           <div class="case-closing"><div class="case-eyebrow">项目复盘</div><h3>真正的陪伴感来自持续理解和合适的表达，而不是多一张卡路里表。</h3><p>当前处于开发阶段，早期内容互动、社群加入和测试反馈为后续产品验证提供了线索。</p></div>
         </section>
-      </div>
+      </article>
     </div>
   </div>
 </section>
-
-
-<section class="view" id="project-shelter">
-  <div class="case-page">
-    <a class="case-back" href="#home" onclick="backToProjects(event)">← 返回作品</a>
-    <section class="case-hero" aria-labelledby="shelter-project-title">
-      <div class="case-hero-grid"><div>
-        <h1 id="shelter-project-title">shelter <span>Early exploration.</span></h1>
-        <div class="case-eyebrow">早期探索 · 手绘视觉与音效 · 2025.08 — 2025.10</div>
-        <h2>给注意力，搭一顶小帐篷。</h2>
-      </div></div>
-    </section>
-    <section class="shelter-concept" aria-label="shelter 早期手绘探索">
-      <div class="concept-stage"><img src="images/shelter.png" alt="shelter 的黄色帐篷与篝火插画"></div>
-      <div class="concept-copy"><h2>从手绘开始，探索一个让人愿意停留的空间。</h2><p>shelter 是一个围绕专注空间的早期探索。以手绘帐篷和篝火为起点，尝试用画面与声音营造暂时远离外界干扰的氛围。</p><p class="concept-status">早期手绘探索 / 氛围与体验</p></div>
-    </section>
+<section class="view ohmee-case shelter-case" id="project-shelter" aria-label="shelter 项目详情">
+  <div class="pgb" aria-hidden="true"></div>
+  <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
+  <nav class="tabs" aria-label="shelter 章节导航">
+    <a href="#project/shelter" data-case-section="shelter-background" onclick="scrollProjectCaseTo(event,'shelter','shelter-background')" class="on" aria-current="location">概念背景</a>
+    <a href="#project/shelter" data-case-section="shelter-exploration" onclick="scrollProjectCaseTo(event,'shelter','shelter-exploration')">视觉与氛围</a>
+    <a href="#project/shelter" data-case-section="shelter-outcome" onclick="scrollProjectCaseTo(event,'shelter','shelter-outcome')">探索成果</a>
+  </nav>
+  <div class="hero"><div class="c">
+    <div class="tags"><span>早期探索</span><span>手绘视觉</span><span>氛围设计</span><span>音效</span></div>
+    <div class="hd"><h1 id="shelter-project-title">shelter<small>Early exploration.</small></h1></div>
+    <p class="lead">给注意力，搭一顶小帐篷。</p>
+    <div class="meta"><div><span>项目阶段</span>早期概念探索</div><div><span>探索方向</span>手绘视觉与音效</div><div><span>时间</span>2025.08 — 2025.10</div></div>
+  </div></div>
+  <div class="c">
+    <div class="q">
+      <div class="q-problem"><span class="mono">01</span><h3>探索方向</h3><p>探索如何为注意力创造一个能暂时停留、远离外界干扰的空间。</p></div>
+      <div class="q-solution"><span class="mono">02</span><h3>概念</h3><p>从一顶手绘帐篷和一簇篝火开始，尝试以视觉与声音营造专注氛围。</p></div>
+      <div class="q-result"><span class="mono">03</span><h3>阶段成果</h3><p>完成早期手绘视觉与音效方向探索，形成 shelter 的概念表达。</p></div>
+      <div class="q-role"><span class="mono">04</span><h3>项目角色</h3><p>独立进行概念构思、手绘视觉探索与氛围体验尝试。</p></div>
+    </div>
+    <div class="gal" style="--gallery-columns:1" aria-label="shelter 概念视觉">
+      <figure class="ph landscape"><button class="p" type="button" data-preview-src="images/shelter.png" data-preview-alt="shelter 的手绘帐篷与篝火插画" aria-label="放大 shelter 手绘插画"><img src="images/shelter.png" alt="shelter 的黄色帐篷与篝火插画" loading="eager"></button><figcaption class="mono">概念视觉 · 手绘帐篷与篝火</figcaption></figure>
+    </div>
+    <div class="w">
+      <nav class="toc" aria-label="shelter 项目目录"><span class="mono">目录</span>
+        <a href="#project/shelter" data-case-section="shelter-background" onclick="scrollProjectCaseTo(event,'shelter','shelter-background')" class="on" aria-current="location"><span>01</span>概念背景</a>
+        <a href="#project/shelter" data-case-section="shelter-exploration" onclick="scrollProjectCaseTo(event,'shelter','shelter-exploration')"><span>02</span>视觉与氛围</a>
+        <a href="#project/shelter" data-case-section="shelter-outcome" onclick="scrollProjectCaseTo(event,'shelter','shelter-outcome')"><span>03</span>探索成果</a>
+      </nav>
+      <article class="doc">
+        <section class="doc-chapter" id="shelter-background">
+          <h2><small>01</small>概念背景</h2>
+          <h3>给注意力，搭一顶小帐篷。</h3>
+          <p>shelter 是一个围绕专注空间的早期探索。起点是一个简单问题：能不能用画面与声音，营造暂时远离外界干扰的氛围？</p>
+        </section>
+        <section class="doc-chapter" id="shelter-exploration">
+          <h2><small>02</small>视觉与氛围</h2>
+          <h3>从手绘开始，探索一个让人愿意停留的空间。</h3>
+          <p>以手绘帐篷和篝火作为视觉起点，尝试把 shelter 表达成一个安静、可暂时停留的空间概念，并探索声音对氛围的补充。</p>
+          <p>这是一轮早期视觉与体验探索，聚焦概念氛围，没有量化用户验证数据。</p>
+        </section>
+        <section class="doc-chapter" id="shelter-outcome">
+          <h2><small>03</small>探索成果</h2>
+          <h3>以视觉与声音形成早期体验方向。</h3>
+          <p>在 2025 年 8 月至 10 月完成手绘视觉与音效方向尝试，沉淀出 shelter 的概念表达，作为后续体验探索的起点。</p>
+          <div class="case-closing"><div class="case-eyebrow">项目阶段</div><h3>早期手绘探索 / 氛围与体验</h3><p>当前成果是概念方向与视觉表达，尚未进入量化用户验证。</p></div>
+        </section>
+      </article>
+    </div>
   </div>
 </section>
-
 </main>
 <footer class="studio-footer page-width"><a href="#home" onclick="go(event,'intro')">Angela Xu</a><span>© 2026 徐晓萌</span></footer>
 <dialog class="studio-lightbox" id="image-dialog" aria-label="项目图片放大预览"><button class="dialog-close" type="button" aria-label="关闭图片预览">关闭 ×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p></dialog>
@@ -1330,20 +1319,38 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
       updateChapter();
       return;
     }
-    if (!('IntersectionObserver' in window)) return;
-    caseObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          for (const link of links) {
-            const current = link.dataset.caseSection === entry.target.id;
-            link.classList.toggle('active', current);
-            if (current) link.setAttribute('aria-current', 'location');
-            else link.removeAttribute('aria-current');
+    const tabs = view.querySelector('.tabs');
+    const progress = view.querySelector('.pgb');
+    const selectChapter = sectionId => {
+      for (const link of links) {
+        const current = link.dataset.caseSection === sectionId;
+        link.classList.toggle('active', current);
+        if (current) {
+          link.setAttribute('aria-current', 'location');
+          if (tabs?.contains(link) && getComputedStyle(tabs).display !== 'none') {
+            tabs.scrollLeft = link.offsetLeft - tabs.clientWidth / 2 + link.offsetWidth / 2;
           }
-        }
+        } else link.removeAttribute('aria-current');
       }
-    }, { rootMargin: '-16% 0px -65% 0px', threshold: 0 });
-    sections.forEach(section => caseObserver.observe(section));
+    };
+    const updateChapter = () => {
+      caseScrollFrame = 0;
+      const top = 150;
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= top) current = section;
+      }
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 3) current = sections.at(-1);
+      if (current) selectChapter(current.id);
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (progress) progress.style.width = (scrollableHeight > 0 ? window.scrollY / scrollableHeight * 100 : 0) + '%';
+    };
+    caseScrollListener = () => {
+      if (!caseScrollFrame) caseScrollFrame = requestAnimationFrame(updateChapter);
+    };
+    window.addEventListener('scroll', caseScrollListener, { passive: true });
+    window.addEventListener('resize', caseScrollListener);
+    updateChapter();
   }
 
   function route() {
@@ -1417,9 +1424,9 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     if (!destination) return;
     if (slug === 'woma') {
       selectOhmeeChapter(sectionId);
-      destination.setAttribute('tabindex', '-1');
-      destination.focus({ preventScroll: true });
     }
+    destination.setAttribute('tabindex', '-1');
+    destination.focus({ preventScroll: true });
     destination.scrollIntoView({ behavior: motion.matches ? 'instant' : 'smooth', block: 'start' });
   };
 

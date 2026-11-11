@@ -4,7 +4,7 @@
 .ohmee-case *{box-sizing:border-box;margin:0}
 .ohmee-case a{color:inherit;text-decoration:none}
 .ohmee-case a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-html:has(body[data-project="woma"]){scroll-behavior:smooth;scroll-padding-top:92px}
+html:has(body[data-view="case"]){scroll-behavior:smooth;scroll-padding-top:92px}
 .ohmee-case{background:var(--paper);color:var(--ink);font-family:"Noto Sans SC","PingFang SC",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.9;}
 .ohmee-case .pgb{position:fixed;top:0;left:0;height:3px;background:var(--berry);z-index:50;width:0}
 .ohmee-case .top{position:sticky;top:0;z-index:40;height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 var(--px);font-size:15px;background:var(--paper);border-bottom:1px solid var(--line)}
@@ -17,6 +17,7 @@ html:has(body[data-project="woma"]){scroll-behavior:smooth;scroll-padding-top:92
 .ohmee-case .tags{display:flex;flex-wrap:wrap;gap:6px;margin:clamp(32px,5vw,64px) 0 16px}
 .ohmee-case .tags span{font:400 13px var(--mono);border:1px solid var(--ink);padding:2px 8px}
 .ohmee-case h1{font:900 clamp(40px,6vw,92px)/1.05 "Noto Sans SC",sans-serif;letter-spacing:-.04em}
+.ohmee-case .hd h1 small{display:block;margin-top:8px;font:500 clamp(16px,2vw,24px)/1.3 "Noto Sans SC",sans-serif;letter-spacing:0;color:var(--mu)}
 .ohmee-case .lead{font-size:clamp(20px,2vw,28px);line-height:1.6;font-weight:500;max-width:25em;margin:20px 0 22px}
 .ohmee-case .meta{display:flex;flex-wrap:wrap;gap:6px 32px;font-size:15.5px;color:#2f2b29;padding-bottom:36px}
 .ohmee-case .meta span{color:var(--mu);font:400 13px var(--mono);margin-right:8px}
@@ -24,17 +25,19 @@ html:has(body[data-project="woma"]){scroll-behavior:smooth;scroll-padding-top:92
 .ohmee-case .ov div{padding:20px 0 24px;border-bottom:1px solid var(--line)}
 .ohmee-case .ov .mono{color:var(--berry);display:block;margin-bottom:6px}
 .ohmee-case .ov p{margin:0;font-size:16.5px;line-height:1.85;color:var(--ink)}
-.ohmee-case .gal{background:var(--blush);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px);margin:48px 0 0}
+.ohmee-case .gal{background:var(--blush);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(var(--gallery-columns,4),minmax(0,1fr));gap:clamp(14px,2vw,28px);margin:48px 0 0}
 .ohmee-case .ph{margin:0}
 .ohmee-case .p{aspect-ratio:9/19;border:1.5px solid var(--ink);background:#fff;padding:12% 10%;display:flex;flex-direction:column;gap:8px}
 .ohmee-case .ph figcaption{margin-top:8px}
+.ohmee-case .ph.landscape .p{aspect-ratio:4/3;padding:5%;}
+.ohmee-case .ph.landscape .p img{width:100%;height:100%;object-fit:contain;}
 .ohmee-case .w{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(32px,6vw,96px);padding-top:clamp(40px,6vw,80px);padding-bottom:120px}
 .ohmee-case .toc{position:sticky;top:96px;align-self:start}
 .ohmee-case .toc .mono{display:block;margin-bottom:10px}
 .ohmee-case .toc a{display:flex;gap:12px;padding:8px 0 8px 14px;border-left:2px solid var(--line);font-size:15.5px;color:var(--mu);line-height:1.6}
 .ohmee-case .toc a span{font:400 12px var(--mono);padding-top:3px}
 .ohmee-case .toc a:hover{color:var(--ink)}
-.ohmee-case .toc a.on{border-left-color:var(--berry);color:var(--ink);font-weight:500}
+.ohmee-case .toc a:is(.on,.active){border-left-color:var(--berry);color:var(--ink);font-weight:500}
 .ohmee-case .doc{max-width:820px}
 .ohmee-case section{padding:0 0 56px}
 .ohmee-case section+section{border-top:1px solid var(--line);padding-top:48px}
@@ -56,25 +59,25 @@ html:has(body[data-project="woma"]){scroll-behavior:smooth;scroll-padding-top:92
 @media(max-width:1100px){
 .ohmee-case .ov{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){
-html:has(body[data-project="woma"]){scroll-padding-top:124px}
+html:has(body[data-view="case"]){scroll-padding-top:124px}
 .ohmee-case .w{grid-template-columns:1fr}
 .ohmee-case .toc{display:none}
-.ohmee-case .gal{grid-template-columns:1fr 1fr}
+.ohmee-case .gal{grid-template-columns:repeat(min(2,var(--gallery-columns,4)),minmax(0,1fr))}
 .ohmee-case .mets{grid-template-columns:1fr 1fr}
 .ohmee-case .tabs{display:flex;position:sticky;top:64px;z-index:35;background:var(--paper);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;padding:0 var(--px)}
 .ohmee-case .tabs::-webkit-scrollbar{display:none}
 .ohmee-case .tabs a{flex:none;padding:13px 14px 10px;font-size:15px;color:var(--mu);border-bottom:3px solid transparent;white-space:nowrap}
-.ohmee-case .tabs a.on{color:var(--ink);font-weight:500;border-bottom-color:var(--berry)}}
+.ohmee-case .tabs a:is(.on,.active){color:var(--ink);font-weight:500;border-bottom-color:var(--berry)}}
 @media(max-width:560px){
 .ohmee-case .ov{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){
-html:has(body[data-project="woma"]){scroll-behavior:auto}}
+html:has(body[data-view="case"]){scroll-behavior:auto}}
 .ohmee-case .hd{display:flex;align-items:flex-end;gap:clamp(18px,3vw,36px);flex-wrap:wrap}
 .ohmee-case .ic{flex:none;width:clamp(88px,9vw,128px);aspect-ratio:1;border:1.5px dashed var(--ink);background:var(--blush);display:grid;place-items:center;text-align:center;line-height:1.5;overflow:hidden}
 
 body[data-project="woma"] { background:#F4EFEA; color:#1A1A1F; }
-body[data-project="woma"] > .studio-header,
-body[data-project="woma"] > .studio-footer { display:none; }
+body[data-view="case"] > .studio-header,
+body[data-view="case"] > .studio-footer { display:none; }
 .ohmee-case { padding:0; border:0; }
 .ohmee-case .doc { min-width:0; }
 .ohmee-case .ic { height:clamp(88px,9vw,128px); border:0; border-radius:22%; object-fit:contain; background:#fff; }
