@@ -1205,7 +1205,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     window.va('event', data ? { name, data } : { name });
   };
   const views = [...document.querySelectorAll('main > .view')];
-  const sectionIds = { intro: 'top', projects: 'work', capabilities: 'capabilities', about: 'about', contact: 'contact' };
+  const sectionIds = { intro: 'top', projects: 'work', capabilities: 'capabilities', about: 'capabilities', contact: 'contact' };
   const dialog = document.getElementById('image-dialog');
   const dialogImage = document.getElementById('dialog-image');
   const dialogCaption = document.getElementById('dialog-caption');
@@ -1257,7 +1257,7 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     const el = document.getElementById(sectionIds[name] || name);
     const destination = el;
     if (destination) destination.scrollIntoView({ behavior: smooth && !motion.matches ? 'smooth' : 'instant', block: 'start' });
-    if (el) window.history?.replaceState(null, '', '#' + el.id);
+    if (el) window.history?.replaceState(null, '', '#' + (name === 'about' ? 'about' : el.id));
     markNav(name);
   }
 
@@ -1472,8 +1472,26 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
   document.querySelectorAll('[data-home-section]').forEach(link => {
     link.addEventListener('click', event => window.go(event, link.dataset.homeSection));
   });
+  let homeNavFrame = 0;
+  function updateHomeNav() {
+    homeNavFrame = 0;
+    if (activeView !== 'home') return;
+    const header = document.querySelector('.studio-header');
+    const threshold = (header?.getBoundingClientRect().height || 0) + 80;
+    const capabilities = document.getElementById('capabilities');
+    const contact = document.getElementById('contact');
+    if (contact && contact.getBoundingClientRect().top <= threshold) markNav('contact');
+    else if (capabilities && capabilities.getBoundingClientRect().top <= threshold) markNav('about');
+    else markNav('projects');
+  }
+  function scheduleHomeNav() {
+    if (!homeNavFrame) homeNavFrame = requestAnimationFrame(updateHomeNav);
+  }
+  window.addEventListener('scroll', scheduleHomeNav, { passive: true });
+  window.addEventListener('resize', scheduleHomeNav);
   window.addEventListener('hashchange', route);
   route();
+  scheduleHomeNav();
 })();
 </script>
 <script src="assets/resume-download-data.js"></script>
