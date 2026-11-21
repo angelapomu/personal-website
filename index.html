@@ -521,13 +521,15 @@ html { scroll-behavior: smooth; }
 .figma-home .project-title-row { align-items: flex-start; display: grid; grid-template-columns: 38px 1fr auto; }
 .figma-home .project-number { font: 400 10px var(--mono); padding-top: 9px; }
 .figma-home .project-info h3 { font: 700 clamp(32px, 4vw, 56px)/1 var(--display); letter-spacing: -.05em; margin: 0; }
-.figma-home .project-subtitle { font-size: 13px; margin: 7px 0 0; }
+.figma-home .project-english-name { color: var(--muted); display: inline; font: 500 clamp(15px, 1.4vw, 18px)/1.2 var(--display); letter-spacing: 0; margin: 0 0 0 6px; vertical-align: baseline; }
+.figma-home .project-date { color: rgba(23,23,19,.62); font: 400 13px/1.4 var(--mono); margin: 6px 0 0; }
+.figma-home .project-subtitle { display: block; font-size: 16px; line-height: 1.5; margin: 10px 0 0; }
 .figma-home .project-arrow { align-items: center; border: 1px solid rgba(23,23,19,.55); display: flex; height: 46px; justify-content: center; transition: .25s; width: 46px; }
 .figma-home .project-arrow:hover { background: var(--orange); border-color: var(--orange); transform: rotate(45deg); }
-.figma-home .project-description { font-size: 13px; line-height: 1.8; margin: 24px 0 20px 38px; max-width: 450px; opacity: .8; }
+.figma-home .project-description { font-size: 16px; line-height: 1.8; margin: 24px 0 20px 38px; max-width: 450px; opacity: .8; }
 .figma-home .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-left: 38px; }
-.figma-home .tag-row span { border: 1px solid rgba(23,23,19,.35); font: 400 8px var(--mono); letter-spacing: .07em; padding: 7px 11px; }
-.figma-home .project-mori .tag-row span { font-size: 10px; padding: 8px 12px; }
+.figma-home .tag-row span { border: 1px solid rgba(23,23,19,.35); font-size: 16px; font-weight: 500; letter-spacing: .02em; line-height: 1.3; padding: 6px 10px; }
+
 .figma-home .lab-heading { align-items: end; border-top: 1px solid rgba(23,23,19,.25); display: flex; justify-content: space-between; margin: 120px 0 34px; padding-top: 22px; }
 .figma-home .lab-heading span { font: 600 clamp(28px, 4vw, 48px) var(--display); }
 .figma-home .lab-heading p { font-size: 11px; opacity: .65; }
@@ -557,14 +559,14 @@ html { scroll-behavior: smooth; }
 .figma-home .capabilities-heading { display: grid; column-gap: 6vw; grid-template-columns: 1.35fr .65fr; margin-bottom: 90px; row-gap: 30px; }
 .figma-home .capabilities-heading .eyebrow { grid-column: 1 / -1; margin-bottom: 0; }
 .figma-home .capabilities-heading h2 { font-size: clamp(48px, 6vw, 86px); letter-spacing: -.07em; line-height: 1.08; margin: 0; }
-.figma-home .capabilities-heading > p:last-child { align-self: end; font-size: 13px; line-height: 1.9; margin: 0; max-width: 320px; opacity: .7; }
+.figma-home .capabilities-heading > p:last-child { align-self: end; font-size: 16px; line-height: 1.8; margin: 0; max-width: 320px; opacity: .7; }
 .figma-home .capability-list { border-top: 1px solid rgba(255,255,255,.35); display: grid; grid-template-columns: repeat(4, 1fr); }
 .figma-home .capability-list article { border-right: 1px solid rgba(255,255,255,.25); min-height: 320px; padding: 24px 24px 26px 0; position: relative; }
 .figma-home .capability-list article:not(:first-child) { padding-left: 24px; }
 .figma-home .capability-list article:last-child { border-right: 0; }
 .figma-home .capability-number { color: var(--orange); font: 500 9px var(--mono); }
 .figma-home .capability-list h3 { font-size: 24px; letter-spacing: -.04em; margin: 58px 0 20px; }
-.figma-home .capability-list p { font-size: 11px; line-height: 2; margin: 0; opacity: .65; }
+.figma-home .capability-list p { font-size: 15px; line-height: 1.7; margin: 0; opacity: .65; }
 .figma-home .capability-list b { bottom: 25px; font: 400 7px var(--mono); letter-spacing: .12em; position: absolute; }
 .figma-home .tool-line { align-items: center; border-top: 1px solid rgba(255,255,255,.35); display: flex; gap: 30px; padding-top: 24px; }
 .figma-home .tool-line span { color: var(--orange); font: 500 8px var(--mono); letter-spacing: .12em; margin-right: auto; }
@@ -579,7 +581,7 @@ html { scroll-behavior: smooth; }
 .figma-home .about-content { padding-left: 9vw; }
 .figma-home .about-lead { font-size: clamp(22px, 2.6vw, 37px); font-weight: 700; letter-spacing: -.04em; line-height: 1.55; margin: 38px 0 70px; }
 .figma-home .about-columns { display: grid; gap: 40px; grid-template-columns: 1fr 1fr; }
-.figma-home .about-columns p { font-size: 13px; line-height: 2; margin: 0; }
+.figma-home .about-columns p { font-size: 16px; line-height: 1.8; margin: 0; }
 .figma-home .skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 60px; }
 .figma-home .skill-list span { border: 1px solid var(--ink); font: 500 8px var(--mono); padding: 9px 13px; }
 
@@ -602,7 +604,7 @@ html { scroll-behavior: smooth; }
 .figma-home .resume-open-hint { bottom: 17px; color: var(--blue); font: 500 6px var(--mono); left: 30px; letter-spacing: .06em; position: absolute; }
 .figma-home .resume-copy { align-self: center; }
 .figma-home .resume-copy h2 { font-size: clamp(52px, 6vw, 86px); letter-spacing: -.07em; line-height: 1.08; margin: 0 0 35px; }
-.figma-home .resume-copy > p:not(.eyebrow) { font-size: 13px; line-height: 2; opacity: .9; }
+.figma-home .resume-copy > p:not(.eyebrow) { font-size: 16px; line-height: 1.8; opacity: .9; }
 .figma-home .resume-actions { align-items: center; display: flex; gap: 30px; margin-top: 45px; }
 .figma-home .primary-button { align-items: center; background: var(--paper); border: 1px solid var(--ink); color: var(--ink); display: flex; font-size: 13px; font-weight: 700; gap: 28px; padding: 16px 20px; transition: .2s; }
 .figma-home .primary-button:hover { background: var(--ink); color: var(--paper); }
@@ -634,8 +636,8 @@ html { scroll-behavior: smooth; }
 .figma-home .footer-main { align-items: end; display: flex; justify-content: space-between; }
 .figma-home .footer-main p { font-size: clamp(60px, 9vw, 130px); font-weight: 900; letter-spacing: -.07em; line-height: .95; margin: 0; }
 .figma-home .footer-main p span { color: var(--orange); }
-.figma-home .footer-main > a { align-items: center; border: 1px solid var(--paper); display: flex; flex-direction: column; font: 500 9px var(--mono); gap: 10px; height: 130px; justify-content: center; transition: .25s; width: 130px; }
-.figma-home .footer-main > a:hover { background: var(--blue); border-color: var(--blue); transform: rotate(8deg); }
+.figma-home .footer-main > .footer-copy-email { background: transparent; color: inherit; cursor: pointer; text-align: center; align-items: center; border: 1px solid var(--paper); display: flex; flex-direction: column; font: 500 14px var(--mono); gap: 10px; height: 130px; justify-content: center; transition: .25s; width: 130px; }
+.figma-home .footer-main > .footer-copy-email:hover { background: var(--blue); border-color: var(--blue); transform: rotate(8deg); }
 .figma-home .footer-meta { border-top: 1px solid rgba(255,255,255,.25); display: flex; font: 400 8px var(--mono); justify-content: space-between; margin-top: 90px; padding-top: 22px; }
 
 @media (max-width: 900px) {
@@ -680,6 +682,7 @@ html { scroll-behavior: smooth; }
   .figma-home .scroll-cue { bottom: 25px; }
   .figma-home .work-section { padding: 90px 18px 100px; }
   .figma-home .featured-project .project-preview { aspect-ratio: .9; }
+  .figma-home .featured-grid { gap: 70px; }
   .figma-home .mori-preview { padding: 4%; }
   .figma-home .mori-content { padding: 14% 5%; }
   .figma-home .prompt-field { min-width: 190px; }
@@ -688,12 +691,13 @@ html { scroll-behavior: smooth; }
   .figma-home .project-description { margin-left: 0; }
   .figma-home .tag-row { margin-left: 0; }
   .figma-home .small-project .project-preview { aspect-ratio: 1.2; }
+  .figma-home .project-info { padding-top: 12px; }
   .figma-home .lab-heading { margin-top: 90px; }
-  .figma-home .capabilities-section { padding: 90px 18px 60px; }
-  .figma-home .capabilities-heading { gap: 20px; margin-bottom: 60px; }
+  .figma-home .capabilities-section { padding: 64px 18px 44px; }
+  .figma-home .capabilities-heading { gap: 14px; margin-bottom: 36px; }
   .figma-home .capability-list { grid-template-columns: 1fr; }
-  .figma-home .capability-list article, .figma-home .capability-list article:not(:first-child) { border-right: 0; min-height: 245px; padding: 22px 0; }
-  .figma-home .capability-list h3 { margin-top: 38px; }
+  .figma-home .capability-list article, .figma-home .capability-list article:not(:first-child) { border-right: 0; min-height: 0; padding: 16px 0 20px; }
+  .figma-home .capability-list h3 { margin: 20px 0 10px; }
   .figma-home .about-columns { grid-template-columns: 1fr; gap: 18px; }
   .figma-home .resume-paper { height: 390px; left: 2%; width: 280px; }
   .figma-home .resume-modal-toolbar { padding: 16px 18px; }
@@ -709,7 +713,7 @@ html { scroll-behavior: smooth; }
   .figma-home .resume-actions { align-items: flex-start; flex-direction: column; }
   .figma-home footer { padding-top: 80px; }
   .figma-home .footer-main { align-items: flex-start; flex-direction: column; gap: 50px; }
-  .figma-home .footer-main > a { align-self: flex-end; height: 105px; width: 105px; }
+  .figma-home .footer-main > .footer-copy-email { align-self: flex-end; height: 105px; width: 105px; }
   .figma-home .footer-meta { align-items: flex-start; flex-direction: column; gap: 12px; margin-top: 70px; }
 }
 
@@ -722,7 +726,7 @@ html { scroll-behavior: smooth; }
 html { scroll-padding-top: 72px; }
 body[data-view="home"] > .studio-header,
 body[data-view="home"] > .studio-footer { display: none; }
-.figma-home .tag-row span { font-size: 10px; padding: 8px 12px; }
+.figma-home .tag-row span { font-size: 16px; padding: 6px 10px; }
 .figma-home .imported-preview {
   --accent: var(--blue); --rust: var(--orange); --muted: #676560;
   --display: 'Outfit', 'Noto Sans SC', sans-serif;
@@ -817,13 +821,14 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 </style>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="angela-palette.css">
-<link rel="stylesheet" href="ohmee-case.css?v=evidence-2">
+<link rel="stylesheet" href="ohmee-case.css?v=case-layout-20261111">
+<link rel="stylesheet" href="home-reference.css">
 </head>
 <body data-view="home">
 <a class="skip-link" href="#main-content">跳到正文</a>
 <header class="studio-header">
   <a class="studio-brand" href="#home" onclick="go(event,'intro')" aria-label="Angela 徐晓萌，回到首页"><b>Angela<span>.</span></b><span>徐晓萌</span></a>
-  <nav aria-label="主导航"><a href="#home" data-p="projects" onclick="go(event,'projects')">作品</a><a href="#capabilities" data-p="capabilities" onclick="go(event,'capabilities')">关于我</a><a class="nav-contact" href="#home" data-p="contact" onclick="go(event,'contact')">简历 <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="主导航"><a href="#home" data-p="projects" onclick="go(event,'projects')">作品</a><a href="#about" data-p="about" onclick="go(event,'about')">关于我</a><a class="nav-contact" href="#home" data-p="contact" onclick="go(event,'contact')">简历 <span aria-hidden="true">↗</span></a></nav>
 </header>
 <main id="main-content" tabindex="-1">
 <section class="view on figma-home" id="home" aria-label="Angela 的作品集">
@@ -832,37 +837,35 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     <h1 class="spring-title" id="spring-title" aria-label="做让用户自己想回来的AI产品"><span class="spring-line"><span class="spring-char" aria-hidden="true"><span class="spring-glyph">做</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">让</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">用</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">户</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph spring-pink">自</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph spring-pink">己</span></span></span>
 <span class="spring-line"><span class="spring-char" aria-hidden="true"><span class="spring-glyph">想</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">回</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">来</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">的</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">AI</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">产</span></span><span class="spring-char" aria-hidden="true"><span class="spring-glyph">品</span></span></span></h1>
     <p class="spring-sub">用观察力和好奇心，打造深入人心、有记忆点的 AI 产品。</p>
-    <p class="spring-bio">AI 产品经理，上海。谢菲尔德大学 2024 届，独立做完了两个 AI 产品的 MVP，正在找工作。</p>
+    <p class="spring-bio">你好！我是徐晓萌（24届QS92毕业生）。有1年的AI PM/ 0-1产品开发经验，正在找AI PM工作。欢迎查看我的AI产品作品集！</p>
   </div>
   <div class="spring-scroll"><a class="spring-scroll-cue" href="#work" data-home-section="projects"><span class="spring-scroll-label">下滑查看我的作品 <span class="spring-scroll-arrow" aria-hidden="true"><svg viewBox="0 0 20 40" fill="none"><path d="M10 2v32m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
-</section><section class="work-section" id="work"><div class="lab-heading selected-work-heading"><h2>主要项目</h2></div><div class="featured-grid"><article class="project-card project-mori featured-project"><div class="project-preview"><div class="featured-stage imported-preview" data-screen="chat">
+</section><div class="home-marquee" aria-hidden="true"><div class="home-marquee-track"><span>让用户自己想回来  /  AI 产品经理  /  上海  /  两个 AI 产品做到 MVP  /  正在找工作  /  </span><span>让用户自己想回来  /  AI 产品经理  /  上海  /  两个 AI 产品做到 MVP  /  正在找工作  /  </span></div></div><section class="work-section" id="work"><div class="lab-heading selected-work-heading"><h2>作品</h2></div><div class="home-group">ai对话</div><div class="featured-grid"><article class="project-card project-mori featured-project"><div class="project-preview"><span class="trial-badge">可试用</span><div class="featured-stage imported-preview" data-screen="chat">
           <p class="stage-label">认识自己，从日常开始。<span>OHMEE / PRODUCT SCREENS</span></p>
           <button class="product-phone identity-phone" type="button" data-preview-src="images/woma-app-profile.png" data-preview-alt="我吗的身份首页" aria-label="放大我吗身份首页"><img src="images/woma-app-profile.png" alt="我吗身份首页，自学者身份卡" loading="lazy"></button>
           <button class="product-phone chat-phone" type="button" data-preview-src="images/woma-app-chat.png" data-preview-alt="我吗的聊天与 AI 重写界面" aria-label="放大我吗聊天界面"><img src="images/woma-app-chat.png" alt="我吗聊天与 AI 重写界面" loading="lazy"></button>
           <div class="screen-switch" role="group" aria-label="选择展示的我吗界面"><button type="button" data-screen-choice="chat" aria-pressed="true">重写对话</button><button type="button" data-screen-choice="identity" aria-pressed="false">身份卡片</button></div>
-        </div></div><div class="project-info"><div class="project-title-row"><div><h3>我吗 OhMee</h3><p class="project-subtitle">AI 自我认知产品</p></div><a class="project-arrow" href="#project/woma" aria-label="查看 我吗 OhMee 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">把日常经历里被忽略的能力重新说出来。通过 AI 重写与身份认领，帮助用户建立更积极的自我认知。</p><div class="tag-row"><span>0→1 PRODUCT</span><span>AI WORKFLOW</span><span>2026</span></div></div></article><article class="project-card project-echo featured-project"><div class="project-preview"><a class="companion-stage imported-preview" href="#project/whybother" aria-label="查看 Why Bother 项目案例"><span class="art-label">A LITTLE COMPANY, EVERY DAY.</span><span class="companion-type" aria-hidden="true">Why<br>Bother?</span><img src="images/whybother.png" alt="Why Bother 的饭碗与对话气泡插画" loading="lazy"><span class="companion-caption">好好吃饭。<br>有人陪，也有人说真话。</span><span class="art-arrow" aria-hidden="true">↗</span></a></div><div class="project-info"><div class="project-title-row"><div><h3>Why Bother</h3><p class="project-subtitle">减肥搭子 · 陪伴型 AI</p></div><a class="project-arrow" href="#project/whybother" aria-label="查看 Why Bother 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">一个会说真话、也一直在的 AI 朋友。通过闺蜜人设与逐步变化的语气，在日常对话中建立熟悉感。</p><div class="tag-row"><span>AI COMPANION</span><span>PROMPT DESIGN</span><span>开发中</span></div></div></article></div><div class="lab-heading"><h2>早期探索</h2><p>早期练习 / 快速实验</p></div><div class="small-grid"><article class="project-card project-sumi small-project"><div class="project-preview"><a class="imported-preview dictionary-media" href="#project/contextual" aria-label="查看截图词典详情"><div class="dictionary-visual"><img src="images/contextual-app-01.png" alt="截图词典的 proactive 词卡与原句" loading="lazy"></div></a></div><div class="project-info"><div class="project-title-row"><div><h3>截图词典</h3><p class="project-subtitle">Contextual Collector · 个人学习工具</p></div><a class="project-arrow" href="#project/contextual" aria-label="查看 截图词典 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">把截图、原句和生词卡连在一起，让单词回到遇见它的语境里。用有限容量，提醒自己收集之后继续处理。</p><div class="tag-row"><span>PERSONAL TOOL</span><span>OCR</span><span>2026</span></div></div></article><article class="project-card project-patch small-project"><div class="project-preview"><a class="imported-preview shelter-media" href="#project/shelter" aria-label="查看 shelter 手绘探索详情"><img src="images/shelter.png" alt="shelter 的手绘帐篷与篝火" loading="lazy"></a></div><div class="project-info"><div class="project-title-row"><div><h3>shelter</h3><p class="project-subtitle">早期手绘探索</p></div><a class="project-arrow" href="#project/shelter" aria-label="查看 shelter 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><p class="project-description">从一顶手绘帐篷和一簇篝火开始，尝试用画面与声音，营造一个让注意力暂时停留的空间。</p><div class="tag-row"><span>HAND-DRAWN</span><span>EXPLORATION</span><span>2025</span></div></div></article></div></section><section class="capabilities-section" id="capabilities"><div class="capabilities-heading"><p class="eyebrow">AIPM CAPABILITIES</p><h2>从机会判断，<br/>到产品落地。</h2><p>不止于定义功能。我关注 AI 能力如何转化为真实用户价值，以及产品如何持续迭代。</p></div><div class="capability-list"><article><span class="capability-number">01</span><h3>产品策略</h3><p>用户研究 · 机会识别 · 产品定位<br/>Roadmap · 指标体系</p><b>DISCOVER / DEFINE</b></article><article><span class="capability-number">02</span><h3>AI 产品设计</h3><p>LLM 工作流 · Prompt / Context<br/>评测体系 · Human-in-the-loop</p><b>DESIGN / EVALUATE</b></article><article><span class="capability-number">03</span><h3>验证与交付</h3><p>PRD · 快速原型 · 用户测试<br/>数据分析 · 迭代实验</p><b>BUILD / ITERATE</b></article><article><span class="capability-number">04</span><h3>跨团队协作</h3><p>设计 / 算法 / 工程协同<br/>目标对齐 · 项目推进</p><b>ALIGN / DELIVER</b></article></div><div class="tool-line"><span>WORKING WITH</span><p>Figma</p><p>Cursor</p><p>SQL</p><p>Python</p><p>LLM APIs</p><p>Analytics</p></div></section><section class="about-section" id="about"><div class="about-title"><span class="about-kicker">ABOUT ME</span><h2>理解技术，<br/><em>也理解人。</em></h2><div class="about-scribble">PRODUCT / TECHNOLOGY / PEOPLE</div></div><div class="about-content"><p class="about-lead">我是一名正在寻找新机会的 AI 产品经理，擅长把技术能力转化成清晰、可验证的产品方案。</p><div class="about-columns"><p>过去 4 年，我从 0 到 1 参与产品策略、用户研究与体验落地。比起追逐每一个新模型，我更关心它如何解决真实问题，并形成长期价值。</p><p>设计背景让我对体验细节敏感，产品训练则让我从目标、约束与结果出发。我喜欢与算法、工程和设计一起，把模糊问题推进到可以上线。</p></div></div></section><section class="resume-section" id="contact"><div class="resume-preview"><div class="resume-paper back-paper"></div><button type="button" class="resume-paper front-paper" data-resume-preview aria-label="全屏预览简历"><div class="resume-name"><b>YUN</b><span>AI Product Designer</span></div><div class="resume-rule"></div><div class="resume-layout"><div><b>EXPERIENCE</b><span></span><span></span><span class="short"></span></div><div><b>EDUCATION</b><span></span><span class="short"></span></div><div><b>SELECTED WORK</b><span></span><span></span><span></span></div><div><b>SKILLS</b><span></span><span class="short"></span></div></div><span class="resume-page">01 / 01</span><span class="resume-open-hint">点击全屏预览 ↗</span></button></div><div class="resume-copy"><p class="eyebrow">ONE MORE THING</p><h2>想了解<br/>更多细节？</h2><p>这里有一份更完整的工作经历与项目说明。<br/>也欢迎直接来信，说说你正在做的有趣事情。</p><div class="resume-actions"><a class="primary-button" href="assets/resume.pdf" download="resume.pdf" data-resume-download>下载简历 <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a><a class="text-link" href="mailto:hello@yun.design">hello@yun.design <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div></div></section></div><dialog class="resume-modal" id="resume-dialog" aria-label="简历全屏预览（模板占位）"><button class="resume-modal-backdrop" type="button" aria-label="关闭简历预览"></button><div class="resume-modal-toolbar"><span>YUN — RESUME PREVIEW</span><div><a href="assets/resume.pdf" download="resume.pdf" data-resume-download>下载简历</a><button class="resume-close" type="button" autofocus>关闭 ×</button></div></div><div class="resume-modal-scroll"><article class="resume-modal-paper"><header><div><h2>YUN</h2><p>AI Product Manager</p></div><p>Shanghai, China<br/>hello@yun.design</p></header><section><h3>PROFILE</h3><p>AI 产品经理，专注于将模型能力转化为清晰、可验证的产品体验。具备产品策略、用户研究、交互设计和快速原型能力。</p></section><section class="resume-modal-grid"><div><h3>SELECTED EXPERIENCE</h3><h4>AI Product Manager</h4><span>2022—PRESENT</span><p>负责 AI 产品从机会识别、方案定义到跨团队交付，建立核心体验与迭代指标。</p><h4>Product Designer</h4><span>2020—2022</span><p>参与多个数字产品从 0 到 1 的体验策略、用户研究与设计落地。</p></div><div><h3>SELECTED WORK</h3><h4>MORI</h4><p>AI Creative Companion</p><h4>ECHO</h4><p>AI Voice Journal</p><h3>CAPABILITIES</h3><p>Product Strategy<br/>LLM Workflows<br/>Prototyping<br/>Data &amp; Evaluation</p></div></section><footer><span>YUN / RESUME</span><span>01 / 01</span></footer></article></div></dialog><footer><div class="footer-main"><p>感谢观看！<br/><span>欢迎联系</span></p><a href="mailto:hello@yun.design">SAY HELLO <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="footer-meta"><span>© 2025 YUN STUDIO</span><span>DESIGNED WITH CURIOSITY</span><span>SHANGHAI · 31°N</span></div></footer></div>
+        </div></div><div class="project-info"><div class="project-title-row"><div><h3>我吗<span class="project-english-name" lang="en">OhMee</span></h3><p class="project-date">2026.06 — 至今</p><p class="project-subtitle">adhd友好的动力挖掘app</p></div><a class="project-arrow" href="#project/woma" aria-label="查看 我吗 OhMee 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="tag-row"><span>AI心理产品</span><span>workflow设计</span><span>记忆机制设计</span></div></div></article><article class="project-card project-echo featured-project"><div class="project-preview"><a class="companion-stage imported-preview" href="#project/whybother" aria-label="查看 Why Bother 项目案例"><span class="art-label">A LITTLE COMPANY, EVERY DAY.</span><span class="companion-type" aria-hidden="true">Why<br>Bother?</span><img src="images/whybother.png" alt="Why Bother 的饭碗与对话气泡插画" loading="lazy"><span class="companion-caption">好好吃饭。<br>有人陪，也有人说真话。</span><span class="art-arrow" aria-hidden="true">↗</span></a></div><div class="project-info"><div class="project-title-row"><div><h3>Why Bother</h3><p class="project-date">2026</p><p class="project-subtitle">一个会破防偷懒的ai减肥搭子</p></div><a class="project-arrow" href="#project/whybother" aria-label="查看 Why Bother 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="tag-row"><span>ai陪伴</span><span>harness设计</span><span>Agent架构设计</span><span>心理学机制设计</span></div></div></article></div><div class="home-group">工具类</div><div class="small-grid"><article class="project-card project-sumi small-project"><div class="project-preview"><span class="trial-badge">可试用</span><a class="imported-preview dictionary-media" href="#project/contextual" aria-label="查看截图词典详情"><div class="dictionary-visual"><img src="images/contextual-app-01.png" alt="截图词典的 proactive 词卡与原句" loading="lazy"></div></a></div><div class="project-info"><div class="project-title-row"><div><h3>截图词典<span class="project-english-name" lang="en">Contextual Collector</span></h3><p class="project-date">2026</p><p class="project-subtitle">保存原先语境和截图的ai辅助背单词app</p></div><a class="project-arrow" href="#project/contextual" aria-label="查看 截图词典 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="tag-row"><span>截图捕捉单词</span><span>OCR</span><span>AI辅助单词学习</span></div></div></article><article class="project-card project-patch small-project"><div class="project-preview"><span class="trial-badge">可试用</span><a class="imported-preview shelter-media" href="#project/shelter" aria-label="查看 shelter 手绘探索详情"><img src="images/shelter.png" alt="shelter 的手绘帐篷与篝火" loading="lazy"></a></div><div class="project-info"><div class="project-title-row"><div><h3>shelter</h3><p class="project-date">2025</p><p class="project-subtitle">一顶与世隔绝的帐篷，却能治疗拖延症</p></div><a class="project-arrow" href="#project/shelter" aria-label="查看 shelter 项目详情"><svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div><div class="tag-row"><span>UIUX设计</span><span>放松解压工具</span><span>白噪音/ 记录工具</span></div></div></article></div></section><section class="capabilities-section" id="capabilities"><div class="capabilities-heading"><p class="eyebrow">AIPM CAPABILITIES</p><h2>多次0-1完整闭环</h2><p>从洞察，到用户心理，真实数据和访谈驱动的产品开发和迭代</p></div><div class="capability-list"><article><span class="capability-number">01</span><h3>市场调研</h3><p>竞品分析 · 用户访谈</p><b>DISCOVER / DEFINE</b></article><article><span class="capability-number">02</span><h3>AI 产品设计</h3><p>结合架构思考的机制功能设计 · UX设计 · 提示词工程 · 评测体系</p><b>DESIGN / EVALUATE</b></article><article><span class="capability-number">03</span><h3>验证与交付</h3><p>PRD · vibe coding全栈开发MVP<br/>用户测试 · 数据分析 · 迭代实验</p><b>BUILD / ITERATE</b></article><article><span class="capability-number">04</span><h3>跨团队协作</h3><p>设计 / 算法 / 工程协同<br/>目标对齐 · 项目推进</p><b>ALIGN / DELIVER</b></article></div><div class="tool-line"><span>WORKING WITH</span><p>Figma</p><p>Cursor</p><p>SQL</p><p>Python</p><p>LLM APIs</p><p>Analytics</p></div></section><section class="about-section" id="about"><div class="about-title"><span class="about-kicker">ABOUT ME</span><h2>理解技术，<br/><em>也理解人。</em></h2><div class="about-scribble">PRODUCT / TECHNOLOGY / PEOPLE</div></div><div class="about-content"><p class="about-lead">擅长快速把观察到的痛点和需求转化为实际可行的ai产品方案</p><div class="about-columns"><p>自学和动手能力强。在25年转行ai pm。多次0-1敏捷开发多款ai产品。2年建筑行业的工作经历累计了调研访谈、项目管理迭代、数据分析等经验。</p><p>设计背景让我对用户体验细节敏感，产品训练则让我从目标、约束与结果出发。擅长市场调研和访谈，系统理解ai架构/ harness，可以和业务与技术团队无障碍合作。希望能加入团队贡献自己的能力！</p></div></div></section><section class="resume-section" id="contact"><div class="resume-preview"><div class="resume-paper back-paper"></div><button type="button" class="resume-paper front-paper" data-resume-preview aria-label="全屏预览简历"><div class="resume-name"><b>徐晓萌</b><span>AI 产品经理</span></div><div class="resume-rule"></div><div class="resume-layout"><div><b>EXPERIENCE</b><span></span><span></span><span class="short"></span></div><div><b>EDUCATION</b><span></span><span class="short"></span></div><div><b>SELECTED WORK</b><span></span><span></span><span></span></div><div><b>SKILLS</b><span></span><span class="short"></span></div></div><span class="resume-page">简历预览</span><span class="resume-open-hint">点击全屏预览 ↗</span></button></div><div class="resume-copy"><p class="eyebrow">ONE MORE THING</p><h2>联系方式</h2><p>教育：2024年毕业-谢菲尔德大学 建筑设计本科（QS 92）<br/>邮箱：XiaomengXu_Angela@163.com<br/>电话：15805323368</p><div class="resume-actions"><a class="primary-button" href="assets/resume.pdf" download="resume.pdf" data-resume-download>下载简历 <svg aria-hidden="true" class="icon icon-diagonal" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2"></path></svg></a></div></div></section></div><dialog class="resume-modal" id="resume-dialog" aria-label="简历全屏预览"><button class="resume-modal-backdrop" type="button" aria-label="关闭简历预览"></button><div class="resume-modal-toolbar"><span>简历预览</span><div><a href="assets/resume.pdf" download="resume.pdf" data-resume-download>下载简历</a><button class="resume-close" type="button" autofocus>关闭 ×</button></div></div><div class="resume-modal-scroll"><iframe class="resume-pdf-frame" src="assets/resume.pdf" title="简历 PDF 预览"></iframe></div></dialog><footer><div class="footer-main"><p>期待您的<br/><span>联系！</span></p><button type="button" class="footer-copy-email" data-copy-email aria-live="polite">复制邮箱 ↗</button></div><div class="footer-meta"><span>© 2026 徐晓萌</span><span>上海</span></div></footer></div>
 </section>
 <section class="view ohmee-case" id="project-woma" aria-labelledby="case-project-title">
   <div class="pgb" id="ohmee-progress" aria-hidden="true"></div>
   <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
   <nav class="tabs" id="ohmee-tabs" aria-label="我吗文档导航">
-    <a href="#project/woma" data-case-section="case-background" onclick="scrollProjectCaseTo(event,'woma','case-background')" class="on" aria-current="location">背景与目标</a>
-        <a href="#project/woma" data-case-section="case-research" onclick="scrollProjectCaseTo(event,'woma','case-research')">用户与洞察</a>
-        <a href="#project/woma" data-case-section="case-experience" onclick="scrollProjectCaseTo(event,'woma','case-experience')">方案概览</a>
-        <a href="#project/woma" data-case-section="case-architecture" onclick="scrollProjectCaseTo(event,'woma','case-architecture')">关键决策</a>
-        <a href="#project/woma" data-case-section="case-results" onclick="scrollProjectCaseTo(event,'woma','case-results')">指标与验证</a>
-        <a href="#project/woma" data-case-section="case-next" onclick="scrollProjectCaseTo(event,'woma','case-next')">风险与下一步</a>
+    <a href="#project/woma" data-case-section="case-background" onclick="scrollProjectCaseTo(event,'woma','case-background')" class="on" aria-current="location">背景调研</a>
+    <a href="#project/woma" data-case-section="case-product" onclick="scrollProjectCaseTo(event,'woma','case-product')">产品设计</a>
+    <a href="#project/woma" data-case-section="case-prompt" onclick="scrollProjectCaseTo(event,'woma','case-prompt')">提示词优化</a>
+    <a href="#project/woma" data-case-section="case-analytics" onclick="scrollProjectCaseTo(event,'woma','case-analytics')">数据分析驱动迭代</a>
   </nav>
+  <div class="hero"><div class="c">
+    <div class="hd"><img class="ic oh-app-logo" src="images/woma.png" alt="我吗应用图标" width="512" height="512" fetchpriority="high"><div class="woma-title-stack"><h1 id="case-project-title">我吗</h1><span class="woma-title-en">OhMee</span><a class="woma-trial-link" href="https://www.angelapomu.space/" target="_blank" rel="noopener noreferrer">试用我吗 ↗</a></div></div>
+    <div class="meta"><div><span>状态：</span>MVP测试</div><div><span>实现：</span>next.js+pwa+匿名id+gemini / deepseek api</div><div><span>时间</span>2026.06 — 至今</div></div>
+  </div></div>
   <div class="c">
-    <div class="tags"><span>AI 产品</span><span>自我认知</span><span>Prompt 设计</span></div>
-    <div class="hd"><img class="ic oh-app-logo" src="images/woma.png" alt="我吗应用图标" width="512" height="512" fetchpriority="high"><h1 id="case-project-title">我吗 OhMee</h1></div>
-    <p class="lead">把日常经历里被忽略的能力重新说出来，帮助用户建立更积极的自我认知。</p>
-    <div class="meta"><div><span>状态</span>MVP · 小范围内测</div><div><span>技术</span>Next.js · Supabase · PWA</div><div><span>时间</span>2026.06 — 至今</div></div>
-    <div class="ov">
-      <div><span class="mono">问题</span><p>用户习惯强调失败，却很少认真看见已经做成的事。外部的鼓励，也未必能变成对自己的认识。</p></div>
-      <div><span class="mono">方案</span><p>用第一人称重新表达日常经历，再从记录中认领能力，逐渐形成可看见的身份。</p></div>
-      <div><span class="mono">结果</span><p>完成全栈 MVP，进入小范围内测，结合真实对话与用户反馈持续迭代。数据见「指标与验证」。</p></div>
-      <div><span class="mono">我的角色</span><p>0–1 产品 owner：产品、UX、AI Workflow、全栈 MVP 与用户验证。</p></div>
+    <div class="q">
+      <div class="q-role"><h3>role</h3><p>产品owner。调研访谈， 0-1产品/ 机制设计，UIUX，ai架构设计，vibe coding全栈开发，提示词工程，冷启动内测，数据分析</p></div>
+      <div class="q-problem"><h3>痛点</h3><p>用户容易被消极叙事塑造身份认同，从而内耗，对做事失去安全感所以倾向于不去做。</p></div>
+      <div class="q-solution"><h3>解决方案</h3><p>将做过的事提炼为能力标签，增强正向自我认同；同时以第一人称重写用户的句子，实现挖掘动力等功能。</p></div>
+      <div class="q-result"><h3>成果</h3><p>获得50+位用户553条真实内容输入、5位高留存用户深入访谈。验证产品核心功能假设成立。优化评测集和产品定位，进入后续迭代。</p></div>
     </div>
     <div class="gal" aria-label="我吗产品截图">
       <figure class="ph"><button class="p" type="button" data-preview-src="images/woma-app-welcome.png" data-preview-alt="我吗 · 首页" aria-label="放大首页截图"><img src="images/woma-app-welcome.png" alt="我吗首页界面" loading="eager"></button><figcaption class="mono">截图 01 · 首页</figcaption></figure>
@@ -872,85 +875,77 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     </div>
     <div class="w">
       <nav class="toc" id="ohmee-chapters" aria-label="我吗项目目录"><span class="mono">目录</span>
-        <a href="#project/woma" data-case-section="case-background" onclick="scrollProjectCaseTo(event,'woma','case-background')" class="on" aria-current="location"><span>01</span>背景与目标</a>
-        <a href="#project/woma" data-case-section="case-research" onclick="scrollProjectCaseTo(event,'woma','case-research')"><span>02</span>用户与洞察</a>
-        <a href="#project/woma" data-case-section="case-experience" onclick="scrollProjectCaseTo(event,'woma','case-experience')"><span>03</span>方案概览</a>
-        <a href="#project/woma" data-case-section="case-architecture" onclick="scrollProjectCaseTo(event,'woma','case-architecture')"><span>04</span>关键决策</a>
-        <a href="#project/woma" data-case-section="case-results" onclick="scrollProjectCaseTo(event,'woma','case-results')"><span>05</span>指标与验证</a>
-        <a href="#project/woma" data-case-section="case-next" onclick="scrollProjectCaseTo(event,'woma','case-next')"><span>06</span>风险与下一步</a>
+        <a href="#project/woma" data-case-section="case-background" onclick="scrollProjectCaseTo(event,'woma','case-background')" class="on" aria-current="location"><span>01</span>背景调研</a>
+        <a href="#project/woma" data-case-section="case-product" onclick="scrollProjectCaseTo(event,'woma','case-product')"><span>02</span>产品设计</a>
+        <a href="#project/woma" data-case-section="case-prompt" onclick="scrollProjectCaseTo(event,'woma','case-prompt')"><span>03</span>提示词优化</a>
+        <a href="#project/woma" data-case-section="case-analytics" onclick="scrollProjectCaseTo(event,'woma','case-analytics')"><span>04</span>数据分析驱动迭代</a>
       </nav>
       <article class="doc">
         <section id="case-background" aria-labelledby="oh-background-title">
-          <h2 id="oh-background-title"><small>01</small>背景与目标</h2>
-          <p>“爱你老己”“强者思维”“自我主体性”等话题反复出现，背后是年轻人对正反馈和自我认知的需要。许多人习惯强调失败，却很少认真看见已经做成的事。</p>
-          <p>我把切入点放在负面的自我叙事：如果记录日常时，有机会换一种看待自己的方式，会发生什么？我吗用第一人称重新表达日常经历，让用户从自己的故事里认领能力，再把能力积累成可看见的身份。</p>
-          <p>MVP 要验证两件事：重写能否帮助用户重新理解经历；身份认领能否成为用户持续记录、再次回来的理由。</p>
-        </section>
-        <section id="case-research" aria-labelledby="oh-research-title">
-          <h2 id="oh-research-title"><small>02</small>用户与洞察</h2>
-          <h3>从竞品和目标用户确定切入点</h3>
-          <p>研究 Tolan、Mindsera、Mindcraft、Mindback 的目标人群、AI 能力边界和商业模式，寻找围绕日常经历与身份认领的差异化空间。</p>
-          <p>用 Figma 和 UI 概念测试市场反馈，结合社媒内容反馈与目标用户访谈，确定 MVP 的核心定位、使用场景和功能范围。早期内容吸引用户加群，再通过深访理解他们如何记录、如何看待自己，以及为什么愿意尝试这类产品。</p>
-          <div class="mets" style="--metric-columns:3" aria-label="早期概念测试与用户研究数据"><div><b>200+</b><span>早期用户加群</span></div><div><b>12.5%</b><span>内容互动率</span></div><div><b>5 位</b><span>目标用户深访</span></div></div>
-          <div class="evidence-pair">
-            <figure class="evidence research-shot"><button type="button" data-preview-src="images/woma-research-note-detail.jpg" data-preview-alt="概念测试 · 内容表现" aria-label="放大概念测试 · 内容表现"><img src="images/woma-research-note-detail.jpg" alt="概念测试 · 内容表现" loading="lazy"></button><figcaption class="mono">概念测试 · 内容表现</figcaption></figure>
-            <figure class="evidence research-shot"><button type="button" data-preview-src="images/woma-research-audience.jpg" data-preview-alt="概念测试 · 用户数据" aria-label="放大概念测试 · 用户数据"><img src="images/woma-research-audience.jpg" alt="概念测试 · 用户数据" loading="lazy"></button><figcaption class="mono">概念测试 · 用户数据</figcaption></figure>
+          <h2 id="oh-background-title"><small>01</small>背景调研</h2>
+          <p>经济下行期，“爱你老几”、“强者心态”、“ADHD”的网络热点和自我觉察、自我关怀文化兴起。探索ai+心理功能、adhd/ 内耗人士友好的垂类产品方向。</p>
+          <h3>竞品调研</h3>
+          <p>对tolan, rosebud, mindsera, mindback, mindcraft, i am等ai记录/ 心理产品进行竞品分析。</p>
+          <h4>心理学依据相关调研</h4>
+          <ul>
+            <li><strong>自我效能</strong>。 Bandura（1977）把亲身完成某项行动的经验列为自我效能的重要来源。<strong>身份动机</strong>研究也发现，一项面向八年级学生的干预，把「可能成为的自己」连到可信的策略和当下行动后，改善了部分学业表现。</li>
+            <li><strong>目标进展监测</strong>。Harkin 等（2016）汇总 138 项随机分配研究，发现促进进展监测的干预平均提高目标达成（标准化效应量 <em>d</em> = 0.40），把进展实际记下来的研究中效果更大。</li>
+          </ul>
+          <h3>目标人群</h3>
+          <p>用户画像：18-35岁、一二线城市、认识到自己的心态不稳定，想主动提升的女性。<br>使用场景：缺乏动力、负面情绪、成就记录。<br>使用时间：早上、下午和晚上。<br>产品定位：ADHD友好，动力挖掘，困难启动的心态调整APP。</p>
+          <h3>初步痛点验证</h3>
+          <div class="evidence-pair research-previews" aria-label="我吗初步验证截图">
+            <figure class="evidence research-shot research-preview"><button type="button" data-preview-src="images/woma-research-note-detail.jpg" data-preview-alt="我吗初步验证笔记分析详情截图" aria-label="放大笔记分析详情截图"><img src="images/woma-research-note-detail.jpg" alt="我吗初步验证笔记分析详情截图" loading="lazy"></button></figure>
+            <figure class="evidence research-shot research-preview"><button type="button" data-preview-src="images/woma-research-audience.jpg" data-preview-alt="我吗初步验证目标人群分析截图" aria-label="放大目标人群分析截图"><img src="images/woma-research-audience.jpg" alt="我吗初步验证目标人群分析截图" loading="lazy"></button></figure>
           </div>
-          <p>加群人数是早期兴趣信号，与后续进入 MVP 测试的用户数分别记录。研究进一步聚焦到一个假设：鼓励需要基于用户自己的经历，并把表达和解释的主动权留给用户。</p>
+          <p>瞄准目标用户，结合热门梗图，使用电子绘画和figma产出概念UIUX，在小红书新号发帖。对5位不同画像用户（adhd、考研拖延、卷王想记录、抑郁倾向、生活平淡好奇）进行访谈，挖掘痛点，发起群投票，确定MVP功能和形态。</p>
         </section>
-        <section id="case-experience" aria-labelledby="oh-experience-title">
-          <h2 id="oh-experience-title"><small>03</small>方案概览</h2>
-          <p>产品由访谈、日常记录和身份积累三个环节组成。先聊具体经历，再进入记录，降低第一次使用的心理摩擦；AI 重写可以自由开关，记录仍然属于用户自己。</p>
-          <div class="flow" aria-label="我吗核心使用流程"><span>访谈与日常记录</span><i aria-hidden="true">→</i><span>意图识别<br>第一人称重写</span><i aria-hidden="true">→</i><span>能力认领<br>身份积累</span></div>
-          <h3>从使用体验到业务流程</h3>
-          <p>把访谈、进入聊天、保存记录和画像更新串成完整流程。用户先看到自己的记录，后台再异步处理；日常输入逐步沉淀为可认领的能力与身份。</p>
-          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-business-swimlane.png" data-preview-alt="我吗业务流程 · 访谈、记录与画像更新" aria-label="放大我吗业务流程 · 访谈、记录与画像更新"><img src="images/woma-business-swimlane.png" alt="我吗业务流程 · 访谈、记录与画像更新" loading="lazy"></button><figcaption class="mono">我吗业务流程 · 访谈、记录与画像更新</figcaption></figure>
-          <h3>分节点的 AI 工作流与记忆</h3>
-          <p>将 Intent、Rewrite、AI Comment、Profile Maintenance、Compact 拆开，通过结构化字段和分节点 Prompt 约束生成行为，区分当前事件、行为模式、长期身份和上下文压缩信息。</p>
-          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-ai-pipeline-no-title.svg" data-preview-alt="AI Pipeline · 意图识别、重写、评论与画像维护" aria-label="放大AI Pipeline · 意图识别、重写、评论与画像维护"><img src="images/woma-ai-pipeline-no-title.svg" alt="AI Pipeline · 意图识别、重写、评论与画像维护" loading="lazy"></button><figcaption class="mono">AI Pipeline · 意图识别、重写、评论与画像维护</figcaption></figure>
-          <h3>前后端实现技术选型</h3>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="前后端实现技术选型表">
-            <table class="document-table stack-table"><thead><tr><th scope="col">环节</th><th scope="col">实现</th><th scope="col">对应职责</th></tr></thead><tbody>
-              <tr><th scope="row">前端</th><td>Next.js · React · TypeScript · PWA</td><td>访谈、聊天、重写开关与身份展示。</td></tr>
-              <tr><th scope="row">本地存储</th><td>IndexedDB</td><td>保存可视化数据，让界面先响应。</td></tr>
-              <tr><th scope="row">后端与数据库</th><td>Supabase / PostgreSQL</td><td>以匿名 ID 关联记录与画像，后台异步更新。</td></tr>
-              <tr><th scope="row">模型接入</th><td>DeepSeek · Gemini · OpenRouter</td><td>横向测试模型输出，再进行多轮 Prompt 优化。</td></tr>
-            </tbody></table>
+        <section id="case-product" aria-labelledby="oh-product-title">
+          <h2 id="oh-product-title"><small>02</small>产品设计</h2>
+          <p>围绕测试“ai重写是否真的能改变用户行为”来设计MVP。</p>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-product-design-flow.png" data-preview-alt="简短访谈、初始画像、预览初始身份标签、使用ai重写句子功能"><img src="images/woma-product-design-flow.png" alt="简短访谈 → 预览初始身份标签 → 使用ai重写句子功能" loading="lazy"></button></figure>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="问题 选择">
+            <table class="document-table">
+              <thead><tr><th scope="col">问题</th><th scope="col">选择</th></tr></thead>
+              <tbody>
+                <tr><td data-label="问题">数据收集带来的不安可能影响实际测试效果</td><td data-label="选择">选用匿名ID绑定数据库，不需要下载和登录的PWA作为MVP</td></tr>
+                <tr><td data-label="问题">延迟影响使用体验</td><td data-label="选择">全部数据本地缓存，更新时刷新；前后端异步数据传输；画像更新和ai重写并行进行。</td></tr>
+                <tr><td data-label="问题">想测试用户是否会关闭ai功能，或者记录to-do</td><td data-label="选择">采用对话气泡输入UIUX，在左边按钮上加入ai关闭、ai开启、to-do的选择按钮</td></tr>
+                <tr><td data-label="问题">减少bad case归因复杂度</td><td data-label="选择">将workflow节点拆分为意图识别-ai重写。</td></tr>
+                <tr><td data-label="问题">最小化测试成本、搭建复杂度、迭代成本</td><td data-label="选择">最小化每个节点的提示词注入，画像更新6轮更新一次寻找发消息的magic number。选用next.js进行前后端技术栈。多出数据字段定义为string，后续修改不需要改数据库schema</td></tr>
+                <tr><td data-label="问题">测试“ai重写能改变用户行为”</td><td data-label="选择">将“记录过负面 情绪的用户，在两个不同的日期记录下积极行动”的人数≥30%作为北极星指标</td></tr>
+                <tr><td data-label="问题">用codex进行vibe coding全栈开发。</td><td data-label="选择">撰写、维护并对齐PRD，定义埋点、数据合同、UI文档、架构文档，维护AGENT.MD，Plan.md和task.md进行开发。3周内完成开发、测试、提示词优化，部署在vercel和supabase开放试用。</td></tr>
+              </tbody>
+            </table>
           </div>
-          <h3>Vibe Coding 全栈开发</h3>
-          <p>用 Figma、Figma Make、Google Stitch、Claude 和 Codex 推进 UIUX。开发过程中手动维护 PRD、agent.md、plan 和 task，以 API、架构和 UI 文档保持前后端一致。</p>
-          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-figma-workspace.png" data-preview-alt="我吗 Figma 工作区" aria-label="放大我吗 Figma 工作区"><img src="images/woma-figma-workspace.png" alt="我吗 Figma 工作区" loading="lazy"></button><figcaption class="mono">我吗 Figma 工作区</figcaption></figure>
+          <h3 id="oh-business-flow-title">业务流程图</h3>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-business-swimlane.png" data-preview-alt="我吗业务流程图" aria-label="放大我吗业务流程图"><img src="images/woma-business-swimlane.png" alt="我吗业务流程图" loading="lazy"></button></figure>
+          <h3 id="oh-workflow-architecture-title">workflow架构图</h3>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-ai-pipeline-no-title.svg" data-preview-alt="我吗 workflow 架构图" aria-label="放大我吗 workflow 架构图"><img src="images/woma-ai-pipeline-no-title.svg" alt="我吗 workflow 架构图" loading="lazy"></button></figure>
         </section>
-        <section id="case-architecture" aria-labelledby="oh-architecture-title">
-          <h2 id="oh-architecture-title"><small>04</small>关键决策</h2>
-          <p>围绕第一次使用、等待反馈和身份积累，把体验中的具体问题转成实现决策。</p>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="产品决策：问题、思考与解决方案">
-            <table class="document-table decision-table"><thead><tr><th scope="col">问题</th><th scope="col">思考</th><th scope="col">解决方案</th></tr></thead><tbody>
-              <tr><td>如何减少等待对测试体验的影响？</td><td>先看到自己的记录</td><td>可视化数据本地存储，后台异步更新，让界面保持响应，减少等待对测试体验的干扰。</td></tr>
-              <tr><td>如何降低匿名身份和数据用途带来的顾虑？</td><td>降低开始使用的顾虑</td><td>用匿名 ID 绑定数据库，以 PWA 进行测试，并清楚说明输入将用于产品迭代。</td></tr>
-              <tr><td>画像更新频率应该如何确定？</td><td>把更新频率当作假设</td><td>初始设定为每 6 轮输入更新画像，用真实使用反馈寻找合适的更新频率。</td></tr>
-              <tr><td>如何让用户感到自己在帮助自己？</td><td>保留第一人称和自主选择</td><td>保留 AI 开关，用轻松的绿色、粉色和身份卡片，形成区别于心理咨询的使用氛围。</td></tr>
-            </tbody></table>
-          </div>
-          <div class="dec">
-            <div><h3>第一人称重写必须贴近真实的经历</h3><p><span class="mono">为什么</span><span>让鼓励听起来像来自自己。用户可以切回原话，保留对记录的解释权。</span></p><p><span class="mono">代价</span><span>需要用具体对话检查语气、事实和边界，持续扩充评测样本。</span></p></div>
-            <div><h3>节点拆分后，分别优化输出与记忆</h3><p><span class="mono">为什么</span><span>把意图识别、重写和画像维护分别约束，便于定位问题并做回归测试。</span></p><p><span class="mono">代价</span><span>需要维护节点间的上下文，以及本地记录与后台更新的一致性。</span></p></div>
-          </div>
+        <section id="case-prompt" aria-labelledby="oh-prompt-title">
+          <h2 id="oh-prompt-title"><small>03</small>提示词优化</h2>
+          <h3>测试工具构建</h3>
+          <p>为了方便双节点的串行批量测试，自行搭建测试工具，减少人工流程约80%。</p>
+          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="我吗 Prompt Lab 测试工具截图" aria-label="放大 Prompt Lab 测试工具截图"><img src="images/woma-prompt-lab.png" alt="我吗 Prompt Lab 测试工具截图" loading="lazy"></button></figure>
+          <h3>测试集创建+llm选型</h3>
+          <p>结合ai，针对意图识别、ai重写创建测试集。从心理判断准确率、人格一致性、成本和延迟四个维度测试sonnet haiku、gemni 3.1 flash、deepseek v4 flash、chatgpt 5，测试7轮，在意图识别采用deepseek v4 flash，画像更新、重写选用gemini 3.1 flash。</p>
+          <p>针对gemini模型国内访问不稳定，设计并调整服务端模型调用链路，通过 Vercel 部署的 Next.js 后端接入 OpenRouter。</p>
+          <h3>提示词优化</h3>
+          <ul>
+            <li>定义画像分析的3个维度、意图识别5个槽位和每个ai重写的效果。</li>
+            <li>优化10+轮输出第一版提示词。</li>
+            <li>实现动力挖掘、负面情绪处理、成就认领等ai重写功能。</li>
+          </ul>
         </section>
-        <section id="case-results" aria-labelledby="oh-results-title">
-          <h2 id="oh-results-title"><small>05</small>指标与验证</h2>
-          <h3>用真实使用记录检验核心假设</h3>
-          <p>完成全栈 MVP 后进入小范围内测。结合使用漏斗、消息聚类和 1 对 1 深访，理解用户从首次体验到持续使用的问题，再调整访谈引导、身份页面与 Prompt 机制。</p>
-          <div class="mets" style="--metric-columns:4" aria-label="MVP 内测与用户分析数据"><div><b>50+</b><span>MVP 测试用户</span></div><div><b>553</b><span>条用户消息分析</span></div><div><b>5</b><span>较高粘性用户</span></div><div><b>1</b><span>用户自发推荐</span></div></div>
-          <p>消息分析形成 5 类分析画像，并关注 5 位较高粘性用户的使用方式。分析分组和用户人数分别记录；这些早期反馈支持继续迭代，仍需进一步验证重复使用与长期留存。</p>
-          <h3>Prompt 评测与回归</h3>
-          <p>为多节点 Workflow 搭建批量测试框架，横向对比模型输出。真实用户进入后，把 bad case、good case 和边缘 case 加入测试集，持续迭代意图识别、第一人称重写和画像维护。</p>
-          <figure class="evidence diagram"><button type="button" data-preview-src="images/woma-prompt-lab.png" data-preview-alt="Prompt Lab · 多节点批量测试" aria-label="放大Prompt Lab · 多节点批量测试"><img src="images/woma-prompt-lab.png" alt="Prompt Lab · 多节点批量测试" loading="lazy"></button><figcaption class="mono">Prompt Lab · 多节点批量测试</figcaption></figure>
-          <div class="mets" style="--metric-columns:3" aria-label="Prompt 测试与优化记录"><div><b>5</b><span>LLM 对比</span></div><div><b>10+ 轮</b><span>初期测试</span></div><div><b>3+ 轮</b><span>内测后优化</span></div></div>
-        </section>
-        <section id="case-next" aria-labelledby="oh-next-title">
-          <h2 id="oh-next-title"><small>06</small>风险与下一步</h2>
-          <ul><li>重写质量：结合真实对话样本和用户反馈，检查输出是否贴近用户的经历、语气和边界。</li><li>重复使用：继续观察用户从日常记录到身份认领的使用路径，验证身份积累能否成为回访的理由。</li><li>长期留存：延长观察窗口，完善统计口径，并继续调整访谈引导、Prompt 与画像更新机制。</li></ul>
+        <section id="case-analytics" aria-labelledby="oh-analytics-title">
+          <h2 id="oh-analytics-title"><small>04</small>数据分析驱动迭代</h2>
+          <div class="mets" role="group" aria-label="50位用户，3周内测，553条输入，4周留存31%，北极星指标27%"><div><b>50</b><span>位用户</span></div><div><b>3</b><span>周内测</span></div><div><b>553</b><span>条输入</span></div><div><b>31%</b><span>4周留存</span></div><div><b>27%</b><span>北极星指标</span></div></div>
+          <ul>
+            <li>测试途中检测数据漏斗，发现访谈通过率过低，修改访谈问题、加强初始指引，提升通过率81%。发现画像更新 提示不明显导致用户流失，添加画像更新视觉提示，互动率提升约28%。</li>
+            <li>发现5个高留存用户画像，对5位用户进行深入访谈。</li>
+            <li>结合ai，将553条消息进行bad case的筛选归因，更新测试集，优化UX和workflow。</li>
+          </ul>
         </section>
       </article>
     </div>
@@ -958,253 +953,248 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 </section>
 
 
-<section class="view" id="project-contextual">
-  <div class="case-page contextual-case-page">
-    <a class="case-back" href="#home" onclick="backToProjects(event)">← 返回作品</a>
-    <section class="case-hero" aria-labelledby="contextual-project-title">
-      <div class="case-hero-grid">
-        <div class="case-visual" aria-label="截图词典（Contextual Collector）产品图标展示">
-          <div class="case-product-icon"><img src="images/contextual-logo.png" alt="截图词典图标" onload="this.parentNode.classList.add('has-image')" onerror="this.remove()"></div>
-        </div>
-        <div>
-          <h1 id="contextual-project-title">截图词典 <span>Contextual Collector</span></h1>
-          <div class="case-eyebrow">个人工具 · 产品设计 · 非商业化</div>
-          <h2>让单词回到你遇见它的那句话里。</h2>
-          <p class="case-lede">一个把截图、OCR 原句和生词卡关联起来的个人词汇工具。十格容量和倒计时让收集回到处理，而不是无限囤积。</p>
-          <div class="case-screenshots" role="region" aria-label="截图词典 App 界面截图">
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：单词卡片与例句" data-lightbox-src="images/contextual-app-01.png" data-lightbox-alt="单词卡片展示 proactive、例句和发音">
-              <img src="images/contextual-app-01.png" alt="单词卡片展示 proactive、例句和发音" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：来源页面语境与单词释义" data-lightbox-src="images/contextual-app-02.png" data-lightbox-alt="来源页面语境和 proactive 的释义、词性与比较级">
-              <img src="images/contextual-app-02.png" alt="来源页面语境和 proactive 的释义、词性与比较级" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：单词详情与更多例句" data-lightbox-src="images/contextual-app-03.png" data-lightbox-alt="proactive 单词详情，包含词义、比较级、更多例句和补充说明">
-              <img src="images/contextual-app-03.png" alt="proactive 单词详情，包含词义、比较级、更多例句和补充说明" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：稍后处理卡片" data-lightbox-src="images/contextual-app-04.png" data-lightbox-alt="单词卡片界面提示下滑稍后处理">
-              <img src="images/contextual-app-04.png" alt="单词卡片界面提示下滑稍后处理" loading="lazy">
-            </figure>
-            <figure class="case-shot contextual-screenshot diagram-zoom" role="button" tabindex="0" aria-label="点击放大：短语卡片与记忆操作" data-lightbox-src="images/contextual-app-05.png" data-lightbox-alt="proactive in 短语卡片界面提示上滑记住">
-              <img src="images/contextual-app-05.png" alt="proactive in 短语卡片界面提示上滑记住" loading="lazy">
-            </figure>
-          </div>
-          <div class="case-tags" aria-label="项目标签"><span class="case-tag">语境消歧</span><span class="case-tag">OCR</span><span class="case-tag">词汇复习</span><span class="case-tag">个人工具</span></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="case-stats" aria-label="产品特点">
-      <div class="case-stat"><b>10 格</b><span>单次容量</span></div>
-      <div class="case-stat"><b>截图</b><span>收词入口</span></div>
-      <div class="case-stat"><b>原句</b><span>保留语境</span></div>
-      <div class="case-stat"><b>个人用</b><span>非商业化</span></div>
+<section class="view ohmee-case contextual-case" id="project-contextual" aria-label="截图词典项目详情">
+  <div class="pgb" aria-hidden="true"></div>
+  <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
+  <nav class="tabs" aria-label="截图词典章节导航">
+    <a href="#project/contextual" data-case-section="contextual-background" onclick="scrollProjectCaseTo(event,'contextual','contextual-background')" class="on" aria-current="location">背景调研</a>
+    <a href="#project/contextual" data-case-section="contextual-design" onclick="scrollProjectCaseTo(event,'contextual','contextual-design')">产品设计</a>
+    <a href="#project/contextual" data-case-section="contextual-mvp" onclick="scrollProjectCaseTo(event,'contextual','contextual-mvp')">MVP内测</a>
+    <a href="#project/contextual" data-case-section="contextual-result" onclick="scrollProjectCaseTo(event,'contextual','contextual-result')">成果</a>
+  </nav>
+  <div class="hero"><div class="c">
+    <div class="hd"><img class="ic" src="images/contextual-logo.png" alt="截图词典应用图标" width="512" height="512"><div class="contextual-title-stack"><h1 id="contextual-project-title">截图词典<small>Contextual Collector</small></h1><a class="contextual-download-link" href="downloads/contextual-collector-android.apk" download="contextual-collector-android.apk">下载安卓app试用</a></div></div>
+    <div class="meta"><div><span>状态：</span>MVP测试结束</div><div><span>实现：</span>安卓原生APP+OCR+deepseek api</div><div><span>模式：</span>TOC | ai工具类</div></div>
+  </div></div>
+  <div class="c">
+    <div class="q">
+      <div class="q-role"><span class="mono">01</span><h3>role</h3><p>产品owner，调研访谈，0-1产品/ 机制设计，UIUX，vibe coding全栈开发。</p></div>
+      <div class="q-problem"><span class="mono">02</span><h3>痛点</h3><p>目前的单词app存储、背诵单词效率低。</p></div>
+      <div class="q-solution"><span class="mono">03</span><h3>解决方案</h3><p>桌面悬浮球点击截屏，OCR+ai储存原来上下文截图的同时给出详细单词用法和解析。</p></div>
+      <div class="q-result"><span class="mono">04</span><h3>成果</h3><p>待测试</p></div>
     </div>
-
-    <div class="case-layout">
-      <aside class="case-sidebar" aria-label="项目目录">
-        <div class="case-toc">
-          <div class="case-toc-title">项目目录</div>
-          <a class="case-toc-link active" href="#project/contextual" data-case-section="contextual-background" onclick="scrollProjectCaseTo(event,'contextual','contextual-background')">01　项目背景</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-research" onclick="scrollProjectCaseTo(event,'contextual','contextual-research')">02　需求验证</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-flow" onclick="scrollProjectCaseTo(event,'contextual','contextual-flow')">03　产品流程</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-constraint" onclick="scrollProjectCaseTo(event,'contextual','contextual-constraint')">04　容量设计</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-context" onclick="scrollProjectCaseTo(event,'contextual','contextual-context')">05　语境复习</a>
-          <a class="case-toc-link" href="#project/contextual" data-case-section="contextual-result" onclick="scrollProjectCaseTo(event,'contextual','contextual-result')">06　结论</a>
-        </div>
-      </aside>
-
-      <div class="case-content">
-        <section id="contextual-background" class="case-section">
-          <div class="case-section-no">01 / 项目背景</div>
-          <h2>词典给出定义，却没有你读到它时的那句话</h2>
-          <p>总是遇到只懂一半的英文单词。离开原句查词，得到的是词典定义，却丢掉了当时的语境；同一个词的不同意思也容易混在一起。</p>
-          <div class="case-insight">记住一个词，往往要先找回它出现时的真实语境。</div>
-          <p>Contextual Collector 因此把单词和它所在的原始句子一起收集，让复习能回到真实阅读场景。</p>
+    <div class="gal" aria-label="截图词典产品界面截图">
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-01.png" data-preview-alt="单词卡片与例句" aria-label="放大单词卡片与例句"><img src="images/contextual-app-01.png" alt="单词卡片展示 proactive、例句和发音" loading="eager"></button><figcaption class="mono">01 · 单词卡片</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-02.png" data-preview-alt="来源页面语境与单词释义" aria-label="放大来源页面语境与单词释义"><img src="images/contextual-app-02.png" alt="来源页面语境和 proactive 的释义、词性与比较级" loading="lazy"></button><figcaption class="mono">02 · 来源语境</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-03.png" data-preview-alt="单词详情与更多例句" aria-label="放大单词详情与更多例句"><img src="images/contextual-app-03.png" alt="proactive 单词详情，包含词义、比较级、更多例句和补充说明" loading="lazy"></button><figcaption class="mono">03 · 单词详情</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-04.png" data-preview-alt="稍后处理卡片" aria-label="放大稍后处理卡片"><img src="images/contextual-app-04.png" alt="单词卡片界面提示下滑稍后处理" loading="lazy"></button><figcaption class="mono">04 · 稍后处理</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/contextual-app-05.png" data-preview-alt="短语卡片与记忆操作" aria-label="放大短语卡片与记忆操作"><img src="images/contextual-app-05.png" alt="proactive in 短语卡片界面提示上滑记住" loading="lazy"></button><figcaption class="mono">05 · 记忆操作</figcaption></figure>
+    </div>
+    <div class="w">
+      <nav class="toc" aria-label="截图词典项目目录"><span class="mono">目录</span>
+        <a href="#project/contextual" data-case-section="contextual-background" onclick="scrollProjectCaseTo(event,'contextual','contextual-background')" class="on" aria-current="location"><span>01</span>背景调研</a>
+        <a href="#project/contextual" data-case-section="contextual-design" onclick="scrollProjectCaseTo(event,'contextual','contextual-design')"><span>02</span>产品设计</a>
+        <a href="#project/contextual" data-case-section="contextual-mvp" onclick="scrollProjectCaseTo(event,'contextual','contextual-mvp')"><span>03</span>MVP内测</a>
+        <a href="#project/contextual" data-case-section="contextual-result" onclick="scrollProjectCaseTo(event,'contextual','contextual-result')"><span>04</span>成果</a>
+      </nav>
+      <article class="doc">
+        <section class="doc-chapter" id="contextual-background">
+          <h2><small>01</small>背景调研</h2>
+          <h3>竞品分析</h3>
+          <p>竞品分析欧路词典、Language Reactor、LingQ、Readlang、Anki。</p>
+          <h3>目标用户</h3>
+          <p>人群：18-25岁学生，会主动注意英语字幕，有背单词需求。</p>
+          <p>触发场景：在视频中遇到想记录下的单词。</p>
+          <p>使用时间：全天。</p>
+          <h3>痛点洞察</h3>
+          <p>访谈5位目标用户</p>
+          <p>发现未满足痛点：</p>
+          <ul>
+            <li>单词囤积不背</li>
+            <li>单词缺少原本的上下文，背单词效率低</li>
+            <li>传统的词典无法准确知道多义词/ 日常用法/ 单词在语境下的具体微妙含义和表达意思。</li>
+          </ul>
         </section>
-
-        <section id="contextual-research" class="case-section">
-          <div class="case-section-no">02 / 需求调研与产品定位</div>
-          <h2>确认这是一个有价值的小众需求</h2>
-          <div class="case-cards">
-            <div class="case-info-card"><div class="case-card-no">01</div><h4>语境优先</h4><p>围绕用户实际遇到单词时的原句设计收集和复习体验。</p></div>
-            <div class="case-info-card"><div class="case-card-no">02</div><h4>个人工具</h4><p>调研潜在用户后，确认需求存在但受众小众，因此保留为自用工具，没有商业化。</p></div>
-          </div>
+        <section class="doc-chapter" id="contextual-design">
+          <h2><small>02</small>产品设计</h2>
+          <ul>
+            <li>倒数机制：利用“只有10个单词卡席位”来逼迫用户处理积累的单词。</li>
+            <li>单词卡片构成：在单词卡ai解释多义词+多时态/ 使用场合/ 单词在语境下的具体含义和感情表达。</li>
+            <li>复习机制：通过上下滑手势完成、暂缓复习，根据遗忘曲线排列10个单词。</li>
+            <li>技术栈选型：安卓原生APP+本地储存+OCR+DEEPSEEK API。</li>
+          </ul>
+          <h3>悬浮球截图体验</h3>
+          <figure class="contextual-media"><button type="button" data-preview-src="images/contextual-floating-ball.png" data-preview-alt="悬浮球截图体验" aria-label="放大悬浮球截图体验"><img src="images/contextual-floating-ball.png" alt="悬浮球截图体验流程图" loading="lazy"></button></figure>
+          <h3>倒数机制</h3>
+          <figure class="contextual-media"><button type="button" data-preview-src="images/contextual-countdown.png" data-preview-alt="倒数机制" aria-label="放大倒数机制图片"><img src="images/contextual-countdown.png" alt="倒数机制" loading="lazy"></button></figure>
         </section>
-
-        <section id="contextual-flow" class="case-section">
-          <div class="case-section-no">03 / 产品机制</div>
-          <h2>从截图捕获，到带着语境复习</h2>
-          <p>截图将单词与 OCR 识别出的原句一起放进悬浮气泡。复习时通过词卡浏览，把词重新放回当时的阅读语境。</p>
-          <div class="case-process" aria-label="截图、保留原句、整理词卡、复习">
-            <div class="case-process-step"><b>截图</b><small>遇到生词</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>识别</b><small>保留原句</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>收集</b><small>悬浮气泡</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>复习</b><small>词卡浏览</small></div>
-          </div>
+        <section class="doc-chapter" id="contextual-mvp">
+          <h2><small>03</small>MVP内测</h2>
+          <p>vibe coding全栈开发MVP，加入埋点。将处理NPS>70指标，用邮件将apk安装包发送给5位用户进行一周试用，回访访谈。</p>
         </section>
-
-        <section id="contextual-constraint" class="case-section">
-          <div class="case-section-no">04 / 交互约束</div>
-          <h2>十个格子，让收集必须回到处理</h2>
-          <p>词库只有十个格子。倒计时促使用户处理已有词条后再补充；容量有限是产品的主动设计，让稀缺帮助用户完成复习。</p>
-          <div class="case-decisions">
-            <div class="case-decision"><h4>容量上限</h4><p>最多十个待处理词条，避免收集变成无限堆积。</p></div>
-            <div class="case-decision"><h4>倒计时</h4><p>用时间压力提示处理已有内容，再继续收集。</p></div>
-          </div>
+        <section class="doc-chapter" id="contextual-result">
+          <h2><small>04</small>成果</h2>
+          <p>待测试</p>
         </section>
-
-        <section id="contextual-context" class="case-section">
-          <div class="case-section-no">05 / 语境与复习</div>
-          <h2>用真实句子区分相近词义</h2>
-          <div class="case-feature"><h4>原始 OCR 语境</h4><p>单词不脱离它出现时的句子，用户可以回忆原来的阅读上下文。</p></div>
-          <div class="case-feature"><h4>短视频式卡片</h4><p>复习以连续浏览词卡的方式进行，让查词和回顾形成轻量闭环。</p></div>
-          <p>真实句子帮助用户分辨同义词和多义词，补上单独词典释义缺少的语境信息。</p>
-        </section>
-
-        <section id="contextual-result" class="case-section">
-          <div class="case-section-no">06 / 项目结论</div>
-          <h2>为明确的小众场景，做好一个轻量工具</h2>
-          <div class="case-outcomes">
-            <div class="case-outcome"><b>10</b><span>词条容量</span></div>
-            <div class="case-outcome"><b>原句</b><span>保留阅读语境</span></div>
-            <div class="case-outcome"><b>自用</b><span>不做商业化</span></div>
-          </div>
-          <p>用户调研确认这是小众需求，因此产品定位为个人工具。它的核心价值是将生词、原句和复习放在同一个轻量流程里。</p>
-          <div class="case-closing"><div class="case-eyebrow">产品复盘</div><h3>收集的上限不是缺陷，而是让每个词重新回到阅读和处理之中。</h3><p>语境是记忆的一部分，有限容量则让复习有机会真正发生。</p></div>
-        </section>
-      </div>
+      </article>
     </div>
   </div>
 </section>
-
-<section class="view" id="project-whybother">
-  <div class="case-page whybother-case-page">
-    <a class="case-back" href="#home" onclick="backToProjects(event)">← 返回作品</a>
-    <section class="case-hero" aria-labelledby="whybother-project-title">
-      <div class="case-hero-grid">
-        <div class="case-visual" aria-label="减肥搭子产品图标展示">
-          <div class="case-product-icon"><img src="images/whybother.png" alt="减肥搭子图标" onload="this.parentNode.classList.add('has-image')" onerror="this.remove()"></div>
-        </div>
-        <div>
-          <h1 id="whybother-project-title">减肥搭子 <span>Why Bother.</span></h1>
-          <div class="case-eyebrow">独立产品 · 陪伴型 AI · 开发中</div>
-          <h2>减肥这件事，需要一个愿意说真话、也一直在的朋友。</h2>
-          <p class="case-lede">一款围绕闺蜜人设设计的陪伴型聊天机器人。不要求用户记卡路里，通过三阶段语气和关系熟悉度，提供持续、直接的陪伴。</p>
-          <div class="case-tags" aria-label="项目标签"><span class="case-tag">陪伴型 AI</span><span class="case-tag">三阶段语气</span><span class="case-tag">Affiliate</span><span class="case-tag">开发中</span></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="case-stats" aria-label="项目早期信号">
-      <div class="case-stat"><b>300</b><span>单条帖子曝光</span></div>
-      <div class="case-stat"><b>20+</b><span>兴趣表达</span></div>
-      <div class="case-stat"><b>9</b><span>加群人数</span></div>
-      <div class="case-stat"><b>2</b><span>测试用户表达购买意愿</span></div>
+<section class="view ohmee-case whybother-case" id="project-whybother" aria-label="减肥搭子项目详情">
+  <div class="pgb" aria-hidden="true"></div>
+  <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
+  <nav class="tabs" aria-label="减肥搭子章节导航">
+    <a href="#project/whybother" data-case-section="whybother-background" onclick="scrollProjectCaseTo(event,'whybother','whybother-background')" class="on" aria-current="location">背景</a>
+    <a href="#project/whybother" data-case-section="whybother-experience" onclick="scrollProjectCaseTo(event,'whybother','whybother-experience')">关键决策</a>
+    <a href="#project/whybother" data-case-section="whybother-model" onclick="scrollProjectCaseTo(event,'whybother','whybother-model')">产品设计</a>
+    <a href="#project/whybother" data-case-section="whybother-business" onclick="scrollProjectCaseTo(event,'whybother','whybother-business')">开发</a>
+    <a href="#project/whybother" data-case-section="whybother-result" onclick="scrollProjectCaseTo(event,'whybother','whybother-result')">成果</a>
+  </nav>
+  <div class="hero"><div class="c">
+    <div class="hd"><img class="ic" src="images/whybother.png" alt="减肥搭子项目插画" width="512" height="512"><h1 id="whybother-project-title">减肥搭子<small>Why Bother.</small></h1></div>
+    <div class="meta"><div><span>状态：</span>初步测试</div><div><span>实现：</span>dify chatflow</div><div><span>模式：</span>TOBTOC ai陪伴带货</div></div>
+  </div></div>
+  <div class="c">
+    <div class="q">
+      <div class="q-role"><span class="mono">01</span><h3>role</h3><p>产品owner，竞品调研，访谈，agent设计，提示词工程，内测。</p></div>
+      <div class="q-problem"><span class="mono">02</span><h3>痛点</h3><p>纯ai对话产品ROI低，寻找ai对话+工具性+tobtoc商业模式的新产品方向。</p></div>
+      <div class="q-solution"><span class="mono">03</span><h3>解决方案</h3><p>提供“匹配ai减肥闺蜜搭子+互相发照片评分游戏+带货”的产品设计。</p></div>
+      <div class="q-result"><span class="mono">04</span><h3>成果</h3><p>dify chatflow实现互相发照片积分游戏机制、ai搭子性格成长功能。初步邀请5人内测1个月并访谈，带货链接点击率54%，4人在访谈中表示对ai推荐有购买意愿。</p></div>
     </div>
-
-    <div class="case-layout">
-      <aside class="case-sidebar" aria-label="项目目录">
-        <div class="case-toc">
-          <div class="case-toc-title">项目目录</div>
-          <a class="case-toc-link active" href="#project/whybother" data-case-section="whybother-background" onclick="scrollProjectCaseTo(event,'whybother','whybother-background')">01　项目背景</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-research" onclick="scrollProjectCaseTo(event,'whybother','whybother-research')">02　早期需求信号</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-experience" onclick="scrollProjectCaseTo(event,'whybother','whybother-experience')">03　陪伴体验</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-model" onclick="scrollProjectCaseTo(event,'whybother','whybother-model')">04　模型与语气</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-business" onclick="scrollProjectCaseTo(event,'whybother','whybother-business')">05　商业模式</a>
-          <a class="case-toc-link" href="#project/whybother" data-case-section="whybother-result" onclick="scrollProjectCaseTo(event,'whybother','whybother-result')">06　测试信号</a>
-        </div>
-      </aside>
-
-      <div class="case-content">
-        <section id="whybother-background" class="case-section">
-          <div class="case-section-no">01 / 项目背景</div>
-          <h2>为什么减肥 App 常常坚持不到一周</h2>
-          <p>很多减肥 App 把重点放在记录卡路里，用户很快就会放弃。产品观察发现，人们需要的可能不是更多数字，而是一个会说真话、又持续在场的朋友。</p>
-          <div class="case-insight">把“监督我完成记录”换成“有人理解我，也愿意直接说”。</div>
-          <p>减肥搭子以闺蜜关系作为产品入口，用陪伴和逐步建立的熟悉感承接用户的日常状态。</p>
+    <div class="gal" style="--gallery-columns:1" aria-label="减肥搭子项目视觉">
+      <figure class="ph landscape"><button class="p" type="button" data-preview-src="images/whybother.png" data-preview-alt="减肥搭子项目插画" aria-label="放大减肥搭子项目插画"><img src="images/whybother.png" alt="减肥搭子的饭碗与对话气泡插画" loading="eager"></button></figure>
+    </div>
+    <div class="w">
+      <nav class="toc" aria-label="减肥搭子项目目录"><span class="mono">目录</span>
+        <a href="#project/whybother" data-case-section="whybother-background" onclick="scrollProjectCaseTo(event,'whybother','whybother-background')" class="on" aria-current="location"><span>01</span>背景</a>
+        <a href="#project/whybother" data-case-section="whybother-experience" onclick="scrollProjectCaseTo(event,'whybother','whybother-experience')"><span>02</span>关键决策</a>
+        <a href="#project/whybother" data-case-section="whybother-model" onclick="scrollProjectCaseTo(event,'whybother','whybother-model')"><span>03</span>产品设计</a>
+        <a href="#project/whybother" data-case-section="whybother-business" onclick="scrollProjectCaseTo(event,'whybother','whybother-business')"><span>04</span>开发</a>
+        <a href="#project/whybother" data-case-section="whybother-result" onclick="scrollProjectCaseTo(event,'whybother','whybother-result')"><span>05</span>成果</a>
+      </nav>
+      <article class="doc">
+        <section class="doc-chapter" id="whybother-background">
+          <h2><small>01</small>背景</h2>
+          <p>发现ai陪伴纯聊天产品的ROI低，和目前对健康的主流追求，进行ai聊天+健康功能性（减重）陪伴产品方向的探索。</p>
+          <h3>竞品分析</h3>
+          <p>竞品分析ai+减重产品（恋上健康，keep，Weightmate ai，小卡健康）。<br>发现未满足痛点：</p>
+          <ul class="why-bullet-list"><li>卡路里识别不准确，体验下降</li><li>菜谱死板，没办法按照用户真实情况动态推荐</li><li>现有ai聊天分类为恋爱异性凝视和专业化建议，缺少同性别视角的共情和理解</li></ul>
+          <h3>线上社群分析</h3>
+          <p>搜索“减肥搭子”相关社区，发现大量征求长期减肥搭子、抱怨搭子不合适的帖子。并且发现相当一部分人对非专业搭子的付费意愿。证实痛点观察为真。</p>
+          <div class="why-pair why-insights"><div class="why-pair-item why-insight"><h4>情感需求洞察</h4><div class="why-pair-content"><p><span>责任感、能力感、权力感、平等、共情、</span><span>需要被他人的行为而不是建议带动、共同困境目标。</span></p></div></div><div class="why-pair-item why-audience"><h4>目标用户</h4><div class="why-pair-content"><p>确定目标用户为18-25岁、想减肥但失败多次的女性。</p></div></div></div>
         </section>
-
-        <section id="whybother-research" class="case-section">
-          <div class="case-section-no">02 / 早期需求信号</div>
-          <h2>从内容互动到社群兴趣</h2>
-          <p>早期内容发布后，单条帖子获得 300 次曝光，20 多人表达兴趣，9 人加入社群。这些信号用于观察用户是否愿意继续了解产品。</p>
-          <div class="case-cards">
-            <div class="case-info-card"><div class="case-card-no">01</div><h4>内容触达</h4><p>单条帖子曝光约 300，初步触达对减肥陪伴有兴趣的人。</p></div>
-            <div class="case-info-card"><div class="case-card-no">02</div><h4>持续兴趣</h4><p>20+ 人表达兴趣，9 人加入社群，形成早期用户沟通入口。</p></div>
-          </div>
-          <figure class="case-image-slot" role="img" aria-label="帖子反馈和社群反馈占位">
-            <svg class="case-image-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 6"/></svg>
-            <strong>内容反馈 / 社群互动</strong><small>可补充帖子数据和早期社群反馈截图</small>
-          </figure>
+        <section class="doc-chapter" id="whybother-experience">
+          <h2><small>02</small>关键决策</h2>
+          <div class="why-decisions"><div><h3>产品形态</h3><p>同性别、年龄，体重和身高相似、减肥目标相同、性格互补的懂一点健身基础知识的女性搭子。</p></div><div><h3>游戏机制设计</h3><p>和ai搭子互相发照片并1-5分评分，输的人吃另外的人规定的减脂餐。与一位真人减肥搭子实施此游戏1个月测试。</p></div><div><h3>产品功能</h3><p>饮食方式建议，动态心理平衡，情感陪伴。</p></div><div><h3>TOBTOC商业化模式探索</h3><p>在饮食照片/ 日常对话里埋入商品暗广，根据对话提供链接。</p></div></div>
         </section>
-
-        <section id="whybother-experience" class="case-section">
-          <div class="case-section-no">03 / 陪伴体验设计</div>
-          <h2>关系逐步熟悉，语气也随之解锁</h2>
-          <p>闺蜜人设一次性生成，避免每次对话都重新定义角色。随着对用户的了解增加，聊天语气从试探、直接逐步走向犀利。</p>
-          <div class="case-process three-step" aria-label="试探、直接、犀利三阶段">
-            <div class="case-process-step"><b>试探</b><small>建立熟悉感</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>直接</b><small>表达更坦率</small></div><span class="case-process-arrow">→</span>
-            <div class="case-process-step"><b>犀利</b><small>关系更熟悉</small></div>
-          </div>
-          <div class="case-insight">语气随了解逐步变化，不靠套路推着用户走。</div>
+        <section class="doc-chapter" id="whybother-model">
+          <h2><small>03</small>产品设计</h2>
+          <div class="why-pair"><div class="why-pair-item"><h3>搭子性格设计</h3><div class="why-pair-content"><p>根据用户八字分析多维度性格，生成性格互补、兴趣相似的ai搭子。根据相处时间逐步熟悉、解锁不同方面的性格画像。</p></div></div><div class="why-pair-item"><h3>MVP功能设计</h3><div class="why-pair-content"><ul><li>画像+记忆更新。</li><li>评分、积分、身体数据档案</li><li>ai搭子选饭、发送图片</li><li>回复策略选择（RAG）</li><li>商品选择、链接推送</li></ul></div></div></div>
+          <ul class="why-diagrams"><li>流程图<figure class="why-placeholder"><button type="button" class="diagram-zoom" data-preview-src="images/whybother-flow.png" data-preview-alt="流程图" aria-label="放大查看流程图"><img src="images/whybother-flow.png" alt="流程图"></button></figure></li><li>Agent架构图<figure class="why-placeholder"><button type="button" class="diagram-zoom" data-preview-src="images/whybother-agent.png" data-preview-alt="Agent架构图" aria-label="放大查看Agent架构图"><img src="images/whybother-agent.png" alt="Agent架构图"></button></figure></li></ul>
         </section>
-
-        <section id="whybother-model" class="case-section">
-          <div class="case-section-no">04 / 模型与语气</div>
-          <h2>中文情感场景里，语气选择就是产品体验</h2>
-          <div class="case-feature"><h4>角色生成</h4><p>闺蜜人设一次性生成，保证陪伴关系有连续性。</p></div>
-          <div class="case-feature"><h4>模型选择</h4><p>项目选择 Sonnet。测试中，DeepSeek 在中文情感场景里的表达被评价为“太爹味”，不符合预期的朋友语气。</p></div>
-          <figure class="case-image-slot tall" role="img" aria-label="对话语气和模型输出对比占位">
-            <svg class="case-image-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
-            <strong>对话样例 / 模型输出比较</strong><small>可补充不同阶段的真实对话和模型评估记录</small>
-          </figure>
-        </section>
-
-        <section id="whybother-business" class="case-section">
-          <div class="case-section-no">05 / 商业模式</div>
-          <h2>用户免费，尝试由转化覆盖陪伴成本</h2>
-          <p>计划采用 ToB affiliate 分成，用户不付费。每位用户的模型成本约 ¥70/月，按现有估算，两笔转化可以覆盖成本。</p>
-          <div class="case-decisions">
-            <div class="case-decision"><h4>用户侧</h4><p>不向用户收费，保留轻量的陪伴体验。</p></div>
-            <div class="case-decision"><h4>商业侧</h4><p>通过 affiliate 分成覆盖模型调用成本。</p></div>
-          </div>
-        </section>
-
-        <section id="whybother-result" class="case-section">
-          <div class="case-section-no">06 / 测试信号</div>
-          <h2>一句自然的回应，触发了购买意愿</h2>
-          <div class="case-outcomes">
-            <div class="case-outcome"><b>2</b><span>测试用户表达购买意愿</span></div>
-            <div class="case-outcome"><b>9</b><span>加入社群</span></div>
-            <div class="case-outcome"><b>开发中</b><span>产品阶段</span></div>
-          </div>
-          <p>两位测试用户在机器人随口说了一句话之后，就表达了购买意愿。这是早期的体验信号，说明角色语气可能影响用户对产品价值的感知。</p>
-          <div class="case-closing"><div class="case-eyebrow">项目复盘</div><h3>真正的陪伴感来自持续理解和合适的表达，而不是多一张卡路里表。</h3><p>当前处于开发阶段，早期内容互动、社群加入和测试反馈为后续产品验证提供了线索。</p></div>
-        </section>
-      </div>
+        <section class="doc-chapter" id="whybother-business"><h2><small>04</small>开发</h2><p>选用dify chatflow进行MVP开发迭代测试。选用gemini 2.5 pro和sonnet 4.5。建立测试集，迭代10+轮获得初版。开发给5位用户进行1个月内测。</p></section>
+        <section class="doc-chapter" id="whybother-result"><h2><small>05</small>成果</h2><p>dify chatflow实现互相发照片积分游戏机制、ai搭子性格成长功能。初步邀请5人内测1个月并访谈，带货链接点击率54%，4人在访谈中表示对ai推荐有购买意愿。</p></section>
+      </article>
     </div>
   </div>
 </section>
-
-
-<section class="view" id="project-shelter">
-  <div class="case-page">
-    <a class="case-back" href="#home" onclick="backToProjects(event)">← 返回作品</a>
-    <section class="case-hero" aria-labelledby="shelter-project-title">
-      <div class="case-hero-grid"><div>
-        <h1 id="shelter-project-title">shelter <span>Early exploration.</span></h1>
-        <div class="case-eyebrow">早期探索 · 手绘视觉与音效 · 2025.08 — 2025.10</div>
-        <h2>给注意力，搭一顶小帐篷。</h2>
-      </div></div>
-    </section>
-    <section class="shelter-concept" aria-label="shelter 早期手绘探索">
-      <div class="concept-stage"><img src="images/shelter.png" alt="shelter 的黄色帐篷与篝火插画"></div>
-      <div class="concept-copy"><h2>从手绘开始，探索一个让人愿意停留的空间。</h2><p>shelter 是一个围绕专注空间的早期探索。以手绘帐篷和篝火为起点，尝试用画面与声音营造暂时远离外界干扰的氛围。</p><p class="concept-status">早期手绘探索 / 氛围与体验</p></div>
-    </section>
+<section class="view ohmee-case shelter-case" id="project-shelter" aria-label="shelter 项目详情">
+  <div class="pgb" aria-hidden="true"></div>
+  <header class="top"><a href="#home" onclick="backToProjects(event)">← 返回作品</a><span>Angela 徐晓萌</span><a class="cvb" href="#contact" onclick="go(event,'contact')">简历 ↗</a></header>
+  <nav class="tabs" aria-label="shelter 章节导航">
+    <a href="#project/shelter" data-case-section="shelter-background" onclick="scrollProjectCaseTo(event,'shelter','shelter-background')" class="on" aria-current="location">背景调研</a>
+    <a href="#project/shelter" data-case-section="shelter-design" onclick="scrollProjectCaseTo(event,'shelter','shelter-design')">方案设计</a>
+    <a href="#project/shelter" data-case-section="shelter-mvp" onclick="scrollProjectCaseTo(event,'shelter','shelter-mvp')">MVP开发测试</a>
+    <a href="#project/shelter" data-case-section="shelter-conclusion" onclick="scrollProjectCaseTo(event,'shelter','shelter-conclusion')">结论</a>
+  </nav>
+  <div class="hero"><div class="c">
+    <div class="hd"><img class="ic" src="images/shelter.png" alt="shelter 帐篷与篝火插画" loading="eager"><div class="shelter-title-stack"><h1 id="shelter-project-title">电子帐篷<small>shelter</small></h1><a class="shelter-trial-link" href="https://angelapomu.github.io/shelter/" target="_blank" rel="noopener noreferrer">可试用MVP ↗</a></div></div>
+    <div class="meta"><div><span>状态：</span>MVP测试完成</div><div><span>实现：</span>PWA+本地储存</div><div><span>模式：</span>TOC -工具类</div></div>
+  </div></div>
+  <div class="c shelter-content">
+    <div class="q">
+      <div class="q-role"><h3>role</h3><p>产品owner，调研访谈，0-1产品/ 机制设计，UIUX，vibe coding开发，冷启动内测。</p></div>
+      <div class="q-problem"><h3>痛点</h3><p>短视频时代信息过载导致的拖延、启动难</p></div>
+      <div class="q-solution"><h3>解决方案</h3><p>用“电子帐篷”来提供合理的叙事、私密和陪伴感。结合现实创造虚拟旅程，增加定制感，鼓励自我表达和复盘。</p></div>
+      <div class="q-result"><h3>成果</h3><p>验证核心假设成立，获得第一批天使用户，深入访谈3位用户。</p></div>
+    </div>
+    <div class="gal" aria-label="shelter 产品界面截图，按体验顺序展示">
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-01-scene.png" data-preview-alt="埃菲尔铁塔顶部的 shelter 场景插画" aria-label="放大：埃菲尔铁塔顶部场景"><img src="images/shelter-01-scene.png" alt="埃菲尔铁塔顶部的 shelter 场景插画" loading="eager"></button><figcaption class="mono">01 · 场景插画</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-02-invitation.png" data-preview-alt="场景文字引导用户进入帐篷" aria-label="放大：帐篷入口引导"><img src="images/shelter-02-invitation.png" alt="场景文字引导用户进入帐篷" loading="lazy"></button><figcaption class="mono">02 · 进入帐篷</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-03-equipment-dark.png" data-preview-alt="深色模式的帐篷与装备界面" aria-label="放大：帐篷装备界面"><img src="images/shelter-03-equipment-dark.png" alt="深色模式的帐篷与装备界面" loading="lazy"></button><figcaption class="mono">03 · 装备界面</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-04-camp-setup.png" data-preview-alt="点亮篝火并摆放椅子的帐篷界面" aria-label="放大：营地布置"><img src="images/shelter-04-camp-setup.png" alt="点亮篝火并摆放椅子的帐篷界面" loading="lazy"></button><figcaption class="mono">04 · 营地布置</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-05-food-interaction.png" data-preview-alt="帐篷场景中的食物选择与互动界面" aria-label="放大：食物互动"><img src="images/shelter-05-food-interaction.png" alt="帐篷场景中的食物选择与互动界面" loading="lazy"></button><figcaption class="mono">05 · 食物互动</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-06-chat.png" data-preview-alt="my tent 中的对话与用户反馈" aria-label="放大：对话与用户反馈"><img src="images/shelter-06-chat.png" alt="my tent 中的对话与用户反馈" loading="lazy"></button><figcaption class="mono">06 · 对话与反馈</figcaption></figure>
+      <figure class="ph"><button class="p" type="button" data-preview-src="images/shelter-07-next-action.png" data-preview-alt="下一步最小行动清单界面" aria-label="放大：下一步行动清单"><img src="images/shelter-07-next-action.png" alt="下一步最小行动清单界面" loading="lazy"></button><figcaption class="mono">07 · 下一步行动</figcaption></figure>
+    </div>
+    <div class="w">
+      <nav class="toc" aria-label="shelter 项目目录"><span class="mono">目录</span>
+        <a href="#project/shelter" data-case-section="shelter-background" onclick="scrollProjectCaseTo(event,'shelter','shelter-background')" class="on" aria-current="location"><span>01</span>背景调研</a>
+        <a href="#project/shelter" data-case-section="shelter-design" onclick="scrollProjectCaseTo(event,'shelter','shelter-design')"><span>02</span>方案设计</a>
+        <a href="#project/shelter" data-case-section="shelter-mvp" onclick="scrollProjectCaseTo(event,'shelter','shelter-mvp')"><span>03</span>MVP开发测试</a>
+        <a href="#project/shelter" data-case-section="shelter-conclusion" onclick="scrollProjectCaseTo(event,'shelter','shelter-conclusion')"><span>04</span>结论</a>
+      </nav>
+      <article class="doc">
+        <section class="doc-chapter" id="shelter-background">
+          <h2><small>01</small>背景调研</h2>
+          <p>疫情后陪伴产品需求激增，同时“露营”文化火爆。现有ai陪伴token消耗大、留存低，通过ai+轻游戏化，探索ai赋能而不是主导的ai陪伴产品。</p>
+          <h3>竞品分析</h3>
+          <p>竞品分析（headspace, tolan, koan, 我要做计划）。</p>
+          <figure class="shelter-diagram"><button type="button" data-preview-src="images/shelter-competitor-analysis.png" data-preview-alt="竞品分析表" aria-label="放大竞品分析表"><img src="images/shelter-competitor-analysis.png" alt="竞品分析表" loading="lazy"></button></figure>
+          <h3>目标用户</h3>
+          <p>用户画像：</p>
+          <ul>
+            <li>16-35岁的高压人群。</li>
+            <li>远离家乡，没有归属感，娱乐匮乏，导致过度沉迷社交媒体和短视频，又觉得浪费时间。</li>
+            <li>压力大，需要系统性解压和发泄场所<br>使用场景：</li>
+            <li><strong>日常场景：</strong> 早上规划一天大概要做的事，白天随机跟帐篷互动，晚上跟帐篷说话，复盘</li>
+            <li><strong>触发场景：</strong> 觉得自己需要发泄，放松，或者需要平静下来的时候</li>
+            <li><strong>使用频次：</strong> 1-10次，每次3-10分钟</li>
+          </ul>
+          <h3>访谈</h3>
+          <p>初步意向UI发帖，深度访谈两位目标用户，以拖延症为实验对象，制作用户旅行地图</p>
+          <figure class="shelter-diagram"><button type="button" data-preview-src="images/shelter-user-journey.png" data-preview-alt="shelter用户旅程地图" aria-label="放大shelter用户旅程地图"><img src="images/shelter-user-journey.png" alt="shelter用户旅程地图" loading="lazy"></button></figure>
+        </section>
+        <section class="doc-chapter" id="shelter-design">
+          <h2><small>02</small>方案设计</h2>
+          <h3>产品定位</h3>
+          <ul>
+            <li><strong>用户目标：</strong> 通过试用shelter来获得平静和归属感，从而更好应对生活中的事务。</li>
+            <li><strong>商业目标：</strong> 以月会员和年会员为主，app内提供买断。之后合作可能：现实露营品牌，文娱ip，ar游戏化，或作为心理健康平台运营。</li>
+            <li><strong>产品目标：</strong> 成为用户的日常规划，情绪调节和复盘的场所。</li>
+          </ul>
+          <h3>功能</h3>
+          <ol>
+            <li>下一步启动/ 计划</li>
+            <li>emoji轻游戏化互动</li>
+            <li>白噪音番茄钟</li>
+            <li>记录/ 情绪发泄（情绪调节）</li>
+          </ol>
+          <h3>流程设计</h3>
+          <figure class="shelter-diagram"><button type="button" data-preview-src="images/shelter-interaction-flow.png" data-preview-alt="跟帐篷互动、自我对话和创立任务的流程图" aria-label="放大shelter流程设计图一"><img src="images/shelter-interaction-flow.png" alt="跟帐篷互动、自我对话和创立任务的流程图" loading="lazy"></button></figure>
+          <figure class="shelter-diagram"><button type="button" data-preview-src="images/shelter-task-flow.png" data-preview-alt="shelter用户流程图" aria-label="放大shelter流程设计图二"><img src="images/shelter-task-flow.png" alt="shelter用户流程图" loading="lazy"></button></figure>
+          <ol>
+            <li><strong>跟帐篷互动：</strong>
+              <ul>
+                <li>输入“你有想拖延的事吗？”和“对此的随机想法”。</li>
+                <li>进入帐篷页面，播放背景音，介绍地图</li>
+                <li>进入帐篷，背景音变小。</li>
+                <li>用木柴点燃火炉（无动画特效，单纯改变背景图片），播放点燃炉火的生效，画面变量（改变背景图片），播放火炉音效</li>
+                <li>从物品栏放置一把椅子（图片）</li>
+                <li>从食品栏吃食物（emoji）</li>
+              </ul>
+            </li>
+            <li><strong>自我对话+创立任务：</strong>
+              <ul>
+                <li>进入跟对话页面记录情绪，用emoji标记想法/情绪。</li>
+                <li>创立the next step</li>
+                <li>返回界面，跟以前的自己对话（评论）</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+        <section class="doc-chapter" id="shelter-mvp">
+          <h2><small>03</small>MVP开发测试</h2>
+          <p>用手绘+免费音效+vibe coding建立PWA（HTML+CSS+JS）开发MVP，加入埋点，邀请15位用户进行一周试用并回访</p>
+        </section>
+        <section class="doc-chapter" id="shelter-conclusion">
+          <h2><small>04</small>结论</h2>
+          <p>收获第一批天使用户，北极星指标达成80%以上，确定了流程的有效性。确认“在安全网内随意失控来解压”的痛点，需要做用户主导和内容主导的平衡优化。60%以上用户不需要实时ai对话。迭代有效提升归属感和使用意愿，但同时引发表演性焦虑和孤独，需要提供隐性陪伴功能，不能做分享功能。纯游戏化的PMF很低，应加强目的性，轻游戏交互作为辅助解压手段和留存机制</p>
+        </section>
+      </article>
+    </div>
   </div>
 </section>
-
 </main>
 <footer class="studio-footer page-width"><a href="#home" onclick="go(event,'intro')">Angela Xu</a><span>© 2026 徐晓萌</span></footer>
 <dialog class="studio-lightbox" id="image-dialog" aria-label="项目图片放大预览"><button class="dialog-close" type="button" aria-label="关闭图片预览">关闭 ×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p></dialog>
@@ -1327,20 +1317,38 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
       updateChapter();
       return;
     }
-    if (!('IntersectionObserver' in window)) return;
-    caseObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          for (const link of links) {
-            const current = link.dataset.caseSection === entry.target.id;
-            link.classList.toggle('active', current);
-            if (current) link.setAttribute('aria-current', 'location');
-            else link.removeAttribute('aria-current');
+    const tabs = view.querySelector('.tabs');
+    const progress = view.querySelector('.pgb');
+    const selectChapter = sectionId => {
+      for (const link of links) {
+        const current = link.dataset.caseSection === sectionId;
+        link.classList.toggle('active', current);
+        if (current) {
+          link.setAttribute('aria-current', 'location');
+          if (tabs?.contains(link) && getComputedStyle(tabs).display !== 'none') {
+            tabs.scrollLeft = link.offsetLeft - tabs.clientWidth / 2 + link.offsetWidth / 2;
           }
-        }
+        } else link.removeAttribute('aria-current');
       }
-    }, { rootMargin: '-16% 0px -65% 0px', threshold: 0 });
-    sections.forEach(section => caseObserver.observe(section));
+    };
+    const updateChapter = () => {
+      caseScrollFrame = 0;
+      const top = 150;
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= top) current = section;
+      }
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 3) current = sections.at(-1);
+      if (current) selectChapter(current.id);
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (progress) progress.style.width = (scrollableHeight > 0 ? window.scrollY / scrollableHeight * 100 : 0) + '%';
+    };
+    caseScrollListener = () => {
+      if (!caseScrollFrame) caseScrollFrame = requestAnimationFrame(updateChapter);
+    };
+    window.addEventListener('scroll', caseScrollListener, { passive: true });
+    window.addEventListener('resize', caseScrollListener);
+    updateChapter();
   }
 
   function route() {
@@ -1414,9 +1422,9 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
     if (!destination) return;
     if (slug === 'woma') {
       selectOhmeeChapter(sectionId);
-      destination.setAttribute('tabindex', '-1');
-      destination.focus({ preventScroll: true });
     }
+    destination.setAttribute('tabindex', '-1');
+    destination.focus({ preventScroll: true });
     destination.scrollIntoView({ behavior: motion.matches ? 'instant' : 'smooth', block: 'start' });
   };
 
@@ -1474,5 +1482,35 @@ body[data-view] .studio-header :focus-visible { outline-color: #171713; outline-
 </script>
 <script src="spring-hero.js" defer></script>
 <script src="project-cards.js" defer></script>
+<script>
+(() => {
+  const button = document.querySelector('[data-copy-email]');
+  if (!button) return;
+  const email = 'XiaomengXu_Angela@163.com';
+  let resetTimer;
+  button.addEventListener('click', async () => {
+    let copied = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      }
+    } catch (_) { /* Try the fallback below. */ }
+    if (!copied) {
+      const input = document.createElement('textarea');
+      input.value = email;
+      input.setAttribute('readonly', '');
+      input.style.cssText = 'position:fixed;left:-9999px;top:0';
+      document.body.appendChild(input);
+      input.select();
+      try { copied = document.execCommand('copy'); } catch (_) { /* Show the address below. */ }
+      input.remove();
+    }
+    button.textContent = copied ? '邮箱已复制' : '复制失败，请手动复制邮箱';
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => { button.textContent = '复制邮箱 ↗'; }, 3000);
+  });
+})();
+</script>
 </body>
 </html>

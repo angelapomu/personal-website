@@ -1,0 +1,97 @@
+/* OhMee: shared layout specification V2. Content and chapter hierarchy stay intact. */
+#project-woma { --px:48px; --line:#ddd6cf; }
+#project-woma > .c { max-width:1200px; }
+#project-woma .hero .c { max-width:1104px; }
+#project-woma .top { height:64px; font-size:14px; }
+#project-woma .hero { padding:64px var(--px) 40px; }
+#project-woma h1 { font-size:64px; line-height:1.15; font-weight:800; }
+#project-woma .lead { font-size:20px; line-height:1.6; font-weight:400; }
+#project-woma .meta { margin-top:24px; font-size:15px; border-top:1px solid var(--line); padding-top:20px; }
+#project-woma .meta span { font-size:14px; }
+#project-woma .q { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; padding:64px var(--px); }
+#project-woma .q > div { padding:24px; border:1px solid var(--line); border-radius:8px; box-shadow:none; }
+#project-woma .q .mono { display:none; }
+#project-woma .q h3 { margin:0 0 16px; font-size:20px; line-height:1.5; font-weight:600; }
+#project-woma .q p { font-size:17px; line-height:1.85; color:var(--ink); }
+#project-woma .q-problem { background:#FBDDE8; }
+#project-woma .q-solution { background:#F29BBF; }
+#project-woma .q-result { background:#EBE3DB; }
+#project-woma .q-role { background:#fff; }
+#project-woma .gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:24px; margin:0 var(--px); padding:0; background:transparent; align-items:start; }
+#project-woma .ph { min-width:0; }
+#project-woma .p { aspect-ratio:auto; border:1px solid var(--line); background:#fff; }
+#project-woma .p img { height:auto; width:100%; object-fit:contain; }
+#project-woma figcaption { margin-top:12px; font-size:14px; line-height:1.6; }
+#project-woma .w { grid-template-columns:160px minmax(0,1fr); gap:48px; padding:64px var(--px) 100px; }
+#project-woma .toc { top:96px; }
+#project-woma .toc > .mono { margin-bottom:16px; font-size:14px; }
+#project-woma .toc a { font-size:14px; padding:10px 0 10px 14px; }
+#project-woma .doc { min-width:0; width:100%; max-width:800px; container-type:inline-size; }
+#project-woma .doc section { padding-bottom:64px; }
+#project-woma .doc section + section { padding-top:64px; }
+#project-woma .doc h2 { margin:0 0 24px; font-size:34px; line-height:1.3; font-weight:700; }
+#project-woma .doc h2 small { margin-bottom:10px; font-size:12px; }
+#project-woma .doc h3 { margin:40px 0 16px; font-size:24px; line-height:1.4; font-weight:700; }
+#project-woma .doc h2 + h3 { margin-top:0; }
+#project-woma .doc h4 { font-size:20px; line-height:1.5; font-weight:600; }
+#project-woma .doc p,#project-woma .doc li { max-width:none; font-size:17px; line-height:1.85; color:var(--ink); }
+#project-woma .doc p { margin-bottom:16px; }
+#project-woma .doc ul { max-width:none; margin:16px 0 0 1.2em; padding:0; }
+#project-woma .doc li { margin-bottom:12px; }
+#project-woma .flow { gap:12px; margin:24px 0; }
+#project-woma .flow span { border:1px solid var(--line); background:#fff; border-radius:8px; padding:20px; font-size:17px; line-height:1.85; }
+#project-woma .evidence { margin:24px 0; }
+#project-woma .evidence > button { padding:0; border:1px solid var(--line); background:#fff; }
+#project-woma .evidence img { width:100%; height:auto; object-fit:contain; }
+#project-woma .evidence-pair { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:24px; margin:24px 0; align-items:start; }
+#project-woma .evidence-pair .evidence { margin:0; }
+#project-woma .research-shot > button { aspect-ratio:auto; display:block; }
+#project-woma .research-shot img { height:auto; }
+#project-woma .table-wrap { margin:24px 0; overflow:visible; }
+#project-woma .document-table th,#project-woma .document-table td { padding:16px; border:1px solid var(--line); font-size:16px; line-height:1.8; font-weight:400; }
+#project-woma .document-table thead th { background:#f6f3f0; font-size:16px; line-height:1.6; font-weight:600; }
+#project-woma .dec > div { border:0; padding:0; margin-top:40px; }
+#project-woma .dec h3 { margin:0 0 16px; }
+#project-woma .dec p { margin-bottom:12px; grid-template-columns:4em minmax(0,1fr); }
+#project-woma .dec .mono { font-size:14px; line-height:1.85; }
+#project-woma .mets { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:24px; padding:0; margin:24px 0; border:0; }
+#project-woma .mets b { font-size:40px; line-height:1.2; font-weight:700; }
+#project-woma .mets span { display:block; margin-top:8px; font-size:14px; line-height:1.6; }
+@container(max-width:699px) {
+ #project-woma .document-table,#project-woma .document-table tbody { display:block; width:100%; }
+ #project-woma .document-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+ #project-woma .document-table tbody tr { display:grid; grid-template-columns:minmax(0,1fr); gap:14px; padding:24px 0; border-top:1px solid var(--line); }
+ #project-woma .document-table tbody :is(th,td) { display:grid; grid-template-columns:4.5em minmax(0,1fr); gap:12px; padding:0; width:100%; min-width:0; border:0; font-size:16px; line-height:1.8; }
+ #project-woma .document-table tbody :is(th,td)::before { content:attr(data-label); font-size:14px; line-height:1.8; color:var(--mu); }
+ #project-woma .document-table tbody :is(th,td):first-child { display:block; font-size:20px; line-height:1.5; font-weight:600; }
+ #project-woma .document-table tbody :is(th,td):first-child::before { content:none; }
+ #project-woma .document-table tbody tr:last-child { border-bottom:1px solid var(--line); }
+}
+@media(max-width:1099px) {
+ #project-woma .w { grid-template-columns:minmax(0,1fr); }
+ #project-woma .toc { display:none; }
+ #project-woma .tabs { display:flex; position:sticky; top:64px; z-index:35; background:var(--paper); border-bottom:1px solid var(--line); overflow-x:auto; scrollbar-width:none; padding:0 var(--px); }
+ #project-woma .tabs a { flex:none; padding:13px 14px 10px; font-size:15px; color:var(--mu); border-bottom:3px solid transparent; white-space:nowrap; }
+ #project-woma .tabs a:is(.on,.active) { color:var(--ink); border-bottom-color:var(--berry); }
+ html:has(body[data-project="woma"]) { scroll-padding-top:124px; }
+}
+@media(max-width:767px) {
+ #project-woma { --px:24px; }
+ #project-woma .hero { padding-top:40px; }
+ #project-woma h1 { font-size:38px; }
+ #project-woma .lead { font-size:18px; }
+ #project-woma .q { grid-template-columns:1fr; gap:16px; padding-top:40px; padding-bottom:40px; }
+ #project-woma .q > div { padding:20px; }
+ #project-woma .w { padding-top:40px; }
+ #project-woma .doc section { padding-bottom:64px; }
+ #project-woma .doc section + section { padding-top:64px; }
+ #project-woma .doc h2 { font-size:28px; }
+ #project-woma .doc h3 { margin-top:32px; font-size:22px; }
+ #project-woma .doc h2 + h3 { margin-top:0; }
+ #project-woma .dec h3 { margin-top:0; }
+ #project-woma .dec > div { margin-top:32px; }
+ #project-woma .mets b { font-size:32px; }
+ #project-woma .top { font-size:12px; }
+ #project-woma .top .cvb { padding:7px 12px; }
+}
+@media(max-width:399px) { #project-woma { --px:20px; } }

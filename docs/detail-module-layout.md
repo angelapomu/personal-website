@@ -1,5 +1,8 @@
 # OhMee document layout
 
+> 当前统一 Layout 规范见 [detail-page-ui-spec.md](detail-page-ui-spec.md)（V2，2026-11-18）。以下为历史参考，冲突处以新版为准。
+
+
 The owner-supplied 项目详情 · 左侧目录文档型.html is the layout authority. The owner's 2026-11-10 correction supersedes the earlier hybrid layout and module system. ohmee-case.css scopes the reference to OhMee; the homepage and other projects remain independent.
 
 ## Reading order
@@ -8,7 +11,7 @@ The owner-supplied 项目详情 · 左侧目录文档型.html is the layout auth
 2. Three tags, square rounded app icon with project name, lead, and metadata.
 3. Four overview columns: 问题、方案、结果、我的角色.
 4. One rose-backed gallery with four real product screenshots and short captions.
-5. A 220px left directory beside six sibling chapters: 背景与目标、用户与洞察、方案概览、关键决策、指标与验证、风险与下一步.
+5. A 220px left directory beside six sibling chapters: 背景、初步验证、关键决策、产品设计、内测、成果.
 
 No repeated screenshot journeys, demonstration panels, annotation chips, enlargement hints, collapsible footnotes, or closing reflection panel. Screenshot enlargement remains available through the images themselves and accessible button labels. Keep meaningful h3 headings and concrete project evidence; visual restraint must not turn the case into generic summaries.
 

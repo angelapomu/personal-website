@@ -11,24 +11,16 @@ async function geometry(page, root = '') {
   return page.evaluate(root => {
     const at = selector => document.querySelector(root + selector);
     const value = (selector, property) => getComputedStyle(at(selector))[property];
+    const columns = selector => value(selector, 'gridTemplateColumns').split(' ').length;
     return {
       header: at('.top').getBoundingClientRect().height,
-      container: at('.c').getBoundingClientRect().width,
-      inset: value('.c','paddingLeft'),
       title: value('h1','fontSize'),
-      lead: value('.lead','fontSize'),
-      overview: value('.ov','gridTemplateColumns'),
-      overviewGap: value('.ov','columnGap'),
-      overviewCopy: value('.ov p','fontSize'),
-      gallery: value('.gal','gridTemplateColumns'),
-      galleryInset: value('.gal','paddingLeft'),
-      document: value('.w','gridTemplateColumns'),
-      documentGap: value('.w','columnGap'),
+      overviewColumns: columns('.q'),
+      galleryColumns: columns('.gal'),
+      documentColumns: columns('.w'),
       directory: value('.toc','display'),
       chapter: value('.doc h2','fontSize'),
-      body: value('.doc p','fontSize'),
-      bodyLeading: value('.doc p','lineHeight'),
-      paper: value('.c','backgroundColor')
+      body: value('.doc p','fontSize')
     };
   }, root);
 }
@@ -44,7 +36,7 @@ async function geometry(page, root = '') {
     await page.locator('#project-woma.on').waitFor();
     await page.evaluate(() => Promise.race([document.fonts.ready, new Promise(resolve => setTimeout(resolve, 6000))]));
     assert.deepEqual(await page.locator('.doc > section').evaluateAll(nodes => nodes.map(node => node.id)), chapters);
-    assert.equal(await page.locator('.ov > div').count(), 4);
+    assert.equal(await page.locator('.q > div').count(), 4);
     assert.equal(await page.locator('.gal > figure img').count(), 4);
     const images = await page.locator('#project-woma img').evaluateAll(async nodes => Promise.all(nodes.map(async image => {
       image.loading = 'eager';
@@ -86,7 +78,7 @@ async function geometry(page, root = '') {
         await reference.setViewportSize({ width, height: 1000 });
         const expected = await geometry(reference);
         const actual = await geometry(page, '#project-woma ');
-        // The container is transparent in both pages; their enclosing paper colors are separately scoped.
+        // Compare the reference's main responsive structure and type scale.
         assert.deepEqual(actual, expected, `reference geometry at ${width}px`);
       }
       if ([1440,849,375].includes(width)) {
@@ -104,12 +96,22 @@ async function geometry(page, root = '') {
       } else await select('case-architecture');
       const tables = await page.locator('.table-wrap').evaluateAll(nodes => nodes.map(node => ({
         outer: node.clientWidth, inner: node.scrollWidth, overflow: getComputedStyle(node).overflowX,
-        headers: [...node.querySelectorAll('thead th')].map(header => header.textContent)
+        headers: [...node.querySelectorAll('thead th')].map(header => header.textContent),
+        rowDisplay: getComputedStyle(node.querySelector('tbody tr')).display,
+        rowWidth: node.querySelector('tbody tr').getBoundingClientRect().width,
+        cellWidths: [...node.querySelectorAll('tbody tr:first-child > *')].map(cell => cell.getBoundingClientRect().width),
+        cellBorders: [...node.querySelectorAll('tbody tr:first-child > *')].map(cell => getComputedStyle(cell).borderLeftWidth),
+        labelled: [...node.querySelectorAll('tbody :is(td,th)')].every(cell => cell.hasAttribute('data-label'))
       })));
       tables.forEach(table => {
-        assert.equal(table.overflow, 'auto');
         assert.equal(table.headers.length, 3);
-        if (width < 560) assert.ok(table.inner > table.outer, 'small-screen tables scroll within their own region');
+        assert.ok(table.labelled, 'responsive cells retain their column labels');
+        assert.ok(table.inner <= table.outer + 1, 'tables fit without horizontal scrolling');
+        if (width <= 700) {
+          assert.equal(table.rowDisplay, 'grid', 'phone rows become vertical entries');
+          assert.ok(table.cellWidths.every(cellWidth => Math.abs(cellWidth - table.rowWidth) < 1), 'phone entries use the full available width');
+        }
+        else assert.ok(table.cellBorders.every(border => border === '1px'), 'desktop cells have vertical grid lines');
       });
       const frames = await page.locator('.p,.research-shot > button').evaluateAll(nodes => nodes.map(node => {
         const frame = node.getBoundingClientRect(), image = node.querySelector('img').getBoundingClientRect();

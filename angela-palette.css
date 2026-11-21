@@ -46,7 +46,7 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 .figma-home .spring-glyph { display: inline-block; transform-origin: center; }
 .figma-home .spring-pink { color: var(--a-pink); }
 .figma-home .spring-sub { margin: 0; max-width: 28em; font-size: clamp(16px,1.15vw,20px); line-height: 1.8; }
-.figma-home .spring-bio { margin: 0; max-width: 34em; font-size: 14px; line-height: 1.8; color: var(--a-muted); justify-self: end; }
+.figma-home .spring-bio { margin: 0; max-width: 34em; font-size: 16px; line-height: 1.8; color: var(--a-muted); justify-self: end; }
 .figma-home .spring-scroll { display: flex; justify-content: center; padding-top: 8px; }
 .figma-home .spring-scroll-cue { display: inline-flex; min-height: 60px; padding: 8px 16px; color: var(--a-muted); font: 400 12px/1.6 var(--a-sans); letter-spacing: .06em; }
 .figma-home .spring-scroll-label { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; }
@@ -147,4 +147,20 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 }
 @media print {
   .figma-home .project-card.card-enter-pending { opacity: 1 !important; transform: none !important; }
+}
+.figma-home .project-preview .trial-badge {
+  position:absolute;
+  z-index:8;
+  top:12px;
+  right:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 10px;
+  border:1px solid #15171A;
+  background:#fff;
+  color:#15171A;
+  font:600 12px/1 "Noto Sans SC","PingFang SC",sans-serif;
+  white-space:nowrap;
+  pointer-events:none;
 }
