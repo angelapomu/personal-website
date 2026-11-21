@@ -142,7 +142,7 @@ body:is([data-view="home"],[data-project="woma"]) .studio-header nav a.on::after
 
 }
 @media (prefers-reduced-motion: reduce) {
-  .figma-home .spring-hero:not([data-motion-enabled="true"]) .spring-glyph { transform: none !important; }
+  .figma-home .spring-hero:not([data-motion-enabled="true"]):not([data-pointer-motion="true"]) .spring-glyph { transform: none !important; }
   .figma-home .project-arrow, .figma-home .footer-main > a { transition: none; }
 }
 @media print {

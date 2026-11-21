@@ -8,7 +8,8 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   // The requested motion preview overrides the system default without extra UI.
   const choice = new URLSearchParams(location.search).get('motion') === 'on' ? true : null;
-  const motionEnabled = () => choice === null ? !reduced.matches : choice;
+  let pointerMotionRequested = false;
+  const motionEnabled = () => choice === null ? (!reduced.matches || pointerMotionRequested) : choice;
   const letters = [...hero.querySelectorAll('.spring-char')].map(anchor => ({
     anchor, glyph: anchor.firstElementChild, x: 0, y: 0, vx: 0, vy: 0
   }));
@@ -65,7 +66,14 @@
     if (moving) frame = requestAnimationFrame(tick);
     else lastTime = 0;
   }
-  function move(event) { pointer = {x:event.clientX,y:event.clientY}; wake(); }
+  function move(event) {
+    // Moving a mouse over the title explicitly requests this interactive effect.
+    if (event.pointerType === 'mouse' && event.target.closest('.spring-title') && !pointerMotionRequested) {
+      pointerMotionRequested = true;
+      hero.dataset.pointerMotion = "true";
+    }
+    pointer = {x:event.clientX,y:event.clientY}; wake();
+  }
   function release() { pointer = null; wake(); }
   hero.addEventListener('pointermove', move, {passive:true});
   hero.addEventListener('pointerdown', move, {passive:true});
